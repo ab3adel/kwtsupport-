@@ -1,0 +1,176 @@
+.analysis-img {
+    text-align: center;
+    padding-right: 15px;
+}
+.analysis-form {
+    padding-left: 15px;
+
+    .sub-title {
+        display: block;
+        margin-bottom: 12px;
+        color: var(--mainColor);
+        text-transform: uppercase;
+        font: {
+            size: 15.5px;
+            weight: 700;
+        };
+    }
+    h2 {
+        margin-bottom: 0;
+        font-size: 42px;
+    }
+    p {
+        margin-top: 12px;
+    }
+    form {
+        margin-top: 25px;
+        margin-bottom: 95px;
+
+        .default-btn {
+            margin-top: 5px;
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
+    .analysis-img {
+        padding-right: 0;
+    }
+    .analysis-form {
+        padding-left: 0;
+        margin-top: 30px;
+        text-align: center;
+
+        .sub-title {
+            margin-bottom: 10px;
+            font-size: 13px;
+        }
+        h2 {
+            font-size: 28px;
+            padding-right: 0;
+        }
+    }
+
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .analysis-img {
+        padding-right: 0;
+        margin-bottom: 35px;
+    }
+    .analysis-form {
+        text-align: center;
+        max-width: 600px;
+        margin: {
+            left: auto;
+            right: auto;
+        };
+        .sub-title {
+            margin-bottom: 12px;
+            font-size: 14.5px;
+        }
+        h2 {
+            font-size: 35px;
+        }
+        p {
+            max-width: 550px;
+            margin: {
+                left: auto;
+                right: auto;
+            };
+        }
+    }
+
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .analysis-form {
+        .sub-title {
+            font-size: 14.5px;
+        }
+        h2 {
+            font-size: 38px;
+        }
+    }
+
+}
+.page-title-area {
+    background: {
+        size: cover;
+        repeat: no-repeat;
+        image: url(../../../../assets/img/myImage/login.png);
+    };
+}
+h4,hr{
+    color: white;
+}
+hr{
+    border: 1px solid white;
+
+}
+h4{
+    margin-right: 75px;
+}
+
+.all{
+ 
+    background: {
+        size: cover;
+        repeat: no-repeat;
+        image: url(../../../../assets/img/myImage/back.png);
+    };
+}
+.form-control:focus {
+    color: white!important;
+ 
+}
+
+.ff:focus{
+    color: #0d486c!important;  
+}
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+  .inputfile + label {
+    max-width: 23%;
+    font-size: 16px;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inherit;
+    overflow: hidden;
+    padding: 10px ;
+    background-color:#125596;
+    height: 50px;
+}
+
+.progress-outer {
+    width: 96%;
+    margin: 44px 2%!important;
+    padding: 3px;
+    background-color: #f4f4f4;
+    border: 1px solid #dcdcdc;
+    color: #fff;
+    border-radius: 20px;
+    text-align: center;
+
+}
+#progressAdd{
+    // margin: 44px 2%!important;
+}
+select.form-control:not([size]):not([multiple]) {
+    height: calc(2.9rem + 2px)!important;
+}
+@media only screen and (max-width: 992px){
+    .inputfile + label {
+        max-width: 38%!important; 
+}
+}
+// .custom-control-label::before ,.custom-control-label::after{width:30px; }

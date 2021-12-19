@@ -1,0 +1,68 @@
+<section class="page-title-area">
+    <div class="container">
+        <div class="page-title-content">
+            <h1 style="color:rgb(13,72,108);margin-top:-40px"
+            [ngStyle]="{'float': lang ?  'right': 'left' }" >  {{'my offer'| translate }}</h1>
+        </div>
+    </div>
+
+
+</section>
+
+<section class="cart-area ptb-100 all">
+    <div class="container">
+        <form>
+            <div class="product-infinitescroll" *ngIf="!finished" >
+                <div class="theme-paggination-block">
+                    <div class="container-fluid p-0">
+                    <div class="row">
+                        <div class="text-center col-sm-12">
+                        <div class="infinite-scrolling mt-4 mb-4 d-inline-block">
+                            <img src="../../../../assets/img/myImage/loader3.png" >
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div style="margin: 0px ;text-align: center;">
+                <img src="../../../../assets/img/myImage/empty-compare.png" *ngIf="empty">
+                <h3 style=" color:rgb(13,72,108);margin-top: 2%;" *ngIf="empty">{{'nooffer' | translate }}</h3>
+            </div>
+            <div class="cart-table table-responsive" *ngIf="finished && !empty" >
+                <table class="table table-bordered"  [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }">
+                    <thead>
+                        <tr>
+                          
+                            <th scope="col">{{'nameoffer' | translate }}</th>
+                            <th scope="col">{{'des' | translate }}</th>
+                            <th scope="col">{{'amount'| translate }}</th>
+                            <th scope="col">{{'code' | translate }}</th>
+                            <th scope="col">{{'percentage' | translate }}</th>
+                            <th scope="col">{{'times_used' | translate }}</th>
+                            <th scope="col">  {{'expiration_date' | translate }}</th>
+                             <th scope="col"> {{'active' | translate }}</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr *ngFor="let myoffer of myoffer">
+                            <td class="product-thumbnail" *ngIf="lang"> {{myoffer.name_ar}} </td>
+                            <td class="product-thumbnail" *ngIf="!lang"> {{myoffer.name_en}} </td>
+                            <td class="product-thumbnail" *ngIf="lang"> {{myoffer.description_ar}} </td>
+                            <td class="product-thumbnail" *ngIf="!lang"> {{myoffer.description_en}} </td>
+                            <td class="product-thumbnail" > {{myoffer.amount}} </td>
+                            <td class="product-thumbnail" > {{myoffer.code}} </td>
+                            <td class="product-thumbnail" > {{myoffer.percentage}} </td>
+                            <td class="product-thumbnail" > {{myoffer.times_used}} </td>
+                            <td class="product-thumbnail" > {{myoffer.expiration_date}} </td>
+                            <td class="product-thumbnail" *ngIf="myoffer.active=='1'" style="color: green;"> {{'active' | translate }} </td>
+                            <td class="product-thumbnail" *ngIf="myoffer.active!='1'" style="color: red;">{{'unactive' | translate }} </td>
+                    </tbody>
+                </table>
+            </div>
+
+         
+        </form>
+    </div>
+</section>

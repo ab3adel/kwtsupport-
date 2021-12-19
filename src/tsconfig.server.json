@@ -1,0 +1,21 @@
+{
+    "extends": "../tsconfig.json",
+    "compilerOptions": {
+      "outDir": "../out-tsc/app",
+      "paths": {
+        "ngx-rangeslider-component/*" : ["../node_modules/ngx-rangeslider-component/*"],
+        "@angular/*": ["../node_modules/@angular/*"]
+      },
+      "baseUrl": "./",
+      "module": "commonjs",
+      "types": []
+    },
+    "exclude": [
+      "test.ts",
+      "**/*.spec.ts"
+    ],
+    "angularCompilerOptions": {
+      "entryModule": "app/app.server.module#AppServerModule",
+      "enableIvy": false
+    }
+  }

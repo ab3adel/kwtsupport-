@@ -1,0 +1,99 @@
+
+<div class="all">
+
+    <section class="">
+        <div class="container">
+            <div class="page-title-content">
+                <h1 style="    font-size: 50px;
+                padding-top: 5%;" >{{'myservice'| translate }} </h1>
+                    
+            </div>
+        </div>
+    
+     
+    </section>
+    
+    <div class="products-area ptb-100 ">
+        <div class="container"  >
+            <div class="plor-grid-sorting row align-items-center">
+                <!-- <div class="col-lg-6 col-md-6 result-count">
+                    <p>We found <span class="count">6</span> products available for you</p>
+                </div> -->
+    
+                 <!-- <div class="col-lg-6 col-md-6 ordering">
+                    <div class="select-box">
+                        <label>Sort By:</label>
+                        <select>
+                            <option>Default</option>
+                            <option>Popularity</option>
+                            <option>Latest</option>
+                            <option>Price: low to high</option>
+                            <option>Price: high to low</option>
+                        </select>
+                    </div>
+                </div> -->
+            </div>
+            <div class="product-infinitescroll" *ngIf="!finished" >
+                <div class="theme-paggination-block">
+                    <div class="container-fluid p-0">
+                    <div class="row">
+                        <div class="text-center col-sm-12">
+                        <div class="infinite-scrolling mt-4 mb-4 d-inline-block">
+                            <i class="fa fa-spinner fa-spin" style="color:white;font-size: 100px;"> </i>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" *ngIf="finished"  >
+    
+                <div class="col-lg-3 col-md-6 col-sm-6 mob" *ngFor="let s of category">
+                    <div class="card" (click)="clickcategory(s.id,s.name_ar,s.name_en)" style="cursor: pointer;">
+                        <div class="products-image">
+                            <a >
+                                <img src="{{s.avatar}}" class="main-image" alt="image" >
+                            </a>
+    
+                            <div class="products-button">
+                                <!-- <ul>
+                                    <li>
+                                        <div class="wishlist-btn" style="cursor: pointer;">
+                                            <a >
+                                                <i class='bx bx-cart'></i>
+                                                <span class="tooltip-label">
+                                                    {{'Add to cart'| translate }}
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul> -->
+                                <ul>
+                                  
+                                </ul>
+                            </div>
+                        </div>
+    
+                        <div class="products-content" >
+                            <h3><a  *ngIf="lang"
+                               >{{s.name_ar}}</a></h3>
+                            <h3><a  *ngIf="!lang">{{s.name_en}}</a></h3>
+                            <div class="price">
+                               
+                                <!-- <p *ngIf="!lang" >
+                                    {{s.short_description_en}}
+                                </p>
+                                <p *ngIf="lang" >
+                                    {{s.short_description_ar}}
+                                </p> -->
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+    
+        
+            </div>
+        </div>
+    </div>
+    </div>

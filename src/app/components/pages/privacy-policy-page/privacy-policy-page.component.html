@@ -1,0 +1,61 @@
+<section class="page-title-area">
+    <div class="container">
+        <div class="page-title-content">
+            <h1 style=" float: left; color: rgb(13,72,108);
+             margin-top: -40px;" *ngIf="!lang">{{'privacy-policy' | translate }}</h1>
+                   <h1 style=" float: right; color: white;
+                   margin-top: -40px;" *ngIf="lang">{{'privacy-policy' | translate }}</h1>
+        </div>
+    </div>
+
+
+</section>
+
+<section class="privacy-policy-area bg-f9f9f9 ptb-100" class="all">
+    <div class="container " [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }" style="padding-bottom: 10%;
+   padding-top: 5%;">
+        <div class="row">
+            <div class="col-lg-8 col-md-12">
+                <div class="privacy-policy-content">
+                    <div class="row">
+                    <!-- <div class="col-lg-4 col-md-4">
+                        <img src="../../../../assets/img/myImage/الصورة-الرباعية-1.png">
+                        <img src="../../../../assets/img/myImage/الصورة-الرباعية-2.png">
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <img src="../../../../assets/img/myImage/الصورة-الرباعية-3.png">
+                        <img src="../../../../assets/img/myImage/الصورة-الرباعية-4.png">
+                    </div> -->
+                </div>
+                    <p *ngIf="!lang" style="text-align: left;" [innerHTML]="privacy_policy"></p>
+                    <p *ngIf="lang" style="text-align: right;" [innerHTML]="privacy_policy_ar"></p>
+              
+            </div>
+            </div>
+
+            <div class="col-lg-4 col-md-12">
+                <aside class="widget-area" *ngIf="!lang">
+                    <section class="widget widget_insight">
+                        <ul>
+                            <li><a routerLink="/about-us-2">{{'about_us' | translate }}</a></li>
+                            <li><a routerLink="/how">{{'how_to_use' | translate }}</a></li>
+                            <li class="active"><a routerLink="/privacy-policy">{{'privacy-policy' | translate }}</a></li>
+                            <li><a routerLink="/terms-of-service">{{'terms_and_conditions' | translate }}</a></li>
+                        </ul>
+                    </section>
+                </aside>
+
+                <aside class="widget-area1" *ngIf="lang">
+                    <section class="widget widget_insight">
+                        <ul>
+                            <li><a routerLink="/about-us-2">{{'about_us' | translate }}</a></li>
+                            <li><a routerLink="/how">{{'how_to_use' | translate }}</a></li>
+                            <li class="active"><a routerLink="/privacy-policy">{{'privacy-policy' | translate }}</a></li>
+                            <li><a routerLink="/terms-of-service">{{'terms_and_conditions' | translate }}</a></li>
+                        </ul>
+                    </section>
+                </aside>
+            </div>
+        </div>
+    </div>
+</section>

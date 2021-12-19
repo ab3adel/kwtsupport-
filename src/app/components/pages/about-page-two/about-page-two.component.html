@@ -1,0 +1,147 @@
+<section class="page-title-area">
+    <div class="container">
+        <div class="page-title-content">
+            <h1 style="  margin-top: -40px;" [ngStyle]="{'float': lang ?  'right': 'left' }">{{'about_us' | translate }}</h1>
+        </div>
+    </div>
+
+
+</section>
+
+<section class="privacy-policy-area bg-f9f9f9 ptb-100" class="all">
+    <div class="container " [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }" style="padding-top: 10%;">
+        <div class="row">
+            <div class="col-lg-8 col-md-12">
+                <div class="privacy-policy-content">
+                    <img src="{{img}}" alt="image">
+                   
+                    <p *ngIf="!lang" style="text-align: left;    " [innerHTML]="about_us"></p>
+                    <p *ngIf="lang" style="text-align: right;     " [innerHTML]="about_us_ar"></p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <aside class="widget-area" *ngIf="!lang">
+                    <section class="widget widget_insight">
+                        <ul>
+                            <li><a routerLink="/about-us-2">{{'about_us' | translate }}</a></li>
+                            <li class="active"><a routerLink="/how">{{'how_to_use' | translate }}</a></li>
+                            <li ><a routerLink="/privacy-policy">{{'privacy-policy' | translate }}</a></li>
+                            <li><a routerLink="/terms-of-service">{{'terms_and_conditions' | translate }}</a></li>
+                        </ul>
+                    </section>
+                </aside>
+
+                <aside class="widget-area1" *ngIf="lang">
+                    <section class="widget widget_insight">
+                        <ul>
+                            <li><a routerLink="/about-us-2">{{'about_us' | translate }}</a></li>
+                            <li class="active"><a routerLink="/how">{{'how_to_use' | translate }}</a></li>
+                            <li ><a routerLink="/privacy-policy">{{'privacy-policy' | translate }}</a></li>
+                            <li><a routerLink="/terms-of-service">{{'terms_and_conditions' | translate }}</a></li>
+                        </ul>
+                    </section>
+                </aside>
+            </div>
+
+            <!-- <div class="col-lg-6 col-md-12">
+                <aside class="widget-area">
+                    <section >
+                      <div class="col-12">
+                          <div class="row">
+                              <div class="col-6"  >
+                                <img src="../../../../assets/img/myImage/الصورة-الرباعية-2.png" class="img1"> 
+                                 <div class="centered" *ngIf="lang">{{'our mission' | translate }}</div>
+                                 <div class="centered1" *ngIf="!lang">{{'our mission' | translate }}</div>
+
+
+                              </div>
+                              <div class="col-6"  >
+                                  <img src="../../../../assets/img/myImage/الصورة-الرباعية-3.png">
+                                  <div class="centered" *ngIf="lang">                                 
+                                     {{'our philosophy' | translate }}</div>
+                                     <div class="centered1" *ngIf="!lang">                                 
+                                        {{'our philosophy' | translate }}</div>
+                              </div>
+                          </div>
+                          <div class="row" style="margin-top: 3%;">
+                              <div class="col-6"  >
+                                  <img src="../../../../assets/img/myImage/الصورة-الرباعية-1.png">
+                                  <div class="centered" *ngIf="lang">                                 
+                                    {{'our vision' | translate }}    </div>
+                                    <div class="centered1" *ngIf="!lang">                                 
+                                        {{'our vision' | translate }}    </div>
+                              </div>
+                              <div class="col-6"  >
+                                  <img src="../../../../assets/img/myImage/الصورة-الرباعية-4.png">
+                                  <div class="centered"  *ngIf="lang">                                 
+                                    {{'our strategy' | translate }}   </div>
+                                    <div class="centered1"  *ngIf="!lang">                                 
+                                        {{'our strategy' | translate }}   </div>
+                              </div>
+                          </div>
+                      </div>
+                    </section>
+                </aside>
+            </div> -->
+        </div>
+
+      
+    </div>
+    <div class="col-12 backblue" [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }" >
+    <div class="row">
+        <div class="col-lg-6 col-sm-12">
+            <img src="../../../../assets/img/myImage/0 (4).png" style="padding: 50px"  >
+        </div>
+        <div class="col-lg-6 col-sm-12" style="padding: 50px"  >
+       <h3 style=" font-size: 40px;color: white;" [ngStyle]="{'text-align': lang ?  'right': 'left' }">
+        {{'SecurityAwareness' | translate }}
+    </h3>
+           <p style="color: white;  margin-top: 5%;
+          font-size: 20px;" [ngStyle]="{'text-align': lang ?  'right': 'left' }" *ngIf="lang">
+        
+        تعتبر منصة الدعم الكويتي سرية معلومات عملائه الكرام من أهم أولوياتها. لذا فإننا نتعهد بان نلتزم بكل ما من شأنه الحفاظ على سرية معلوماتكم وأن تظل ثقتكم بنا هي الركيزة الأساسية التي نعمل من اجل تعزيزها والحفاظ عليها.
+        الإجراءات التي تتخذها منصة الدعم الكويتي للتأكد من أمان وحماية عملياتك على الإنترنت:
+        الجلسات الآمنة: عند دخولك إلى موقعنا او لوحة تحكم تكون قد دخلت إلى جلسة آمنة.
+        التشفير: استخدام تقنية (SSL) في تشفير معلوماتك الخاصة قبل إرسالها من حاسبك على الإنترنت بحيث لا يستطيع أحد الاطلاع عليها. في الغالب سيقوم المتصفح (حسب إعدادات المتصفح) بإخطارك بأنك على وشك الدخول إلى موقع آمن.
+        انقطاع الجلسة: في حال إغلاق المتصفح بدون الخروج من الموقع، أو في حال ترك الحاسب لمدة معينة من الوقت سيتم إخراجك من الموقع لحمايتك. للعودة إلى الموقع، عليك أن تعود إلى الصفحة الرئيسية وتعاود الدخول من جديد.
+          
+        </p>
+        <p style="color: white;  margin-top: 5%;
+        font-size: 20px;" [ngStyle]="{'text-align': lang ?  'right': 'left' }" *ngIf="!lang">
+      
+      The Kuwaiti support platform considers the confidentiality of the information of its valued customers as one of its most important priorities. Therefore, we pledge to abide by everything that would maintain the confidentiality of your information, and that your trust in us remains the main pillar that we are working to strengthen and preserve.
+      Actions the Kuwait Support Platform takes to ensure the security and protection of your online operations:
+      Secure sessions: When you access our site or control panel, you have entered a secure session.
+      Encryption: Using SSL technology to encrypt your private information before sending it from your computer on the Internet so that no one can see it. In most cases, your browser (depending on your browser settings) will notify you that you are about to enter a secure site.
+      Session interruption: If the browser is closed without leaving the site, or if the computer is left for a certain period of time, you will be removed from the site for your protection. To return to the site, you have to go back to the main page and log back in again.
+      </p>
+        </div>
+        </div> 
+    </div>
+
+    <!-- <div class="col-12" style="margin-top: 5%;padding-bottom: 10%;">
+        <h1 style="color:#00adee ; text-align: center;">
+            {{'our leadership team' | translate }}   
+        </h1>
+       <div class="row" style="margin-top: 3%;">
+           <div class="col-lg-3 col-sm-6">
+               <img src="../../../../assets/img/myImage/اشخاص-1.png" class="i">
+               <p style="text-align: center;font-size: 30px;">Amalia Bruno</p>
+           </div>
+           <div class="col-lg-3 col-sm-6">
+            <img src="../../../../assets/img/myImage/اشخاص-2.png" class="i">
+            <p style="text-align: center;font-size: 30px;">David Ferry</p>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+            <img src="../../../../assets/img/myImage/اشخاص-3.png" class="i">
+            <p style="text-align: center;font-size: 30px;">
+                Christina Torres
+            </p>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+            <img src="../../../../assets/img/myImage/اشخاص-4.png" class="i">
+            <p style="text-align: center;font-size: 30px;">Robert Cooper</p>
+        </div>
+       </div> 
+    </div> -->
+</section>

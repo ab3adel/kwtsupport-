@@ -1,0 +1,115 @@
+.single-portfolio-box {
+    margin-bottom: 30px;
+    text-align: center;
+    background-color: #f9f9f9;
+    transition: var(--transition);
+    border-radius: 5px;
+
+    .image {
+        border-radius: 5px 5px 0 0;
+
+        img {
+            border-radius: 5px 5px 0 0;
+        }
+    }
+    .content {
+        text-align: left;
+        padding: 25px 25px 20px;
+        border-radius: 0 0 5px 5px;
+        position: relative;
+
+        h3 {
+            margin-bottom: 0;
+            transition: var(--transition);
+            font: {
+                size: 25px;
+            };
+        }
+        span {
+            display: block;
+            color: var(--mainColor);
+            transition: var(--transition);
+            font-weight: 600;
+            margin-top: 6px;
+        }
+        .link-btn {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background-color: var(--mainColor);
+            transition: var(--transition);
+            color: var(--whiteColor);
+            border-radius: 3px;
+            position: absolute;
+            font-size: 25px;
+            right: 20px;
+            top: -20px;
+            display: inline-block;
+        }
+    }
+    &:hover {
+        background-color: var(--mainColor);
+
+        .content {
+            h3 {
+                color: var(--whiteColor);
+
+                a {
+                    color: var(--whiteColor);
+                }
+            }
+            span {
+                color: var(--whiteColor);
+            }
+            .link-btn {
+                color: var(--whiteColor);
+                background-color: var(--blackColor);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
+    .single-portfolio-box {
+        .content {
+            padding: 25px 20px 20px;
+
+            h3 {
+                font-size: 19px;
+            }
+            .link-btn {
+                width: 30px;
+                height: 30px;
+                line-height: 30px;
+                font-size: 19px;
+                right: 15px;
+                top: -15px;
+            }
+        }
+    }
+
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .single-portfolio-box {
+        .content {
+            h3 {
+                font-size: 22px;
+            }
+        }
+    }
+
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .single-portfolio-box {
+        .content {
+            h3 {
+                font-size: 23px;
+            }
+        }
+    }
+
+}

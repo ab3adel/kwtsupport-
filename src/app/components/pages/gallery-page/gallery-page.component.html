@@ -1,0 +1,42 @@
+<section class="page-title-area">
+    <div class="container">
+        <div class="page-title-content">
+            <h1 style="  margin-top: -40px;" [ngStyle]="{'float': lang ?  'right': 'left' }">{{'SecurityAwareness' | translate }}</h1>
+        </div>
+    </div>
+
+
+</section>
+
+<section class="privacy-policy-area bg-f9f9f9 ptb-100" class="all">
+    <div class="container " [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }" style="padding-top: 5%;padding-bottom: 5%;">
+        <div class="row" >
+            <div class="col-lg-12 col-md-12">
+                <div class="privacy-policy-content">
+                    <!-- <img src="{{img}}" alt="image"> -->
+                   
+                    <p *ngIf="!lang" style="text-align: left; ">
+                        The Kuwaiti support platform considers the confidentiality of the information of its valued customers as one of its most important priorities. Therefore, we pledge to abide by everything that would maintain the confidentiality of your information, and that your trust in us remains the main pillar that we are working to strengthen and preserve.
+                        Actions the Kuwait Support Platform takes to ensure the security and protection of your online operations:
+                        Secure sessions: When you access our site or control panel, you have entered a secure session.
+                        Encryption: Using SSL technology to encrypt your private information before sending it from your computer on the Internet so that no one can see it. In most cases, your browser (depending on your browser settings) will notify you that you are about to enter a secure site.
+                        Session interruption: If the browser is closed without leaving the site, or if the computer is left for a certain period of time, you will be removed from the site for your protection. To return to the site, you have to go back to the main page and log back in again.
+                    </p>
+                    <p *ngIf="lang" style="text-align: right;     " >
+                        تعتبر منصة الدعم الكويتي سرية معلومات عملائه الكرام من أهم أولوياتها. لذا فإننا نتعهد بان نلتزم بكل ما من شأنه الحفاظ على سرية معلوماتكم وأن تظل ثقتكم بنا هي الركيزة الأساسية التي نعمل من اجل تعزيزها والحفاظ عليها.
+                        الإجراءات التي تتخذها منصة الدعم الكويتي للتأكد من أمان وحماية عملياتك على الإنترنت:
+                        الجلسات الآمنة: عند دخولك إلى موقعنا او لوحة تحكم تكون قد دخلت إلى جلسة آمنة.
+                        التشفير: استخدام تقنية (SSL) في تشفير معلوماتك الخاصة قبل إرسالها من حاسبك على الإنترنت بحيث لا يستطيع أحد الاطلاع عليها. في الغالب سيقوم المتصفح (حسب إعدادات المتصفح) بإخطارك بأنك على وشك الدخول إلى موقع آمن.
+                        انقطاع الجلسة: في حال إغلاق المتصفح بدون الخروج من الموقع، أو في حال ترك الحاسب لمدة معينة من الوقت سيتم إخراجك من الموقع لحمايتك. للعودة إلى الموقع، عليك أن تعود إلى الصفحة الرئيسية وتعاود الدخول من جديد.
+                        
+                    </p>
+                </div>
+            </div>
+
+           
+        </div>
+
+      
+    </div>
+    
+</section>

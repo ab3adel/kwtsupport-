@@ -1,0 +1,217 @@
+<div class="all">
+<section class="">
+    <div class="container">
+        <div class="page-title-content" style="    padding-top: 15%">
+            <h5 >{{'cont' | translate }}</h5>
+            <h1 class="title">{{'Contactus' | translate }}</h1>
+        </div>
+    </div>
+
+</section>
+
+<!-- <section class="contact-info-area pt-100 pb-70">
+    <img src="../../../../assets/img/myImage/map.png" style="width: 100%;">
+
+</section> -->
+
+<section class="contact-area pb-100">
+    <div class="container" [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }">
+        <!-- <div class="section-title">
+            <span class="sub-title">Get in Touch</span>
+            <h2>Ready to Get Started?</h2>
+            <p>Your email address will not be published. Required fields are marked *</p>
+        </div> -->
+
+        <div class="row">
+            <!-- <div class="col-lg-6 col-md-12">
+                <div class="contact-image">
+                    <img src="assets/img/contact.png" alt="image">
+                </div>
+            </div> -->
+
+            <div class="col-lg-12 col-md-12">
+                <div class="contact-form">
+                    <!-- <p
+                    [ngStyle]="{'text-align': lang ?  'right': 'float' }" class="n">{{'ncont' | translate }}</p> -->
+                    <form [formGroup]="contactForm" (ngSubmit)="postContact()">
+                        <div class="row">
+
+
+                            <div class="col-lg-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="email" name="email" class="form-control" id="email" required placeholder="{{ lang ? 'البريد الالكتروني'  :'  email '}}"
+                                    formControlName="email"
+                                    [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                        <div *ngIf="f.email.errors.required && lang" style="float: right;">الايميل مطلوب</div>
+                                        <div *ngIf="f.email.errors.required && !lang">Email is required</div>
+                                        <div *ngIf="f.email.errors.email && lang" style="float: right;">يجب أن يكون البريد الإلكتروني عنوان
+                                            بريد إلكتروني صالح</div>
+                                        <div *ngIf="f.email.errors.email && !lang">Email must be a valid email address
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-12">
+                                <div class="form-group">
+                                    <input type="text" name="phone" class="form-control" id="phone" required  placeholder="{{lang?   'رقم الهاتف' :' phone number'}}"
+                                    formControlName="phone"
+                                    [ngClass]="{ 'is-invalid': submitted && f.phone.errors }">
+                                    <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                                        <div *ngIf="f.phone.errors.required && lang" style="float: right;">رقم الموبايل مطلوب</div>
+                                        <div *ngIf="f.phone.errors.required && !lang">Phone Number is required</div>
+                                        <div *ngIf="f.phone.errors.phone && lang" style="float: right;">يجب أن يكون رقم الهاتف صحيح</div>
+                                        <div *ngIf="f.phone.errors.phone && !lang">phone must be a valid Phone Number
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12">
+                                <div class="form-group">
+                                    <textarea name="message" id="message" class="form-control" cols="30" rows="8" required data-error="" placeholder="{{lang ? 'الرسالة':'The Message'}}......"
+                                    formControlName="message"
+                                    [ngClass]="{ 'is-invalid': submitted && f.message.errors }">
+                                   </textarea>
+                                   <div *ngIf="submitted && f.message.errors" class="invalid-feedback">
+                                    <div *ngIf="f.message.errors.required && lang" style="float: right;">  يجب إدخال حقل الرسالة</div>
+                                    <div *ngIf="f.message.errors.required && !lang">message is required</div>
+
+                                </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12">
+
+                                <button type="submit" class="default-btn"  [ngStyle]="{'float': lang ?  'right': 'left' }" style="font-size: 25px">
+                                    {{lang ?"ارسل" : 'Send '}}
+                                    <i class="fa fa-cog fa-spin" style="color: white;" *ngIf="loading"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- <div class="container" >
+<h1  class="cc">{{'cc' | translate }}</h1>
+    <div class="product-infinitescroll" *ngIf="!finished" >
+        <div class="theme-paggination-block">
+            <div class="container-fluid p-0">
+            <div class="row" >
+                <div class="text-center col-sm-12">
+                <div class="infinite-scrolling mt-4 mb-4 d-inline-block">
+                    <i class="fa fa-spinner fa-spin" style="color:white;font-size: 100px;"> </i>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="margin-left: -1%;" >
+    <div class="row"  *ngIf="finished" style="margin: 0px;text-align: center;    margin-top: 9%;"  [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }">
+
+        <div class="col-lg-6 col-md-6">
+            <div class="col-12">
+                <div class="row" *ngIf="!lang" >
+                    <div class="col-6" style="text-align: right">
+                        <img src="../../../../assets/img/myImage/kk.png">
+                    </div>
+                    <div class="col-6" style="text-align: left;">
+                        <p style="color: white;font-size: 20px;">{{address}}</p>
+                        <h3 style="    color: white;
+                        font-size: 40px !important;"> {{'OurAddress' | translate }}</h3>
+
+                    </div>
+                </div>
+
+                <div class="row" *ngIf="lang" >
+                    <div class="col-6" style="text-align: left">
+                        <img src="../../../../assets/img/myImage/kk.png">
+                    </div>
+                    <div class="col-6" style="text-align: right;">
+                        <p style="color: white;font-size: 20px;">{{address}}</p>
+                        <h3 style="    color: white;
+                        font-size: 40px !important;"> {{'OurAddress' | translate }}</h3>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="col-lg-6 col-md-6">
+            <div class="col-12">
+                <div class="row" *ngIf="!lang">
+                    <div class="col-6" style="text-align: right">
+                        <img src="../../../../assets/img/myImage/phone.png">
+                    </div>
+                    <div class="col-6" style="text-align: left;">
+                        <p style="    color: white;
+                  font-size: 20px;   " >  {{phone}}</p>
+                        <h3 style="color: white;   font-size: 40px !important;"> {{'Contact' | translate }}</h3>
+
+                    </div>
+                </div>
+
+                <div class="row" *ngIf="lang">
+                    <div class="col-6" style="text-align: left">
+                        <img src="../../../../assets/img/myImage/phone.png">
+                    </div>
+                    <div class="col-6" style="text-align: right;">
+                        <p style="    color: white;
+                  font-size: 20px;   " >  {{phone}}</p>
+                        <h3 style="color: white;   font-size: 40px !important;"> {{'Contact' | translate }}</h3>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        </div>
+
+    </div>
+    <div class="container" class="ee" >
+    <div class="col-12" *ngIf="finished">
+        <div class="row" style=" text-align: center; margin: 4% 48px 65px 20%;"  [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }">
+            <div class="col-12" >
+                <div class="row" *ngIf="!lang"
+                >
+                    <div class="col-6" style="text-align: right">
+                        <img src="../../../../assets/img/myImage/rr.png">
+                    </div>
+                    <div class="col-6" style="text-align: left;">
+                        <p   style="    color: white;
+                       font-size: 20px; "> {{email}}</p>
+                        <h3 style="color: white;font-size: 40px !important;"> {{'email' | translate }}</h3>
+
+                    </div>
+                </div>
+
+                <div class="row" *ngIf="lang"
+                >
+                    <div class="col-6" style="text-align: left">
+                        <img src="../../../../assets/img/myImage/rr.png">
+                    </div>
+                    <div class="col-6" style="text-align: right;">
+                        <p   style="    color: white;
+                       font-size: 20px; "> {{email}}</p>
+                        <h3 style="color: white;font-size: 40px !important;"> {{'email' | translate }}</h3>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+</div> -->
+
+
+</div>

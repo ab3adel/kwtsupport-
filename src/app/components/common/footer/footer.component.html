@@ -1,0 +1,123 @@
+<!-- Start Footer Area -->
+<footer class="footer-area footer">
+    <!-- <div style="margin: 0px;text-align: center;">
+        <a routerLink="/" class="logo">
+            <img src="./../../../../assets/img/myImage/اللوغو.png" alt="logo"
+            style="width: 30%;">
+        </a>
+    </div> -->
+    <div class="container " [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }" style="margin-top: 3%;">
+        <div class="row">
+
+            <div class="col-lg-4 col-md-12 col-sm-12" style="margin-top: -2%;">
+                <div class="single-footer-widget">
+                    <!-- <h3>{{'address' | translate }}</h3> -->
+
+                    <ul class="footer-contact-info"  [ngStyle]="{'text-align': lang ?  'start': 'justify' }">
+                        <a routerLink="/" class="logo">
+                            <img src="./../../../../assets/img/myImage/اللوغو.png" alt="logo"
+                         style="width: 90%;"  >
+                        </a>
+                        <!-- <li  *ngIf="!lang" ><i class='bx bx-map'   [ngStyle]="{'position': lang ?  'revert': 'absolute' }"></i>{{address}}</li>
+                        <li  *ngIf="lang"><i class='bx bx-map' [ngStyle]="{'position': lang ?  'revert': 'absolute' }"></i>{{address_ar}}</li>
+                        <li><i class='bx bx-phone-call' [ngStyle]="{'position': lang ?  'revert': 'absolute' }"></i><a href="tel:{{phone}}
+                            ">{{phone}}</a></li>
+                        <li><i class='bx bx-envelope' [ngStyle]="{'position': lang ?  'revert': 'absolute' }"></i>	<a  href="mailto:{{email}}">{{email}}</a></li> -->
+                        <!-- <li><i class='bx bxs-inbox'></i><a href="tel:+557854578964">+55 785 4578964</a></li> -->
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12 col-sm-12">
+                <div class="single-footer-widget pl-5">
+                    <!-- <h3 >Explore</h3> -->
+
+                    <ul class="footer-links-list" *ngIf="lang" style="text-align: justify; ">
+
+                        <li><a [routerLink]="'/terms-of-service'" >{{'terms_and_conditions' | translate}}</a></li>
+                        <li><a [routerLink]="'/privacy-policy'" >{{'privacy-policy' | translate }}</a></li>
+
+                        <li><a [routerLink]="'/how'" >{{'how_to_use' | translate }}</a></li>
+
+                        <!-- <li><a [routerLink]="'/how'" >{{'how_to_use' | translate }}</a></li> -->
+
+
+
+                        <!-- <li><a [routerLink]="'/faq'" >{{'faq' | translate }}</a></li> -->
+
+                         <li ><a [routerLink]="'/about-us-2'"  >{{'about' | translate }} </a>
+
+                        </li>
+                    </ul>
+                    <ul class="footer-links-list" *ngIf="!lang"  >
+                        <!-- <li><a [routerLink]="'/privacy-policy'" >{{'privacy-policy' | translate }}</a></li> -->
+
+                        <!-- <li><a [routerLink]="'/faq'" >{{'faq' | translate }}</a></li> -->
+                        <li><a [routerLink]="'/terms-of-service'" >{{'terms_and_conditions' | translate}}</a></li>
+                        <li><a [routerLink]="'/privacy-policy'" >{{'privacy-policy' | translate }}</a></li>
+
+                        <li><a [routerLink]="'/how'" >{{'how_to_use' | translate }}</a></li>
+
+                        <!-- <li><a [routerLink]="'/how'" >{{'how_to_use' | translate }}</a></li> -->
+
+
+
+                        <!-- <li><a [routerLink]="'/faq'" >{{'faq' | translate }}</a></li> -->
+
+                         <li ><a [routerLink]="'/about-us-2'"  >{{'about' | translate }} </a>
+
+                        </li>
+                        <!-- <li><a [routerLink]="'/SecurityAwareness'" >  {{'SecurityAwareness' | translate }}</a></li> -->
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12 col-sm-12">
+                <div class="single-footer-widget">
+
+                    <!-- <p>description description description description description description description description description.</p> -->
+                    <div class="products-share">
+                        <ul class="social" [ngStyle]="{'float': lang ?  'right': 'left' }">
+                            <!-- <li><span>Share:</span></li> -->
+                            <li><a href="{{facebook}}" class="facebook" target="_blank"><i class='bx bxl-facebook'></i></a></li>
+                            <li><a href="{{twitter}}" class="twitter" target="_blank"><i class='bx bxl-twitter'></i></a></li>
+                            <li><a href="{{linkedin}}" class="linkedin" target="_blank"><i class='bx bxl-linkedin'></i></a></li>
+                            <li><a href="{{instagram}}" class="instagram" target="_blank"><i class='bx bxl-instagram'></i></a></li>
+                        </ul>
+                    </div>
+                    <!-- <ul class="social-link effect jaques">
+                        <li><a href="{{facebook}}" class="d-block" target="_blank"><i class='bx bxl-facebook'></i></a></li>
+                        <li><a href="{{twitter}}" class="d-block" target="_blank"><i class='bx bxl-twitter'></i></a></li>
+                        <li><a href="{{instagram}}"  class="d-block" target="_blank"><i class='bx bxl-instagram'></i></a></li>
+                        <li><a href="{{linkedin}}" class="d-block" target="_blank"><i class='bx bxl-linkedin'></i></a></li>
+                    </ul> -->
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+
+        <div class="footer-bottom-area">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-6">
+                    <p   [ngStyle]="{'float': lang ?  'right': 'left' }"> {{'copyright' | translate }}<i class='bx bx-copyright'>2021
+                        {{'All Right Reserved' | translate }} </i></p>
+                </div>
+
+                <div class="col-lg-6 col-md-6">
+                    <img src="../../../../assets/img/charge/kk.png" style="width: 30%;" [ngStyle]="{'float': lang ?  'left': 'right' }">
+                    <!-- <ul> -->
+                        <!-- <li><a routerLink="privacy-policy"></a></li> -->
+                        <!-- <li><a routerLink="terms-of-service">Terms & Conditions</a></li> -->
+                    <!-- </ul> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="shape16"><img src="assets/img/shape/shape16.png" alt="image"></div> -->
+</footer>
+<!-- End Footer Area -->
+
+<div class="go-top"><i class='bx bx-up-arrow-alt'></i></div>

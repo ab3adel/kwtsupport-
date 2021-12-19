@@ -1,0 +1,202 @@
+.main-banner {
+    position: relative;
+    z-index: 1;
+    background: {
+        color: var(--whiteColor);
+        image: url(../../../../../assets/img/banner-bg2.jpg);
+        position: bottom center;
+        size: cover;
+        repeat: no-repeat;
+    };
+    padding: {
+        top: 230px;
+    };
+    .shape2 {
+        left: 10%;
+        top: 20%;
+    }
+    .shape7 {
+        left: 85%;
+        bottom: 10%;
+    }
+    .shape6 {
+        left: 90%;
+        bottom: 85%;
+    }
+    .shape13 {
+        left: 67%;
+        bottom: 43%;
+    }
+}
+.banner-area-content {
+    max-width: 800px;
+    text-align: center;
+    margin: {
+        left: auto;
+        right: auto;
+    };
+    h1 {
+        margin-bottom: 20px;
+        font-size: 55px;
+    }
+    p {
+        max-width: 630px;
+        font-size: 17px;
+        margin: {
+            left: auto;
+            right: auto;
+        };
+    }
+    img {
+        margin-top: 60px;
+    }
+    form {
+        margin-top: 35px;
+
+        .row {
+            margin: {
+                left: -5px;
+                right: -5px;
+            };
+            .col-lg-5, .col-lg-3, .col-lg-4 {
+                padding: {
+                    left: 5px;
+                    right: 5px;
+                };
+            }
+        }
+        .form-group {
+            margin-bottom: 0;
+        }
+        .form-control {
+            background-color: var(--whiteColor);
+            height: 55px;
+
+            &:focus {
+                border-color: var(--mainColor);
+            }
+        }
+        .default-btn {
+            height: 55px;
+            display: block;
+            width: 100%;
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
+    .main-banner {
+        padding: {
+            top: 150px;
+        };
+    }
+    .banner-area-content {
+        max-width: 100%;
+        margin: {
+            left: 0;
+            right: 0;
+        };
+        h1 {
+            margin-bottom: 13px;
+            font-size: 30px;
+        }
+        p {
+            max-width: 100%;
+            font-size: 14.5px;
+            margin: {
+                left: auto;
+                right: auto;
+            };
+        }
+        img {
+            margin-top: 50px;
+        }
+        form {
+            margin-top: 15px;
+
+            .form-group {
+                margin: {
+                    top: 15px;
+                    bottom: 0;
+                };
+            }
+            .form-control {
+                height: 50px;
+            }
+            .default-btn {
+                height: 50px;
+            }
+        }
+    }
+
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+
+    .banner-area-content {
+        max-width: 500px;
+        margin: {
+            left: auto;
+            right: auto;
+        };
+    }
+
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .main-banner {
+        padding-top: 170px;
+    }
+    .banner-area-content {
+        max-width: 610px;
+        margin: {
+            left: auto;
+            right: auto;
+        };
+        .sub-title {
+            margin-bottom: 12px;
+            font-size: 14.5px;
+        }
+        h1 {
+            margin-bottom: 15px;
+            font-size: 40px;
+        }
+        p {
+            max-width: 545px;
+            font-size: 15.5px;
+            margin: {
+                left: auto;
+                right: auto;
+            };
+        }
+        form {
+            margin-top: 15px;
+
+            .form-group {
+                margin-top: 15px;
+            }
+            .default-btn {
+                display: inline-block;
+                width: auto;
+            }
+        }
+    }
+
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .main-banner {
+        padding-top: 180px;
+    }
+    .banner-area-content {
+        h1 {
+            margin-bottom: 15px;
+            font-size: 45px;
+        }
+        p {
+            max-width: 600px;
+            font-size: 16px;
+        }
+    }
+
+}

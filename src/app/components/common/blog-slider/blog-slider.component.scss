@@ -1,0 +1,293 @@
+.card {
+    color: white;
+    background-color: #f9f9f9;
+    position: relative;
+    margin-bottom: 30px;
+    box-shadow: 10px 10px 8px -4px #888888;
+
+    .products-image {
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+
+        a {
+            position: relative;
+            display: block;
+
+            img {
+                transition: all 1.5s cubic-bezier(0,0,.2,1);
+            }
+        }
+        .products-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1;
+
+            ul {
+                padding-left: 0;
+                margin-bottom: 0;
+                list-style-type: none;
+
+                li {
+                    margin-bottom: 10px;
+                    opacity: 0;
+                    visibility: hidden;
+                    transform: translateX(30px);
+                    transition: all 0.3s ease-in-out 0s;
+
+                    a {
+                        display: inline-block;
+                        font-size: 20px;
+                        line-height: 1;
+                        color: var(--blackColor);
+                        position: relative;
+                        box-shadow: 0 0 4px rgba(0,0,0,.07);
+                        background-color: var(--whiteColor);
+                        width: 40px;
+                        height: 40px;
+                        text-align: center;
+                        line-height: 45px;
+                        border-radius: 50%;
+
+                        .tooltip-label {
+                            right: 110%;
+                            top: 5px;
+                            transform: translateX(0);
+                            position: absolute;
+                            padding: 0 10px;
+                            visibility: hidden;
+                            white-space: nowrap;
+                            opacity: 0;
+                            color: transparent;
+                            background-color: transparent;
+                            transition: all .2s ease-in-out;
+                            background-color:  white;;
+                            color: black;
+                            line-height: 28px;
+                            font: {
+                                size: 12px;
+                                weight: 800;
+                            };
+                            &::before {
+                                content: '';
+                                background-color: white;
+                                top: 50%;
+                                position: absolute;
+                                transition: all .2s ease-in-out;
+                                right: -1px;
+                                width: 10px;
+                                height: 10px;
+                                transform: rotate(45deg) translateY(-50%);
+                            }
+                        }
+                        &:hover {
+                            background-color: white;
+                            color: black;
+
+                            .tooltip-label {
+                                visibility: visible;
+                                opacity: 1;
+                                right: 135%;
+                            }
+                        }
+                    }
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                    &:nth-child(1) {
+                        transition-delay: 0.1s;
+                    }
+                    &:nth-child(2) {
+                        transition-delay: 0.2s;
+                    }
+                    &:nth-child(3) {
+                        transition-delay: 0.3s;
+                    }
+                }
+            }
+        }
+        .sale-tag {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            background-color: red;
+            color: var(--whiteColor);
+            width: 55px;
+            height: 55px;
+            line-height: 55px;
+            text-align: center;
+            border-radius: 50%;
+            z-index: 2;
+            text-transform: uppercase;
+            font: {
+                weight: 700;
+                size: 14px;
+            };
+        }
+        .new-tag {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            background-color: green;
+            color: var(--whiteColor);
+            text-align: center;
+            z-index: 2;
+            padding: 1px 7px;
+            text-transform: uppercase;
+            font: {
+                weight: 700;
+                size: 14px;
+            };
+        }
+    }
+    .products-content {
+        margin-top: 25px;
+        position: relative;
+
+        h3 {
+            color: white;
+            margin-bottom: 0;
+            margin-top: -20%;
+            font: {
+                size: 19px;
+            };
+            a {
+                display: inline-block;
+            }
+        }
+        .price {
+            margin-top: 13px;
+            display: inline-block;
+            font: {
+                size: 16px;
+                weight: 800;
+            };
+            .old-price {
+                text-decoration: line-through;
+                color: #999999;
+                font-weight: 700;
+                margin-right: 4px;
+            }
+        }
+        .add-to-cart {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            text-transform: uppercase;
+            transition: var(--transition);
+            display: inline-block;
+            color: var(--optionalColor);
+            font: {
+                size: 14px;
+                weight: 800;
+            };
+            &:hover {
+                color: var(--mainColor);
+            }
+        }
+    }
+    &:hover {
+        .products-image {
+            a {
+                img {
+                    transform: scale3d(1.1,1.1,1.1) translateZ(0);
+                }
+            }
+            .products-button {
+                ul {
+                    li {
+                        transform: translateX(0);
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
+    .card {
+        color: white;
+        box-shadow: 10px 10px 8px -4px #888888;
+        background-color: #f9f9f9;
+        .products-content {
+            h3 {
+                color: white;
+
+                font-size: 18px;
+            }
+            .price {
+                font-size: 15px;
+            }
+            .add-to-cart {
+                font-size: 13px;
+            }
+        }
+    }
+
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .card {
+        color: white;
+        box-shadow: 10px 10px 8px -4px #888888;
+          background-color: #f9f9f9;
+        .products-content {
+            h3 {
+                color: white;
+                font-size: 20px;
+            }
+            .price {
+                font-size: 15.5px;
+            }
+        }
+    } 
+
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .card {
+        color: white;
+        box-shadow: 10px 10px 8px -4px #888888;
+        background-color: #f9f9f9;
+        .products-content {
+            h3 {
+                color: white;
+                font-size: 21px;
+            }
+        }
+    }
+
+}
+// .page-title-area {
+//     // height: 400px;
+//     background: {
+//         size: cover;
+//         repeat: no-repeat;
+//         image: url(../../../../assets/img/myImage/service.png);
+       
+//     };
+// }
+.all{
+    background: {
+        size: cover;
+        repeat: no-repeat;
+        image: url(../../../../assets/img/myImage/back.png);
+     
+    };  
+}
+.card{
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+.card1{
+    background-color: gainsboro;
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+}

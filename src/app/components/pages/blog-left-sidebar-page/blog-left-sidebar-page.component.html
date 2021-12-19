@@ -1,0 +1,145 @@
+<div class="all">
+    <section class="">
+        <div class="container">
+            <div class="page-title-content">
+                <h1 *ngIf="!lang">Date of services purchased</h1>
+                <h1 *ngIf="lang">فواتير الخدمات المشتراة</h1>
+            </div>
+        </div>
+    
+       
+    </section>
+    
+    <section class="cart-area ptb-100 " >
+        <div class="container">
+            <form>
+                <div class="product-infinitescroll" *ngIf="!finished" >
+                    <div class="theme-paggination-block">
+                        <div class="container-fluid p-0">
+                        <div class="row">
+                            <div class="text-center col-sm-12">
+                            <div class="infinite-scrolling mt-4 mb-4 d-inline-block">
+                                <img src="../../../../assets/img/myImage/loader3.png" >
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div style=" margin: 0px; text-align: center;"  *ngIf="purchesempty">
+                    <img src="./../../../../assets/img/myImage/icon-empty-cart.png">
+                    <br>
+                    <h3 style="color:white;margin-top: 1%;" *ngIf="lang">لا يوجد مشتريات حتى الآن</h3>
+                    <h3 style="color: white;margin-top: 1%;" *ngIf="!lang">    There are no purchases yet</h3>
+                    </div>
+                <div class=" table-responsive" *ngIf="finished && !purchesempty">
+    
+                    <table class="table table-bordered"  [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }">
+                        <thead>
+                            <tr>
+                                <th scope="col">{{'img' | translate }}</th>
+                                <th scope="col">{{'name' | translate }}</th>
+                               
+                                <th scope="col" *ngIf="!lang"> cost</th>
+                                <th scope="col" *ngIf="lang">الكلفة</th>
+                                <th scope="col">{{'quantity'| translate }}</th>
+                                <th scope="col">{{'total_cost' | translate }}</th> 
+                                <!-- <th scope="col">{{'delete' | translate }}</th> -->
+                            </tr>
+                        </thead>
+                    
+                        <tbody >
+                           <ng-container *ngFor="let order of myorder">
+                            <tr  class="aa" *ngFor="let cart of order.orders"  >
+                                
+                                <td class="product-thumbnail">
+                                    <a >
+                                        <img src="{{cart.service.avatar}}" alt="item" style="width: 20%; ">
+                                    </a>
+                                </td>
+    
+                                <td class="product-thumbnail" *ngIf="lang">
+                                   {{cart.service.name_ar}}
+                                </td>
+                                <td class="product-thumbnail" *ngIf="!lang">
+                                    {{cart.service.name_en}}
+                                 </td>
+                              
+                                <td class="product-thumbnail">
+                                    {{cart.cost}}
+                                    <!-- <div class="input-counter">
+                                        <span class="minus-btn"><i class='bx bx-minus'></i></span>
+                                        <input type="text" min="1" value="1">
+                                        <span class="plus-btn"><i class='bx bx-plus'></i></span>
+                                    </div> -->
+                                </td>
+    
+                              
+    
+                                <td class="product-thumbnail">
+                                    {{cart.quantity}}
+                                </td>
+                                <td class="product-thumbnail">
+                                    {{order.total_cost}}
+                                </td>
+                                <!-- <td class="product-thumbnail" style="cursor: pointer;">
+                                    <a class="danger delete mr-1 mrless"><i  id="loader{{cart.id}}" class="fa fa-cog fa-spin" hidden></i><i id="delete{{cart.id}}" class="fa fa-trash" (click)="delete(cart.id)" style="color: red;"></i></a>
+                               
+                                </td> -->
+                                <!-- <td class="product-thumbnail" *ngIf="lang">
+                                    {{cart.service.short_description_ar}}
+                                </td>
+                                <td class="product-thumbnail" *ngIf="!lang">
+                                    {{cart.service.short_description_en}}
+                                </td> -->
+                            </tr>
+    
+                        </ng-container>
+    
+                        
+                           
+                        </tbody>
+                    </table>
+                </div>
+    
+              
+    
+                <!-- <div class="cart-totals" *ngIf="!purchesempty" style="height: 230px;">
+                    <h3  [ngStyle]="{'text-align': lang ?  'right': 'left' }"
+                    style="color: rgb(13,72,108)">{{'total_cost' | translate }}</h3>
+    
+                    <ul>
+                        <li [ngStyle]="{'text-align': lang ?  'right': 'left' }"
+                        style="color: rgb(0,173,238)"> {{total_cost}}</li>
+                      
+                    </ul>
+                    <div class="row">
+                        <div class="col-6">
+                            <div >
+                                <button  class="default-btn" (click)="checkout()">
+                                 <a  style="color: white;">{{'Checkout' | translate }} </a><i   class="fa fa-cog fa-spin" *ngIf="loading2" ></i> 
+                             </button>
+                         </div>
+                        </div>
+                        <div class="col-6" style="padding-left: 13%;">
+                            <div data-toggle="modal" data-target="#exampleModalCenter"  style="cursor: pointer;">
+                                <a  class="default-btn a" style="color: white;width: 170px;
+                                margin-left: -17px;">{{'useoffer' | translate }}
+                            
+                                </a>
+                             </div>
+                        </div>
+                       
+                    </div>
+          
+    
+                
+                </div> -->
+            </form>
+        </div>
+    </section>
+</div>
+
+
+
+

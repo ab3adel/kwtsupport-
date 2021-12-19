@@ -1,0 +1,167 @@
+<div class="">
+    <div class="section-title">
+
+        <h1 style="color: white; font-size: 60px;">{{'myservice' | translate }}</h1>
+
+    </div>
+<div class="container">
+<div class="row lab" [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }" data-aos="slide-up"
+                 data-aos-once="true">
+  <div class="col-lg-6 col-sm-12"  data-aos="slide-left" style="display:flex;text-align:left"
+                                    data-aos-once="true">
+     <h1 style="margin: 0px;margin-top: 35%;
+     text-align: center;
+     font-size: 45px;color: white; cursor: pointer;" routerLink="/category">{{'s' | translate }}</h1>
+     <br>
+       <div style="margin: 0px;
+       text-align: center;
+       font-size: 55px;" >
+     <!-- <button class="default-btn1" >{{'ss' | translate }}</button> -->
+     </div>
+  </div>
+<div class="col-lg-6 col-sm-12 "  data-aos="slide-right">
+
+        <ngb-carousel >
+            <ng-template ngbSlide *ngFor="let item of category" >
+          <div class="banner-image"(click)="clickcategory(item.id,item.name_ar,item.name_en)" style="cursor:pointer">
+              <img [src]="item.avatar" alt="Random slide"  class="image" style="width: 60%;">
+              <div class="text-block2">
+              <!-- <p *ngIf="lang" style="color:white">{{item.name_ar}}</p>
+              <p *ngIf="!lang" style="color:white">{{item.name_en}}</p> -->
+                </div>
+
+              <div class="carousel-caption">
+        </div>
+              </div>
+            </ng-template>
+
+          </ngb-carousel>
+
+
+   <!-- <img src="../../../../assets/img/myImage/1.png"> -->
+</div>
+</div>
+<div class="row mobile">
+    <div class="col-lg-6 col-sm-12 products-image">
+        <!-- <div class="card"> -->
+            <ngb-carousel >
+                <ng-template ngbSlide *ngFor="let item of category" >
+              <div class="banner-image"(click)="clickcategory(item.id,item.name_ar,item.name_en)" style="cursor:pointer">
+                  <img [src]="item.avatar" alt="Random slide"  class="image" >
+                  <div class="text-block2">
+                  <!-- <p *ngIf="lang" style="color:white">{{item.name_ar}}</p> -->
+                  <!-- <p *ngIf="!lang" style="color:white">{{item.name_en}}</p> -->
+                    </div>
+
+                  <div class="carousel-caption">
+            </div>
+                  </div>
+                </ng-template>
+
+              </ngb-carousel>
+        <!-- </div> -->
+
+    </div>
+  <div class="col-lg-6 col-sm-12">
+    <h1 style="margin: 0px;margin-top: 12%;
+    text-align: center;
+    font-size: 45px;color: white; cursor: pointer;" routerLink="/category">{{'s' | translate }}</h1>
+      <br>
+      <div style="margin: 0px;
+      text-align: center;
+      font-size: 55px;">
+
+    <!-- <button class="default-btn1" >{{'ss' | translate }}</button> -->
+    </div>
+  </div>
+  </div>
+<div class="row " style="margin-top:2%" [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }"
+                                  data-aos-once="true"  data-aos="slide-up">
+    <div class="col-lg-6 col-sm-12 "  data-aos="slide-left" data-aos-once="true" id="noPadding">
+        <img src="../../../../assets/img/myImage/2.png"
+
+  style="width: 95%;"     >
+     </div>
+    <div class="col-lg-6 col-sm-12"   data-aos="slide-right" data-aos-once="true">
+       <h1 style="margin: 0px;margin-top: 20%;
+       text-align: center;
+       font-size:45px;color: white; cursor: pointer;" routerLink="/programservice">{{'sss' | translate }}</h1>
+        <br>
+       <div style="margin: 0px;
+       text-align: center;
+       font-size: 55px;">
+
+        <!-- <button class="default-btn1" >{{'ss' | translate }}</button> -->
+       </div>
+
+    </div>
+
+  </div>
+</div>
+<br>
+<!-- <div class="section">
+<div class="row">
+    <div class="col-lg-4 col-sm-12">
+        <img src='../../../../assets/img/myImage/1 (1).png' class="ic">
+        <h3 class="center">{{'a' | translate }}</h3>
+        <p class="center">{{'a1' | translate }}</p>
+    </div>
+    <div class="col-lg-4 col-sm-12">
+        <img src='../../../../assets/img/myImage/11.png' class="ic">
+        <h3 class="center">{{'twitter' | translate }}</h3>
+        <p class="center" >{{'t' | translate }}</p>
+    </div>
+    <div class="col-lg-4 col-sm-12">
+        <img src='../../../../assets/img/myImage/121.png'class="ic">
+        <h3 class="center">{{'facebook' | translate }}</h3>
+        <p class="center">{{'f1' | translate }}</p>
+    </div>
+</div>
+</div> -->
+    <!-- <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="single-featured-services-box">
+                <div class="icon">
+                    <i class="fa fa-youtube" aria-hidden="true"></i>
+                    <div class="circles-box">
+                        <div class="circle-one"></div>
+                        <div class="circle-two"></div>
+                    </div>
+                </div>
+                <h3><a routerLink="/single-services">Marketing Analysis</a></h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+                <a routerLink="/single-services" class="learn-more-btn"><i class="left-icon flaticon-next-button"></i> Learn More <i class="right-icon flaticon-next-button"></i></a>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="single-featured-services-box">
+                <div class="icon">
+                    <i class="flaticon-speed"></i>
+                    <div class="circles-box">
+                        <div class="circle-one"></div>
+                        <div class="circle-two"></div>
+                    </div>
+                </div>
+                <h3><a routerLink="/single-services">Website Optimization</a></h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+                <a routerLink="/single-services" class="learn-more-btn"><i class="left-icon flaticon-next-button"></i> Learn More <i class="right-icon flaticon-next-button"></i></a>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-0 offset-md-3 offset-sm-3">
+            <div class="single-featured-services-box">
+                <div class="icon">
+                    <i class="flaticon-email-marketing"></i>
+                    <div class="circles-box">
+                        <div class="circle-one"></div>
+                        <div class="circle-two"></div>
+                    </div>
+                </div>
+                <h3><a routerLink="/single-services">Email Marketing</a></h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+                <a routerLink="/single-services" class="learn-more-btn"><i class="left-icon flaticon-next-button"></i> Learn More <i class="right-icon flaticon-next-button"></i></a>
+            </div>
+        </div>
+    </div> -->
+</div>

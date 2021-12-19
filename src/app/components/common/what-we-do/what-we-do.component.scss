@@ -1,0 +1,315 @@
+.what-we-do-content {
+    .sub-title {
+        display: block;
+        margin-bottom: 12px;
+        color: var(--mainColor);
+        text-transform: uppercase;
+        font: {
+            size: 15.5px;
+            weight: 700;
+        };
+    }
+    h2 {
+        margin-bottom: 0;
+        font-size: 42px;
+    }
+    p {
+        margin: {
+            top: 12px;
+        };
+    }
+    .skills-item {
+        position: relative;
+        margin-top: 25px;
+
+        .skills-header {
+            position: relative;
+            margin-bottom: 12px;
+
+            .skills-title {
+                margin-bottom: 0;
+                font: {
+                    size: 18px;
+                };
+            }
+            .skills-percentage {
+                position: absolute;
+                right: 0;
+                top: -2px;
+                color: var(--mainColor);
+                font: {
+                    size: 18px;
+                    weight: 600;
+                };
+            }
+        }
+        .skills-bar {
+            position: relative;
+            width: 100%;
+
+            .bar-inner {
+                position: relative;
+                width: 100%;
+                border: {
+                    radius: 30px;
+                    top: 2px solid #e7e7e7;
+                    bottom: 2px solid #e7e7e7;
+                };
+                .bar {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 0;
+                    height: 4px;
+                    background: var(--mainColor);
+                    transition: all 2000ms ease;
+                    border-radius: 30px;
+                    margin-top: -2px;
+                }
+                [data-width="50"] {
+                    width: 50%;
+                }
+                [data-width="55"] {
+                    width: 55%;
+                }
+                [data-width="60"] {
+                    width: 60%;
+                }
+                [data-width="65"] {
+                    width: 65%;
+                }
+                [data-width="70"] {
+                    width: 70%;
+                }
+                [data-width="75"] {
+                    width: 75%;
+                }
+                [data-width="80"] {
+                    width: 80%;
+                }
+                [data-width="85"] {
+                    width: 85%;
+                }
+                [data-width="90"] {
+                    width: 90%;
+                }
+                [data-width="95"] {
+                    width: 95%;
+                }
+                [data-width="100"] {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+.what-we-do-content-accordion {
+    padding-left: 50px;
+    
+    .accordion {
+        .card {
+            display: block;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 0 !important;
+            background-color: transparent;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+            .card-header {
+                padding: 0;
+                margin-bottom: 0;
+                background-color: transparent;
+                border-bottom: none;
+                border-radius: 0 !important;
+
+                button {
+                    display: block;
+                    text-align: left;
+                    width: 100%;
+                    padding: 0;
+                    background-color: transparent;
+                    border: none;
+                    cursor: pointer;
+                    position: relative;
+                    color: var(--blackColor);
+                    padding: {
+                        left: 55px;
+                        top: 7px;
+                        bottom: 7px;
+                    };
+                    font: {
+                        size: 18px;
+                        weight: 700;
+                    };
+                    i {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 40px;
+                        height: 40px;
+                        text-align: center;
+                        border-radius: 5px !important;
+                        background-color: var(--mainColor);
+                        color: var(--whiteColor);
+                        line-height: 40px;
+                    }
+                    &.collapsed {
+                        i {
+                            &::before {
+                                content: "\f103";
+                            }
+                        }
+                    }
+                }
+            }
+            .card-body {
+                padding: {
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    top: 15px;
+                };
+            }
+            &:nth-child(2), &:nth-child(5) {
+                .card-header {
+                    button {
+                        i {
+                            background-color: #290390;
+                            color: var(--whiteColor);
+                        }
+                    }
+                }
+            }
+            &:nth-child(3), &:nth-child(6) {
+                .card-header {
+                    button {
+                        i {
+                            background-color: #1fa299;
+                            color: var(--whiteColor);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
+    .what-we-do-content {
+        text-align: center;
+
+        .sub-title {
+            margin-bottom: 10px;
+            font-size: 13px;
+        }
+        h2 {
+            font-size: 28px;
+        }
+        .skills-item {
+            text-align: left;
+
+            .skills-header {
+                .skills-title {
+                    font-size: 14.5px;
+                }
+                .skills-percentage {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+    .what-we-do-content-accordion {
+        padding-left: 0;
+        margin-top: 30px;
+        
+        .accordion {
+            .card {
+                .card-header {
+                    button {
+                        font-size: 15px;
+                        padding: {
+                            left: 38px;
+                            top: 4px;
+                            bottom: 4px;
+                        };
+                        i {
+                            width: 28px;
+                            height: 28px;
+                            line-height: 28px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .what-we-do-content {
+        text-align: center;
+
+        .sub-title {
+            margin-bottom: 12px;
+            font-size: 14.5px;
+        }
+        h2 {
+            font-size: 35px;
+        }
+        .skills-item {
+            text-align: left;
+        }
+    }
+    .what-we-do-content-accordion {
+        padding-left: 0;
+        margin-top: 30px;
+    }
+
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .what-we-do-content {
+        .sub-title {
+            font-size: 14.5px;
+        }
+        h2 {
+            font-size: 38px;
+        }
+    }
+    .what-we-do-content-accordion {
+        padding-left: 20px;
+    }
+
+}
+.payment {
+    // height: 300px;
+    background-image: url(../../../../assets/img/myImage/blue.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 190px;
+ 
+}
+
+@media only screen and (max-width: 992px){
+    .payment {
+        height: auto;
+    }.icon{
+        margin-left: 25%;
+        width: 50%;
+    }h1{
+        font-size: 35px!important;
+    }.ii{
+       height: auto!important; 
+       width: 60%!important;
+    }
+    .icon{
+        margin-top: 3%;
+    }
+}
+.icon{
+    // border-radius: 15px;
+     width:60%;
+}

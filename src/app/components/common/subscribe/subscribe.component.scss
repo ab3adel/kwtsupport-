@@ -1,0 +1,166 @@
+.subscribe-content {
+    max-width: 720px;
+    text-align: center;
+    margin: {
+        left: auto;
+        right: auto;
+    };
+    .sub-title {
+        display: block;
+        margin-bottom: 15px;
+        color: var(--mainColor);
+        text-transform: uppercase;
+        font: {
+            size: 15.5px;
+            weight: 700;
+        };
+    }
+    h2 {
+        margin-bottom: 0;
+        font-size: 42px;
+    }
+    p {
+        max-width: 600px;
+        font: {
+            size: 17px;
+            weight: 600;
+        };
+        margin: {
+            left: auto;
+            right: auto;
+            top: 12px;
+        };
+    }
+    .newsletter-form {
+        position: relative;
+        max-width: 600px;
+        margin: {
+            top: 30px;
+            left: auto;
+            right: auto;
+        };
+        .input-newsletter {
+            display: block;
+            width: 100%;
+            border: none;
+            background-color: #eaeaea;
+            color: var(--blackColor);
+            height: 50px;
+            padding-left: 18px;
+            border-radius: 5px;
+            font: {
+                size: 16px;
+                weight: 400;
+            };
+            &::placeholder {
+                color: #999999;
+                transition: var(--transition);
+            }
+            &:focus {
+                &::placeholder {
+                    color: transparent;
+                }
+            }
+        }
+        .default-btn {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 50px;
+
+            i {
+                top: 12px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
+    .subscribe-content {
+        max-width: 100%;
+        margin: {
+            left: 0;
+            right: 0;
+        };
+        .sub-title {
+            margin-bottom: 10px;
+            font-size: 13px;
+        }
+        h2 {
+            font-size: 28px;
+            padding-right: 0;
+        }
+        p {
+            max-width: 100%;
+            font-size: 14px;
+            margin: {
+                left: auto;
+                right: auto;
+                top: 10px;
+            };
+        }
+        .newsletter-form {
+            .input-newsletter {
+                height: 48px;
+                padding-left: 15px;
+                font-size: 14px;
+            }
+            .default-btn {
+                position: relative;
+                display: block;
+                width: 100%;
+                margin-top: 15px;
+                height: 47px;
+            }
+        }
+    }
+
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+
+    .subscribe-content {
+        .newsletter-form {
+            .default-btn {
+                position: absolute;
+                display: inline-block;
+                width: auto;
+                margin-top: 0;
+                height: 48px;
+            }
+        }
+    }
+
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .subscribe-content {
+        max-width: 600px;
+
+        .sub-title {
+            margin-bottom: 12px;
+            font-size: 14.5px;
+        }
+        h2 {
+            font-size: 35px;
+        }
+        p {
+            max-width: 550px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+    }
+
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .subscribe-content {
+        .sub-title {
+            font-size: 14.5px;
+        }
+        h2 {
+            font-size: 38px;
+        }
+    }
+
+}

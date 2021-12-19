@@ -1,0 +1,89 @@
+<!-- breadcrumb start -->
+<section class="page-title-area">
+    <div class="container">
+        <div class="page-title-content">
+            <h1 style=" margin-top: -40px; ">{{'faq' | translate }}</h1>
+        </div>
+    </div>
+
+</section>
+
+
+<section class="faq-section section-b-space content" class="all" style="padding-bottom: 5%;">
+    <div class="container">
+        <div class="col-sm-12">
+            <div class="product-infinitescroll" *ngIf="!finished" >
+                <div class="theme-paggination-block">
+                    <div class="container-fluid p-0">
+                    <div class="row">
+                        <div class="text-center col-sm-12">
+                        <div class="infinite-scrolling mt-4 mb-4 d-inline-block">
+                            <img src="../../../../assets/img/myImage/loader3.png" >
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="finished">
+                <div class="bs-example">
+                    <div class="accordion theme-accordion" [attr.id]="'accordion_' + i" *ngFor="let item of faq; let i = index;"
+                    style="padding-top: 1%;">
+
+                        <div class="card" >
+                            <div class="card-header">
+                                <h4 class="panel-title">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse"  style="width: 100%;font-size: 20px;"
+                                    [attr.data-parent]="'#accordion_' + i" [attr.href]="'#collapseOne_' + i">
+                                       
+                                       <span *ngIf="!lang" style="float: left;">{{item.question_en}}</span>
+                                       
+                                       <span *ngIf="lang" style="float: right;">{{item.question_ar}}</span>
+                                    </button>
+                                </h4>
+                            </div>
+                            <div [attr.id]="'collapseOne_' + i" class="panel-collapse collapse in">
+                                <div class="card-body" [ngStyle]="{'float': lang ?  'right': 'left' }">
+                                    <div class="row">
+                                        <p *ngIf="!lang" style="font-size: 20px;
+                                        margin-left: 30px;"> {{item.answer_en}}</p> 
+                                        <p *ngIf="lang"  style="font-size: 20px;
+                                        margin-right: 20px;"> {{item.answer_ar}}</p> 
+                                      
+                                    </div>
+                                 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
+            <!-- <div class="accordion theme-accordion" id="accordionExample" *ngIf="finished ">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button *ngIf="!lang" class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                {{question}}
+                            </button>
+                            <button *ngIf="lang" class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                {{questionArabic}}
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body" *ngIf="!lang">
+                            <p>{{answer}}</p>
+                        </div>
+                        <div class="card-body" *ngIf="lang">
+                            <p>{{answerArabic}}</p>
+                        </div>
+                    </div>
+                </div>
+           
+            </div> -->
+        </div>
+    </div>
+</section>
+<!--Section ends-->

@@ -1,0 +1,157 @@
+<section class="page-title-area">
+    <div class="container">
+        <div class="page-title-content">
+            <h1 >{{'signin'|translate}} </h1>
+        </div>
+    </div>
+
+</section>
+
+
+
+
+<div class="all">
+<div class="container" [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }" style="padding-top:5%">
+    <div class="row align-items-center body">
+        <div class="col-lg-12 col-md-12">
+            <div class="analysis-form">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-sm-6">
+                <h3 [ngStyle]="{'float': lang ?  'right': 'left' }">{{'signin'|translate}}</h3>
+                <div class="shadow" style="padding: 35px;
+                margin-top: 12%;background-color: black;
+                margin-bottom: 18%;">
+                    <form  [formGroup]="loginForm" (ngSubmit)="login()" style="margin-bottom: 48px;">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="email" placeholder="{{'email' | translate }}"
+                                    formControlName="email"
+                                        [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                            <div *ngIf="f.email.errors.required && lang" style="float: right;">الايميل مطلوب</div>
+                                            <div *ngIf="f.email.errors.required && !lang">Email is required</div>
+                                            <div *ngIf="f.email.errors.email && lang" style="float: right;">يجب أن يكون البريد الإلكتروني عنوان
+                                                بريد إلكتروني صالح</div>
+                                            <div *ngIf="f.email.errors.email && !lang">Email must be a valid email address
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-lg-12 col-md-12">
+                                <div class="form-group">
+                                    <input type="password" class="form-control" id="password" placeholder="{{'password' | translate }}"
+                                    formControlName="password"
+                                    [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                        <div *ngIf="f.password.errors.required && lang" style="float: right;">كلمة المرور مطلوبة</div>
+                                        <div *ngIf="f.password.errors.required && !lang">password is required</div>
+                                        <div
+                                        *ngIf=" f.password.errors.minlength && lang " style="float: right;">
+                                        كلمة المرور يجب أن تكون أكثر من 7 محارف</div>
+                                    <div
+                                        *ngIf=" f.password.errors.minlength && !lang ">
+                                        The password must be more than 7 characters long </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        <div class="col-12" style="padding-left: 0px;padding-right: 0px;">
+                            <div class="form-group">
+                                <div class="form-row" id="modifiedRow">
+                                    <div class="col-lg-7 col-sm-6" style="padding-left:0px">
+                                        <button type="submit" class="default-btn1"  >{{'signin'|translate}}
+                                            <i class="fa fa-cog fa-spin" style="color: white;" *ngIf="loading"></i>
+                                        </button>
+                                    </div>
+
+                                    <div class="col-lg-4 col-sm-6">
+                                        <p class="forgot" >
+                                            <a data-toggle="modal" data-target="#exampleModalCenter"
+                                                  style="cursor: pointer;white-space:nowrap">
+                                               {{lang? 'هل نسيت كلمة المرور؟  ' : 'Forget Your Password'}}
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-6 col-sm-6">
+                <h3 [ngStyle]="{'float': lang ?  'right': 'left' }" >{{'Newuser'|translate}} </h3>
+                <div class="shadow" style="padding: 35px;
+                margin-top: 12%;
+                margin-bottom: 18%;background-color: black;
+                height: 324px;">
+                    <form style="margin-top: 30px;" >
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12">
+                                <h5 [ngStyle]="{'float': lang ?  'right': 'left' }" style="color: white;"> {{'register'|translate}}</h5>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12">
+                                <h6 [ngStyle]="{'float': lang ?  'right': 'left' }" style="color: white;"> {{'No account?'|translate}}
+                                   {{'Create a new account now.'|translate}}
+                                </h6>
+                            </div>
+
+
+
+
+
+
+                        </div>
+                        <div >
+                        <button type="submit" class="default-btn1"  style="    margin-top: 15%;"
+         [ngStyle]="{'float': lang ?  'right': 'left' }"  [routerLink]="'/register'">{{'signup'|translate}}
+
+                        </button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header" [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }">
+          <h6 class="modal-title" id="exampleModalLongTitle" style="color: rgb(0,173,238)"  > {{'Enter your email to send the new password' | translate }}</h6>
+          <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button> -->
+        </div>
+        <div class="modal-body">
+
+            <input type="email" class="form-control forget11" id="email1" placeholder="{{'email' | translate }}" [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }" >
+          <p *ngIf="lang && emailnull" style="color: red;float: right;">يرجى إخال الإيميل</p>
+          <p *ngIf="!lang && emailnull" style="color: red;float: left;">  please enter email</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" style="    height: 46px;">{{'close' | translate }}</button>
+          <button type="button" class="default-btn" (click)="forget()">{{'send' | translate }}
+            <i class="fa fa-cog fa-spin" style="color: white;" *ngIf="loading1"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>

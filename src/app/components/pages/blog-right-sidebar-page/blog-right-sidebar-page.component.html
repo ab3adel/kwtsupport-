@@ -1,0 +1,225 @@
+<section class="page-title-area">
+    <div class="container">
+        <div class="page-title-content">
+            <h1 *ngIf="lang">{{wordpress.title_ar}}</h1>
+            <h1 *ngIf="!lang">{{wordpress.title_en}}</h1>
+        </div>
+    </div>
+
+
+</section>
+
+<section class="products-details-area ptb-100 all" [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }">
+    <div class="product-infinitescroll" *ngIf="!finished">
+        <div class="theme-paggination-block">
+            <div class="container-fluid p-0">
+                <div class="row">
+                    <div class="text-center col-sm-12">
+                        <div class="infinite-scrolling mt-4 mb-4 d-inline-block">
+                            <img src="../../../../assets/img/myImage/loader3.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" *ngIf="finished">
+        <div class="row align-items-center">
+            <div class="col-lg-5 col-md-12">
+                <div class="products-details-image">
+                    <ngx-doc-viewer [url]="wordpress.path" viewer="google" style="width:100%;height:500px;"></ngx-doc-viewer>
+                    <!-- <img src="{{}}" alt="image"> -->
+
+                </div>
+            </div>
+
+            <div class="col-lg-7 col-md-12">
+
+                <div class="products-details-desc">
+                    <h3 *ngIf="lang" style="text-align: right;">{{wordpress.title_ar}}</h3>
+                    <h3 *ngIf="!lang" style="text-align: left;">{{wordpress.title_en}}</h3>
+                    <h3  style="text-align: justify;">{{'dess'| translate }}</h3>
+                    <p *ngIf="lang" style="text-align: justify;">{{wordpress.description_ar}}</p>
+                    <p *ngIf="!lang" style="text-align: justify;">{{wordpress.description_en}}</p>
+
+                    <!-- <h3  style="text-align: justify;">{{'addinfo'| translate }}</h3>
+
+                    <p *ngIf="lang" style="text-align: justify;">{{wordpress.long_description_ar}}</p>
+                    <p *ngIf="!lang" style="text-align: justify;">{{wordpress.long_description_en}}</p> -->
+                    <div class="products-meta" [ngStyle]="{'float': lang ?  'right': 'left' }"
+                        style="text-align: justify;">
+                        <!-- <span> {{'quantity'| translate }}: <span class="sku">{{wordpress.quantity}}</span></span> -->
+                        <!-- new price not null -->
+                        <span style=" -webkit-text-decoration-line: line-through;
+                        text-decoration-line: line-through; " *ngIf="wordpress.new_price!=null">{{'old_price' | translate
+                            }}: <span class="in-stock" style=" -webkit-text-decoration-line: line-through;
+                            text-decoration-line: line-through; "> {{wordpress.old_price}}</span></span>
+                        <!-- new price null -->
+                        <span  *ngIf="wordpress.new_price==null">{{'price' | translate }}: <span
+                                class="in-stock">{{wordpress.old_price}}</span></span>
+
+                        <span *ngIf="wordpress.new_price!=null">{{'new_price' | translate }}:
+                            <a>{{wordpress.new_price}}</a></span>
+                        <button *ngIf="lang" type="submit" class="default-btn" (click)="shows()" >
+                            <i class="bx bx-cart" style="color: white;" ></i> شراء الآن
+
+                        </button>
+                        <button  *ngIf="!lang"  type="submit" class="default-btn"  (click)="shows()" >
+                            <i class="bx bx-cart" style="color: white;"></i> Buy Now
+
+                        </button>
+
+                       <br>
+                       <form class="form" *ngIf="show">
+                           <div [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }">
+                            <h6 class="modal-title" id="exampleModalLongTitle" style="color: rgb(0,173,238)"
+                            *ngIf="lang">شراء الآن </h6>
+                            <h6 class="modal-title" id="exampleModalLongTitle" style="color: rgb(0,173,238)"
+                            *ngIf="!lang">  Buy Now</h6>
+                            <div class="modal-body">
+
+            
+                                <p style="float: right;" *ngIf="lang">  هل ترغب حقا بالشراء؟ سيتم الخصم من رصيدك  </p>
+                                <p style="float: left;" *ngIf="!lang">Do you really want to buy? Your balance will be deducted</p>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-6">
+                                    <button type="button" class="default-btn" *ngIf="lang" style="margin-right: 10%;" (click)="showform()">نعم
+                                         <!-- <i class="bx bx-cart" style="color: white;"></i> -->
+                                          <!-- <i class="fa fa-cog fa-spin"
+                                             style="color: white;" *ngIf="loading1"></i> -->
+                                     </button>
+                                     <button type="button" class="default-btn" *ngIf="!lang " style="margin-right: 10%;" (click)="showform()">yes
+                                         <!-- <i class="bx bx-cart" style="color: white;" ></i> -->
+                                          <!-- <i class="fa fa-cog fa-spin"
+                                             style="color: white;" *ngIf="loading1"></i> -->
+                                     </button>
+                                   </div>
+                                <div class="col-6">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal" style="    height: 46px;"
+                                    (click)="notshow()">{{'close'
+                                        | translate }}</button>
+                                </div>
+                            
+                               
+                
+                                
+                            </div>
+                            
+                                 
+                                  
+                                   <br>
+                                 
+                           </div>
+                           <br>
+                           <div *ngIf="showff"  [formGroup]="form" >
+                            <p style="float: right;" *ngIf="lang">  اختر اللون  </p>
+                            <p style="float: left;" *ngIf="!lang">choose color</p>
+                            <br>
+                            <div class="row">
+                              
+                                            <div class="col-3" *ngFor="let coloritem of color;let i = index" >
+                                                <div class="form-check form-check-inline"  >
+                                                    <!-- <input class="btn-check" type="radio" name="colorRadio" id="colorRadio1" [value]="coloritem" (click)="click(coloritem)" style="width: 50px;
+                                                    height: 50px;"> -->
+                                                    <label class="btn "   (click)="click(coloritem,i)"  [style.background-color]="coloritem" style="min-width: 48px;border-radius:50px;  height: 50px;cursor: pointer;" ></label>
+                                                    <i class="fa fa-check-square-o check" aria-hidden="true"  *ngIf="clicked[i]" style="color: #125596;"></i>
+                                                  </div>
+                                               
+                                          
+                                            </div>
+                                    
+                             
+                            </div>
+                            <br>
+                            <p style="float: right;" *ngIf="lang">  اختر صورة اللوغو  </p>
+                            <p style="float: left;" *ngIf="!lang">choose logo</p>
+                           
+                          <br>
+                            <br>
+                             <input type="file" id="file"  name="" class="inputfile"  (change)="upload($event.target.files)"
+                             formControlName="logo"  />
+                             <!-- <div *ngIf="submitted && f.logo.errors" class="invalid-feedback"> -->
+                                <!-- <div *ngIf="f.logo.errors.required && lang">  الحقل مطلوب</div>
+                                <div *ngIf="f.logo.errors.required && !lang">failed is Required</div>
+                                
+                            </div> -->
+                             <label for="file"  [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }" >
+                                 <i class="fa fa-upload" aria-hidden="true" style="color: white;float:right"></i> 
+                                 <span style="color: white;" *ngIf="lang">
+                                     اختر ملف </span>
+                                     <span style="color: white;" *ngIf="!lang">
+                                         choose file </span>
+                                         
+                             </label>
+                             <p style="color: #125596;">{{namefile}}</p>
+                             <progress-bar [progress]="percentDone " id="progressAdd" 
+                             [color-degraded]="{'0': '#007bff',  '15': '#125596', '25': '#007bff'}" style="direction:ltr;display: none; ">
+                             </progress-bar> 
+                          
+                             <button *ngIf="lang" type="submit" class="default-btn" (click)="addCart()">
+                                <i class="bx bx-cart" style="color: white;"  *ngIf="!loading1"></i> شراء الآن
+                                <i class="fa fa-cog fa-spin"
+                                style="color: white;" *ngIf="loading1"></i>
+                            </button>
+                            <button  *ngIf="!lang"  type="submit" class="default-btn"   (click)="addCart()" >
+                                <i class="bx bx-cart" style="color: white;" *ngIf="!loading1"></i> Buy Now
+                                <i class="fa fa-cog fa-spin"
+                                style="color: white;" *ngIf="loading1"></i>
+                            </button>
+                           </div>
+                           
+                        
+                          
+                          
+                       </form>
+                   
+                    </div>
+
+
+                </div>
+
+            </div>
+
+         
+        </div>
+    </div>
+</section>
+
+
+<div class="modal fade"  id="exampleModalCenter"
+    tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header" [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }">
+                <h6 class="modal-title" id="exampleModalLongTitle" style="color: rgb(0,173,238)"
+                *ngIf="lang">شراء الآن </h6>
+                <h6 class="modal-title" id="exampleModalLongTitle" style="color: rgb(0,173,238)"
+                *ngIf="!lang">  Buy Now</h6>
+            </div>
+            <div class="modal-body">
+
+            
+                <p style="float: right;" *ngIf="lang">  هل ترغب حقا بالشراء؟ سيتم الخصم من رصيدك  </p>
+                <p style="float: left;" *ngIf="!lang">Do you really want to buy? Your balance will be deducted</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" style="    height: 46px;">{{'close'
+                    | translate }}</button>
+                <button type="button" class="default-btn" *ngIf="lang">نعم
+                    <i class="bx bx-cart" style="color: white;" *ngIf="!loading1"></i> <i class="fa fa-cog fa-spin"
+                        style="color: white;" *ngIf="loading1"></i>
+                </button>
+                <button type="button" class="default-btn" *ngIf="!lang">yes
+                    <i class="bx bx-cart" style="color: white;" *ngIf="!loading1"></i> <i class="fa fa-cog fa-spin"
+                        style="color: white;" *ngIf="loading1"></i>
+                </button>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+

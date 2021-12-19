@@ -1,0 +1,184 @@
+<section class="page-title-area">
+    <div class="container">
+        <div class="page-title-content">
+            <h1 >{{'wallet'|translate}} </h1>
+        </div>
+    </div>
+
+</section>
+
+
+
+ 
+<div class="all">
+<div class="container" [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }" style="padding-top:5%;padding-bottom:5%">
+   <!-- <div class="shadow" style="background-color: black;"> -->
+       
+        <h2 style="color: white;"> {{'mywallet'|translate}}</h2>
+        <div style="margin: 0px; text-align: center;">
+            <div class="card1" >
+                <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+                <i class="fa fa-briefcase" aria-hidden="true" style="color:white;
+                font-size: 40px"></i>
+                <div class="card-body">
+                  <p class="card-text" style="color:white;">{{payload}}</p>
+            
+              <!-- </div> -->
+            <!-- <h2 style="color: white;margin: 0px;text-align: center;"> {{'mywallet'|translate}}</h2>
+            
+              <h4 style="color: white;margin: 0px;text-align: center;"> {{payload}}</h4> -->
+           </div>
+        </div>
+        </div>
+  
+<h4 [ngStyle]="{'text-align': lang ?  'right': 'left' }" style="    margin-left: 72px; ">{{'Charging' | translate }}</h4>
+<!-- <hr style="width:89% ; margin-top: 35px;"> -->
+<form [formGroup]="Form" (ngSubmit)="charge()">
+    <div class="container">
+    <div class="row" style="    margin-right: 3%;margin-left: 3%;">
+<div class="col-lg-12">
+<h3 style="color: white;text-align: right;" *ngIf="lang" >اختر طريقة الشحن </h3>
+<h3 style="color: white;text-align: left;"  *ngIf="!lang" >  Choose a charge method </h3>
+<div class="row">
+    
+        <!-- <div class="col-lg-3 col-sm-6">
+            <div class="card" (click)="clickAMEX()" id="amex">
+            <img src="../../../../assets/img/charge/amex.jfif" class="iconch">
+            <p style="color: white;">AMEX</p>
+        </div>
+    </div> -->
+    
+    <!-- <div class="col-lg-3 col-sm-6">
+        <div class="card" (click)="clickBOOKEEY()  " id="bookey">
+        <img src="../../../../assets/img/charge/bookey2.png" class="iconch">
+        <p style="color: white;">BOOKEEY</p>
+        </div>
+    </div> -->
+    <!-- <div class="col-lg-6 col-sm-6"> -->
+        <!-- <div class="card" (click)="clickcredit() " id="credit">
+        <img src="../../../../assets/img/charge/maxresdefault.jpg" class="iconch">
+        <p style="color: white;"> CREDIT</p>
+        </div> -->
+    <!-- </div> -->
+    <div class="col-lg-6 col-sm-6">
+        <div class="card" (click)="clickKNET()" id="KNET" style="padding: 10%;">
+        <img src="../../../../assets/img/charge/kk.png" class="iconch">
+        <p style="color: white;">KNET</p>
+        </div>
+    </div>
+</div>
+</div>
+<br>
+<br>
+
+        <div class="col-lg-6 col-md-6" style="margin-top: 3%;">
+            <div class="form-group">
+                <input type="text" name="amount" id="amount" class="form-control"required data-error="" placeholder="{{'amount'| translate}}"
+                formControlName="amount"
+                [ngClass]="{ 'is-invalid': submitted && f.amount.errors }">
+            
+               <div *ngIf="submitted && f.amount.errors" class="invalid-feedback">
+                <div *ngIf="f.amount.errors.required && lang" style="float: right;">  يجب إدخال الحقل</div>
+                <div *ngIf="f.amount.errors.required && !lang">filed is required</div>
+              
+            </div>
+            </div>
+        </div>
+    
+        <div class="col-lg-12 col-md-12">
+
+            <button type="submit" class="default-btn"  [ngStyle]="{'float': lang ?  'right': 'left' }" style="">{{'Charging'| translate}} 
+                <i class="fa fa-cog fa-spin" style="color: white;" *ngIf="loading"></i>
+            </button> 
+        </div>
+    </div>
+</div>
+</form>
+
+
+<h4 [ngStyle]="{'text-align': lang ?  'right': 'left' }" style="      margin-top: 3%;  margin-left: 72px; ">{{'my chargings' | translate }}</h4>
+<!-- <hr style="width:89% ;margin-top: 72px;"> -->
+
+<div class="cart-table table-responsive" *ngIf="!lang" style="margin-left:25%" [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }">
+<table class="table table-bordered"  >
+    <thead>
+        <tr class="a">
+           
+                <th scope="col" > date</th>
+                <th scope="col">{{'amount' | translate }}</th>
+                <th scope="col">{{'method' | translate }}</th>
+          
+        
+        
+           
+        </tr>
+    </thead>
+
+    <tbody>
+       
+        <tr *ngFor="let h of hist"  >
+            <td class="product-thumbnail" >
+                {{h.updated_at.slice(0, 10)}}
+             </td>
+
+            <td class="product-thumbnail" >
+               {{h.amount}}
+            </td>
+            <td class="product-thumbnail" >
+                {{h.method}}
+             </td>
+          
+          
+        </tr>
+
+       
+
+    
+       
+    </tbody>
+</table>
+</div>
+<div class="cart-table table-responsive" *ngIf="lang"  [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }" style="    margin-right: 17%;">
+    <table class="table table-bordered"  >
+        <thead>
+            <tr  class="a">
+               
+                    <th scope="col" *ngIf="lang">التاريخ</th>
+           
+               
+                    <th scope="col">{{'amount' | translate }}</th>
+                    <th scope="col">{{'method' | translate }}</th>
+        
+               
+               
+               
+            </tr>
+        </thead>
+    
+        <tbody>
+           
+            <tr *ngFor="let h of hist"  >
+             
+    
+                <td class="product-thumbnail" >
+                    {{h.updated_at.slice(0, 10)}}
+                 </td>
+                <td class="product-thumbnail" >
+                   {{h.amount}}
+                </td>
+                <td class="product-thumbnail" >
+                    {{h.method}}
+                 </td>
+              
+              
+            </tr>
+    
+           
+    
+        
+           
+        </tbody>
+    </table>
+    </div>
+</div>
+</div>

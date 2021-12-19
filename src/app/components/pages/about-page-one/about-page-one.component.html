@@ -1,0 +1,182 @@
+<section class="page-title-area">
+    <div class="container">
+        <div class="page-title-content">
+            <h1>{{'myprofile' | translate }}</h1>
+        </div>
+    </div>
+
+</section>
+<div class="all">
+<div class="container" [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }">
+    <div class="row align-items-center">
+        <div class="col-lg-12 col-md-12">
+            <div class="analysis-form">
+
+                <form >
+                    <div class="row">
+                        
+                      
+
+                      
+
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="full_name" placeholder="{{'full_name' | translate }}"
+                                value="{{full_name}}" >
+                             
+                            </div>
+                        </div>
+                    
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+                                <select  class="form-req"   class="form-control ff"  
+                          
+                                (change)="selectCountrys($event)"       >
+                                 <option selected disabled value *ngIf="lang">{{countryar}}
+                                 </option>
+                                 <option selected disabled value *ngIf="!lang">{{countryen}}
+                                </option>
+                                 <option *ngFor="let c of country" [value]="c.id">
+                                     <a *ngIf="lang">{{c.name_ar}}</a>
+                                     <a *ngIf="!lang">{{c.name_en}}</a>
+                                 </option>
+                                 
+                             </select>
+                            
+                            
+                            </div>
+                        </div>
+
+                        
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="address" placeholder="{{'address' | translate }}"
+                                value="{{address}}"    >
+                            
+                            </div>
+                        </div>
+
+                         
+                   
+
+                     
+                       
+
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+                                <input type="number"  min="1" class="form-control" id="phone" placeholder="{{'phone' | translate }}"
+                                value="{{phone}}" >
+                           
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+                        <!-- <p style="float: right;color: white;" *ngIf="lang" >  رفع صورة الهوية  </p> -->
+                        <!-- <p style="float: left;color: white;" *ngIf="!lang">Upload Your ID </p> -->
+                   
+                        <img src="{{id_photo}}" style="width: 50%;margin-bottom: 3%;" > 
+                         <input type="file" id="file"  name="" class="inputfile"  (change)="upload($event.target.files)"
+                         formControlName="id_photo"  />
+                         <label for="file"  [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }" >
+                            <i class="fa fa-upload" aria-hidden="true" style="color: white;float:right"></i> 
+                            <span style="color: white;" *ngIf="lang">
+                                رفع صورة الهوية </span>
+                                <span style="color: white;" *ngIf="!lang">
+                                    Upload Your ID </span>
+                                    
+                        </label>
+                        <p style="color: white">{{namefile}}</p>
+                        <progress-bar [progress]="percentDone " id="progressAdd" 
+                        [color-degraded]="{'0': '#007bff',  '15': '#125596', '25': '#007bff'}" style="direction:ltr;display: none; ">
+                        </progress-bar> 
+                         </div>
+                         </div>
+                    </div>
+                    <button type="submit" class="default-btn" [ngStyle]="{'float': lang ?  'right': 'left' }" (click)="edit()">{{'edit'|translate}} 
+                        <i class="fa fa-cog fa-spin" style="color: white;" *ngIf="loading"></i>
+                    </button> 
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<h4 [ngStyle]="{'text-align': lang ?  'right': 'left' }" style="    margin-left: 6%;"  >{{'changePass' | translate }}</h4>
+<!-- <hr style="width:89% ; margin-top: 35px;"> -->
+<div class="container" [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }">
+    <div class="row align-items-center">
+        <div class="col-lg-12 col-md-12">
+            <div class="analysis-form">
+
+                <form >
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="old_password" placeholder="{{'oldP' | translate }}"
+                          >
+                             
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="new_password" placeholder="{{'newP' | translate }}"
+                        >
+                              
+                            </div>
+                        </div>   
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="new_password_confirmation" placeholder="{{'password_confirmation' | translate }}"
+                        >
+                              
+                            </div>
+                        </div>    
+                    
+                    </div>
+                    <button type="submit" class="default-btn" [ngStyle]="{'float': lang ?  'right': 'left' }"
+                    (click)="change()">{{'change'|translate}} 
+                        <i class="fa fa-cog fa-spin" style="color: white;" *ngIf="loading1"></i>
+                    </button> 
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<h4 [ngStyle]="{'text-align': lang ?  'right': 'left' }" style="    margin-left: 6%;" >{{'Two factor authentication' | translate }}</h4>
+<!-- <hr style="width:89% ; margin-top: 35px;"> -->
+<div class="container" [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }">
+    <div class="row align-items-center">
+        <div class="col-lg-12 col-md-12">
+            <div class="analysis-form">
+
+                <form >
+                    <div class="row">
+                        <div class="shadow" style="background: black;
+                        padding: 30px;">
+                            <p [ngStyle]="{'text-align': lang ?  'right': 'left' }" style="color: white;font-size: 20px;">{{'i' | translate }}</p>
+                            <div class="custom-control custom-switch"  [ngStyle]="{'text-align': lang ?  'right': 'left' }"
+                            style="cursor: pointer;">
+                            <input type="checkbox"  class="custom-control-input" id="customSwitches" (click)="onCheckSkill($event)"
+                                style="cursor: pointer;" checked *ngIf="two_factor_authentication==1">
+                                <input type="checkbox"  class="custom-control-input" id="customSwitches" (click)="onCheckSkill($event)"
+                                style="cursor: pointer;"  *ngIf="two_factor_authentication==0">
+                                <label class="custom-control-label" for="customSwitches"></label>
+                            </div>
+                          
+                       
+                        </div>
+                    </div>
+                 
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
