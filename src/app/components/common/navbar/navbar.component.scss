@@ -34,18 +34,16 @@
     display: none;
 }
 
-   .navbarEn {
-    display:grid;
-    grid-template-columns:0.5fr 1fr ;
-
-   }
-   .navbarAr {
-    display:grid;
-    grid-template-columns:1fr 0.5fr ;
-
-   }
+#modifiedList {
+   margin-left: 1px;
+}
+.spaceEvenly {
+    display:flex;
+    justify-content: space-evenly;
+}
     .navbar {
-
+        display:grid;
+        grid-template-columns:0.3fr 1fr ;
         padding: {
             left: 0;
             right: 0;
@@ -55,8 +53,11 @@
         .navbar-brand {
             grid-column: 1/1;
             font-size: inherit;
+            display:flex;
+            justify-content: center;
             margin-right: 0px;
             line-height: 1;
+            max-width: 100%;
             padding: {
                 top: 0;
                 bottom: 0;
@@ -74,14 +75,11 @@
             justify-content: space-between;
         }
         .navbar-nav {
-            margin-left: auto;
+            margin-left: 4rem;
 
             .nav-item {
                 position: relative;
-                margin: {
-                    left: 15px;
-                    right: 15px;
-                };
+
                 a {
                     color: rgb(0,173,238);
                     font: {
@@ -111,10 +109,7 @@
 
             .nav-item1 {
                 position: relative;
-                margin: {
-                    left: 15px;
-                    right: 15px;
-                };
+
                 a {
                     color: rgb(0,173,238);
                     font: {
@@ -652,6 +647,7 @@
         display: none;
     }
 
+
 }
 @media only screen and (min-width: 1550px) {
 
@@ -670,8 +666,11 @@
 
 // }
 
-@media (max-width: 991px) {
-
+@media (max-width: 500px) {
+     .navbar {
+         display: grid;
+         grid-template-columns: 1fr 0.3fr;
+     }
     .iccc{
         width: 10%!important;
     }.oo{
@@ -686,7 +685,7 @@
         text-align: right!important;
     }.imm{
     width: 50%;
-    margin-left: 50%!important;
+
 
     }.navbar-nav{
         margin-left: 0%!important;
@@ -697,13 +696,12 @@
     }.r{
         margin-left: 4%!important;
     }.my{
-        margin-right: 17px!important;
-        margin-left:2%!important;
+
     }.j{
         margin-right: 0%!important;
         margin-left:0%!important;
     }.lar{
-        margin-left: 50%!important;
+
     }
     #modifiedList {
         text-align: left;
@@ -731,7 +729,7 @@ a:hover{
     background-color: rgb(0,173,238);
     border-radius: 30px;
     padding: 10px 18px 3px;
-    margin-left: 10%;
+    margin-left: 1%;
 
 
     .option-item {
@@ -821,7 +819,7 @@ a:hover{
     background-color: rgb(0,173,238);
     border-radius: 30px;
     padding: 10px 18px 3px;
-    margin-right: 28%;
+    margin-left: 2%;
 
 
     .option-item {
@@ -914,5 +912,9 @@ a:hover{
     .navbar-toggler {
         padding:2px 2px ;
         font-size: medium;
+    }
+    .spaceEvenly {
+        display:flex;
+        justify-content: normal;
     }
 }

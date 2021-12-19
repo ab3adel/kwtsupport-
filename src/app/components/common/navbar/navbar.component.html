@@ -10,21 +10,22 @@
                 </div>
             </div>
         </div>
+          [ngClass]="{navbarAr:widthX>500 || !lang ,navbarAr:lang && widthX<500}"
     </div> -->
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light"
      [ngStyle]="{'direction': lang ?  'rtl': 'ltr'}"
-     [ngClass]="{navbarEn:widthX>500 || !lang ,navbarAr:lang && widthX<500}"
+
     >
 
         <a class="navbar-brand" routerLink="/"  >
             <img src="./../../../../assets/img/myImage/اللوغو.png" alt="logo"
 
-         class="imm"  *ngIf="!lang&&login"  style="width: 50%;;" >
+         class="imm"  *ngIf="!lang&&login"  style="width: 50%;margin-right:3rem;" >
 
          <img src="./../../../../assets/img/myImage/اللوغو.png" alt="logo"
 
-           *ngIf="lang && login" style="width: 50%;  margin-left: 40%;" class="lar">
+           *ngIf="lang && login" style="width: 50%;margin-left:3rem " class="lar" >
 
            <img src="./../../../../assets/img/myImage/اللوغو.png" alt="logo"
 
@@ -42,23 +43,22 @@
         </button>
 
         <button *ngIf="login && lang" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"
-        style="    margin-top: -16%;
+        style="
         background-color: white;
-        margin-right: 82%;
-    margin-left: 50%;
+
         ">
           <span class="navbar-toggler-icon"></span>
         </button>
         <button class="navbar-toggler" *ngIf="login && !lang" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"
-        style="    margin-top: -14%; background-color: white;     margin-left: 80%;
+        style="  background-color: white;
         ">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse j" id="navbarText"
+        <div class="collapse navbar-collapse j spaceEvenly" id="navbarText"
 
                         >
-          <ul class="navbar-nav ar" *ngIf="lang" id="modifiedList" >
+          <ul class="navbar-nav ar" *ngIf="lang" style="padding:5px" >
 
             <li class="nav-item active"><a routerLink="/"  class="nav-link active">{{'home' | translate }}  </a>
 
@@ -95,12 +95,12 @@
                         </a>
                      </li>
 
-                <li class="nav-item active out" style="padding-right:4%"><a  class="nav-link" *ngIf="login" (click)="logout()" style="cursor: pointer;">{{'sign out' | translate }} |  </a>  </li>
-                <li class="nav-item active my"  style="margin-right: -5px; margin-left: -5px;"><a routerLink="/myProfile" class="nav-link" *ngIf="login">{{'myprofile' | translate }}
+                <li class="nav-item active out" ><a  class="nav-link" *ngIf="login" (click)="logout()" style="cursor: pointer;">{{'sign out' | translate }} |  </a>  </li>
+                <li class="nav-item active my"  ><a routerLink="/myProfile" class="nav-link" *ngIf="login">{{'myprofile' | translate }}
            </a> </li>
 
            <li class="nav-item iccc" style="width:5% ;margin-left:2px"  (click)="changeLang()">
-            <a>
+            <a>-
 
 
             <img src="../../../../assets/img/myImage/hi.png"   style="
@@ -126,7 +126,7 @@
 
           </ul>
 
-          <ul class="navbar-nav "   *ngIf="!lang"  id="modifiedLink">
+          <ul class="navbar-nav "   *ngIf="!lang"  id="modifiedList" style="padding:5px">
             <li class="nav-item active"><a routerLink="/"  class="nav-link">{{'home' | translate }} </a>
 
             </li>
@@ -155,18 +155,18 @@
                 </a>
             </li>
 
-                <li class="nav-item active r" style="    margin-left: -2%;
-                     ">
+                <li class="nav-item active r"
+                     >
                     <a routerLink="/login" class="nav-link" *ngIf="!login" >
                           {{'signin' | translate }}
                     </a>
                </li>
 
                 <li class="nav-item active out" style="padding-left:4%"><a  class="nav-link" *ngIf="login" (click)="logout()" style="cursor: pointer;">{{'sign out' | translate }} |  </a>  </li>
-                <li class="nav-item active my"  style="margin-right: -5px; margin-left: -5px;"><a routerLink="/myProfile" class="nav-link " *ngIf="login">{{'myprofile' | translate }}
+                <li class="nav-item active my"  ><a routerLink="/myProfile" class="nav-link " *ngIf="login">{{'myprofile' | translate }}
            </a> </li>
 
-           <li class="nav-item1 iccc active" style="width:5%;margin-right:2px;margin-top:5px" >
+           <li class="nav-item1 iccc active" style="width:5%;" >
             <a>
             <img src="../../../../assets/img/myImage/k.png"  (click)="changeLang()" style="
           border-radius: 50%;
@@ -226,8 +226,7 @@
                           </a>
                       </div>
                   </div>
-      <div style="color: white;padding-left: 10px;
-      padding-right: 10px" *ngIf="login"> |</div>
+      <div style="color: white;" *ngIf="login"> |</div>
             <div class="" *ngIf="login">
                 <div class="cart-btn">
                     <a routerLink="/cart">
