@@ -1,0 +1,36 @@
+<div class="all">
+    <section class="">
+        <div class="container">
+            <div class="page-title-content" style="    padding-top: 4%;">
+                <h1 *ngIf="lang">{{service.ar}}</h1>
+                <h1 *ngIf="!lang">{{service.en}}}</h1>
+            </div>
+        </div>
+
+
+    </section>
+
+    <section class="products-details-area ptb-100 " [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }">
+
+        <div class="container" >
+            <div class="row ">
+                <div class="col-lg-5 col-md-12">
+                    <div class="products-details-image">
+
+                        <img src="{{service.src}}" alt="image"  [ngStyle]="{'float': lang ?  'right': 'left' }">
+
+                    </div>
+                </div>
+
+                <div class="col-lg-7 col-md-12">
+
+                    <div class="products-details-desc">
+                        <h3 *ngIf="lang" style="text-align: right;">{{service.ar}}</h3>
+                        <h3 *ngIf="!lang" style="text-align: left;">{{service.en}}</h3>
+                        <h3  style="text-align: justify;">{{'dess'| translate }}</h3>
+
+
+                        <h3  style="text-align: justify;">{{lang?"السعر" :"Price"}}</h3>
+
+
+                                service price {{lang ? "دينار كويتي" :"Kuwaiti dinar"}}

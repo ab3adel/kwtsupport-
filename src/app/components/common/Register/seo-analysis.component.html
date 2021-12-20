@@ -14,10 +14,10 @@
 
                 <form  [formGroup]="registerForm" (ngSubmit)="register()">
                     <div class="row">
-                        
+
                         <div class="col-lg-6 col-md-6">
                             <div class="form-group">
-                                
+
                                 <input type="text" class="form-control" id="full_name" placeholder="{{'full_name' | translate }}"
                                 formControlName="full_name"
                                     [ngClass]="{ 'is-invalid': submitted && f.full_name.errors }">
@@ -42,10 +42,10 @@
                                     </div>
                             </div>
                         </div>
-                     
+
                         <div class="col-lg-6 col-md-6">
                             <div class="form-group">
-                                <select  class="form-req"   class="form-control ff"  formControlName="country_id" 
+                                <select  class="form-req"   class="form-control ff"  formControlName="country_id"
                                 [ngClass]="{ 'is-invalid': submitted && f.country_id.errors }"
                                 (change)="selectCountrys($event)"       >
                                  <option selected disabled value>{{ 'country' | translate }}
@@ -54,34 +54,34 @@
                                      <a *ngIf="lang">{{c.name_ar}}</a>
                                      <a *ngIf="!lang">{{c.name_en}}</a>
                                  </option>
-                                 
+
                              </select>
                              <div *ngIf="submitted && f.country_id.errors" class="invalid-feedback">
                                 <div *ngIf="f.country_id.errors.required && lang" style="float: right;">الحقل مطلوب</div>
                                 <div *ngIf="f.country_id.errors.required && !lang">failed is required</div>
                             </div>
-                            
+
                             </div>
                         </div>
 
-                     
 
-                     
 
-                        
+
+
+
                         <div class="col-lg-6 col-md-6">
                             <div class="form-group">
                                 <input type="text" class="form-control" id="address" placeholder="{{'address' | translate }}"
-                               
+
                             >
-                             
+
                             </div>
                         </div>
 
-                         
-                    
 
-                     
+
+
+
                         <div class="col-lg-6 col-md-6">
                             <div class="form-group">
                                 <input type="password" class="form-control" id="password" placeholder="{{'password' | translate }}"
@@ -111,7 +111,7 @@
                                     <div *ngIf="f.password_confirmation.errors.required && !lang">password is
                                         required</div>
                                         <div
-                                        *ngIf=" f.password_confirmation.errors.minlength && lang " style="float: right;"> 
+                                        *ngIf=" f.password_confirmation.errors.minlength && lang " style="float: right;">
                                        تأكيد كلمة المرور يجب أن تكون أكثر من 7 محارف </div>
                                     <div
                                         *ngIf="f.password_confirmation.errors.minlength && !lang ">
@@ -136,32 +136,32 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-6 col-md-6">
-                            <div class="form-group">    
-                        <!-- <label style="float: right;color: white;" *ngIf="lang" >رفع صورة الهوية  </label> -->
-                        <!-- <label style="float: left;color: white;" *ngIf="!lang">Upload Your ID </label> -->
-                
+                       <!-- <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+
+
                          <input type="file" id="file"  name="" class="inputfile"  (change)="upload($event.target.files)"
                          formControlName="id_photo"  />
                          <label for="file"  [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }" >
-                            <i class="fa fa-upload" aria-hidden="true" style="color: white;float:right"></i> 
+                            <i class="fa fa-upload" aria-hidden="true" style="color: white;float:right"></i>
                             <span style="color: white;" *ngIf="lang">
                                 رفع صورة الهوية </span>
                                 <span style="color: white;" *ngIf="!lang">
                                     Upload Your ID </span>
-                                    
-                        </label>
-                        <!-- <p style="color: white">{{namefile}}</p> -->
-                        <progress-bar [progress]="percentDone " id="progressAdd" 
-                        [color-degraded]="{'0': '#007bff',  '15': '#125596', '25': '#007bff'}" style="direction:ltr;display: none; ">
-                        </progress-bar> 
-                         </div>
-                         </div>
 
+                        </label>
+
+                        <progress-bar [progress]="percentDone " id="progressAdd"
+                        [color-degraded]="{'0': '#007bff',  '15': '#125596', '25': '#007bff'}" style="direction:ltr;display: none; ">
+                        </progress-bar>
+                         </div>
+                         </div>
+                      -->
                     </div>
-                    <button type="submit" class="default-btn" [ngStyle]="{'float': lang ?  'right': 'left' }">{{'signup'|translate}} 
+
+                    <button type="submit" class="default-btn" [ngStyle]="{'float': lang ?  'right': 'left' }">{{'signup'|translate}}
                         <i class="fa fa-cog fa-spin" style="color: white;" *ngIf="loading"></i>
-                    </button> 
+                    </button>
                 </form>
             </div>
         </div>

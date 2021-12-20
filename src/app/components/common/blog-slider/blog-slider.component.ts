@@ -31,8 +31,13 @@ lang;
 
   }
   click(){
- 
+
     this.router.navigateByUrl("wordpress1");
-  
+
   }
+  webDetails (item) {
+      localStorage.setItem("serviceDetailName",item)
+      this.router.navigateByUrl('website&advertiseDetails')
+  }
+
 }

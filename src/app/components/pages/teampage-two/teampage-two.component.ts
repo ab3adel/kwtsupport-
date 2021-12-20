@@ -30,17 +30,17 @@ data
   nameCharge;
   Form: FormGroup;
   PayUrl
-    constructor(private translate: TranslateService,private fb: FormBuilder,private toastrService: ToastrService ,  
-       private formBuilder: FormBuilder,private service:Constants, private router: Router) { 
+    constructor(private translate: TranslateService,private fb: FormBuilder,private toastrService: ToastrService ,
+       private formBuilder: FormBuilder,private service:Constants, private router: Router) {
         this.Form = this.formBuilder.group({
           amount: ['', [Validators.required]]
-      
-        })  
-      
+
+        })
+
        }
-  
+
     ngOnInit(): void {
-    
+
       this.translateMethod();
       this.getmywallet();
       this.userid=this.service.getUser().id;
@@ -62,11 +62,11 @@ data
       } else {
         this.lang = false;
       }
-  
+
     }
    getmywallet(){
      this.service.getWallet().subscribe(res=>{
-       console.log(res);
+       console.log(res,"mywalletRes");
        this.res=res;
        this.payload=this.res.payload;
      })
@@ -74,14 +74,14 @@ data
 gethistory()
 {
   this.service.getWallethistory(this.userid).subscribe(res=>{
-    console.log(res);
+    console.log(res,"history");
     this.data=res;
     this.hist=this.data.payload
   })
 }
 charge(){
  this.loading=true
-  var amount = (<HTMLInputElement>document.getElementById("amount")).value; 
+  var amount = (<HTMLInputElement>document.getElementById("amount")).value;
   const obj={
     "amount":"",
     "payment_method":"",
@@ -121,29 +121,29 @@ this.service.paymentMethod(obj).subscribe(res=>{
   // console.log("login", this.userInfo)
   // this.service.SaveUser(this.userInfo.payload);
 
-        
-        
-     
- 
-        
-            //  
-        
+
+
+
+
+
+            //
+
 
       },(err) => {
           this.loading=false;
        console.log(err);
        this.toastrService.error(err)
-       
-      
-});  
+
+
+});
 }
- clickAMEX() 
+ clickAMEX()
  {
   (<HTMLInputElement>document.getElementById("amex")).style.borderColor = "#00adee";
   (<HTMLInputElement>document.getElementById("credit")).style.borderColor = "black";
   (<HTMLInputElement>document.getElementById("bookey")).style.borderColor = "black";
   (<HTMLInputElement>document.getElementById("KNET")).style.borderColor = "black";
-  
+
    this.AMEXBool=true;
    this.bookeyBol=false;
    this.CREDITBool=false;
@@ -152,7 +152,7 @@ this.service.paymentMethod(obj).subscribe(res=>{
    console.log(this.nameCharge)
 
  }
- clickBOOKEEY() 
+ clickBOOKEEY()
  {
   (<HTMLInputElement>document.getElementById("bookey")).style.borderColor = "#00adee";
   (<HTMLInputElement>document.getElementById("amex")).style.borderColor = "black";
@@ -165,7 +165,7 @@ this.service.paymentMethod(obj).subscribe(res=>{
    this.nameCharge="Bookeey";
    console.log(this.nameCharge)
  }
- clickcredit() 
+ clickcredit()
  {
   (<HTMLInputElement>document.getElementById("credit")).style.borderColor = "#00adee";
   // (<HTMLInputElement>document.getElementById("bookey")).style.borderColor = "black";
@@ -178,7 +178,7 @@ this.service.paymentMethod(obj).subscribe(res=>{
    this.nameCharge="credit";
    console.log(this.nameCharge)
  }
- clickKNET() 
+ clickKNET()
  {
   (<HTMLInputElement>document.getElementById("KNET")).style.borderColor = "#00adee";
   //  (<HTMLInputElement>document.getElementById("bookey")).style.borderColor = "black";
@@ -192,4 +192,3 @@ this.service.paymentMethod(obj).subscribe(res=>{
    console.log(this.nameCharge)
  }
   }
-  

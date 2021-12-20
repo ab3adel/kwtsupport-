@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Constants } from 'src/app/model/constants';
 let  langId;
@@ -15,7 +16,7 @@ export class BlogLeftSidebarPageComponent implements OnInit {
   loaddeletall:boolean=false
   loader = true;
   lang;
- finished:boolean=false 
+ finished:boolean=false
   res;
   myorder;
   myorderlength;
@@ -29,12 +30,12 @@ export class BlogLeftSidebarPageComponent implements OnInit {
   order;
   allarray=[]
   constructor(private translate: TranslateService,
-    private service:Constants,private toast:ToastrService) { }
+    private service:Constants,private toast:ToastrService,private router:Router) { }
 
   ngOnInit(): void {
     this.translateMethod();
     this.getmypurches();
-  
+
   }
   translateMethod() {
     this.translate.setDefaultLang('en');
@@ -55,12 +56,17 @@ export class BlogLeftSidebarPageComponent implements OnInit {
     this.service.myPurchesMethod().subscribe(res=>{
         console.log("purches",res);
         this.res=res;
-        // this.order=this.res.orders
-  //       this.total_cost=this.res.payload.total_cost;
-  //       console.log(this.total_cost)
-   this.myorder=this.res.payload;
-  //  console.log("purches",this.myorder)
-   this.myorderlength=this.myorder.length;
+
+   //this.myorder=this.res.payload;
+   this.myorder=[
+                 {
+                    orders:[{service:{name_ar:"arabicName",name_en:"englishName"},cost:10,quantity:10,id:10}],
+                    total_cost:100
+
+                    }
+              ]
+  // this.myorderlength=this.myorder.length;
+  this.myorderlength=5
    if(this.myorderlength==0)
    {
      this.purchesempty=true
@@ -75,5 +81,9 @@ export class BlogLeftSidebarPageComponent implements OnInit {
 
 
     })
+}
+purshasedDetails (item) {
+    localStorage.setItem('orderDetails',JSON.stringify(item) )
+    this.router.navigateByUrl('/purshasedDetails')
 }
 }

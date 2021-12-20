@@ -104,14 +104,16 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import '@angular/localize/init';
+import { PurshasedServiceDetailsComponent } from './components/pages/purshased-service-details/purshased-service-details.component';
+import { WebsitesAdvetiseDetailsComponent } from './components/pages/websites-advetise-details/websites-advetise-details.component';
 
 
 @NgModule({
   exports: [
 
- 
-  
- 
+
+
+
   ],
   declarations: [
     AppComponent,
@@ -198,15 +200,17 @@ import '@angular/localize/init';
     BlogSliderComponent,
     AboutComponent,
     HomesevenAboutComponent,
-    HomesevenMainBannerComponent
-  
-    
-    
+    HomesevenMainBannerComponent,
+    PurshasedServiceDetailsComponent,
+    WebsitesAdvetiseDetailsComponent
 
-   
- 
 
-  
+
+
+
+
+
+
   ],
   imports: [
     LeafletModule,

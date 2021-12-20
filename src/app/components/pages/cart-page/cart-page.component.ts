@@ -14,7 +14,7 @@ export class CartPageComponent implements OnInit {
  loaddeletall:boolean=false
   loader = true;
   lang;
- finished:boolean=false 
+ finished:boolean=false
   res;
   myorder;
   myorderlength;
@@ -49,13 +49,17 @@ export class CartPageComponent implements OnInit {
   }
   getmyCart(){
     this.service.getMyCart().subscribe(res=>{
-        console.log(res);
+        console.log(res,"myCartRes");
         this.res=res;
-        this.total_cost=this.res.payload.total_cost;
-        console.log(this.total_cost)
-   this.myorder=this.res.payload.orders;
+
+        //this.total_cost=this.res.payload.total_cost;
+        this.total_cost="1000"
+        console.log(this.total_cost,"total Cost")
+   //this.myorder=this.res.payload.orders;
+   this.myorder=[{service:{name_ar:"arabicName",name_en:"englishName"},cost:10,quantaty:10,id:10}]
    console.log("cart",this.myorder)
-   this.myorderlength=this.myorder.length;
+  // this.myorderlength=this.myorder.length;
+  this.myorderlength=5
    if(this.myorderlength==0)
    {
      this.cartempty=true
@@ -89,7 +93,7 @@ delete(id)
      this.getmyCart();
   },err => {
      this.toast.error(err.error)
-     this.loader=false;   
+     this.loader=false;
   })
 }
 
@@ -108,14 +112,14 @@ deleteallservice()
      this.loaddeletall=false;
      window.location.reload();
      this.getmyCart();
-    
+
   },err => {
      this.toast.error(err.error)
-     this.loaddeletall=false;  
+     this.loaddeletall=false;
   })
 }
 useoffer() {
-  
+
   this.loading1 = true;
   var code = (document.getElementById("code") as HTMLInputElement).value;
   const body={
@@ -132,19 +136,19 @@ else{
   this.service.useOfferMethod(body).subscribe(res=>{
     console.log(res);
  this.loading1=false
- 
+
             if (Number(langId) == 1) {
               this.toast.success("تم استخدام العرض");
             } else {
               this.toast.success("used offer successfully" );
             }
-         
+
         },(err) => {
          console.log(err);
          this.toast.error(err)
            this.loading1=false;
-        
-  });  
+
+  });
 }
 
 }
@@ -156,7 +160,7 @@ checkout(){
       this.toast.success("تم الدفع بنجاح");
     } else {
       this.toast.success("checkout successfully" );
-      
+
     }
     this.loading2=false
   },
@@ -164,8 +168,8 @@ checkout(){
     console.log(err);
     this.toast.error(err.error.error)
     this.loading2=false
-   
-}); 
+
+});
 }
 getIp(){
   this.service.getIPAddress().subscribe((res :any)=>{

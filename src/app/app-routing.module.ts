@@ -41,6 +41,8 @@ import { ContactPageComponent } from './components/pages/contact-page/contact-pa
 import { HomepageSevenComponent } from './components/pages/homepage-seven/homepage-seven.component';
 import { BlogSliderComponent } from './components/common/blog-slider/blog-slider.component';
 import { SeoAnalysisComponent } from './components/common/Register/seo-analysis.component';
+import { PurshasedServiceDetailsComponent } from './components/pages/purshased-service-details/purshased-service-details.component';
+import { WebsitesAdvetiseDetailsComponent } from './components/pages/websites-advetise-details/websites-advetise-details.component';
 const routes: Routes = [
 
     {path: '', component: HomepageOneComponent},
@@ -84,7 +86,8 @@ const routes: Routes = [
     {path: 'purches', component: BlogLeftSidebarPageComponent},
     {path: 'subcategory', component: BlogDetailsPageComponent},
     {path: 'contact', component: ContactPageComponent},
-    
+    {path:'purshasedDetails',component:PurshasedServiceDetailsComponent},
+    {path:'website&advertiseDetails',component:WebsitesAdvetiseDetailsComponent},
     {path: '**', component: ErrorPageComponent}
 ];
 

@@ -1,0 +1,87 @@
+<div class="all">
+    <section class="">
+        <div class="container">
+            <div class="page-title-content">
+                <h1 *ngIf="!lang">purshased Services Details</h1>
+                <h1 *ngIf="lang">  تفاصيل الخدمات المشتراة</h1>
+            </div>
+        </div>
+
+
+    </section>
+
+    <section class="cart-area ptb-100 " >
+        <div class="container">
+            <form>
+
+
+                <div class=" table-responsive" >
+
+                    <table class="table table-bordered"  [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }">
+                        <thead>
+                            <tr>
+                                <th scope="col">{{'img' | translate }}</th>
+                                <th scope="col">{{'name' | translate }}</th>
+
+                                <th scope="col" *ngIf="!lang"> cost</th>
+                                <th scope="col" *ngIf="lang">الكلفة</th>
+                                <th scope="col">{{'quantity'| translate }}</th>
+                                <th scope="col">{{'total_cost' | translate }}</th>
+
+                                <!-- <th scope="col">{{'delete' | translate }}</th> -->
+                            </tr>
+                        </thead>
+
+                        <tbody >
+
+                            <tr  class="aa" *ngFor="let cart of order.orders"  >
+
+                                <td class="product-thumbnail">
+                                    <a >
+                                        <img src="{{cart.service.avatar}}" alt="item" style="width: 20%; ">
+                                    </a>
+                                </td>
+
+                                <td class="product-thumbnail" *ngIf="lang">
+                                   {{cart.service.name_ar}}
+                                </td>
+                                <td class="product-thumbnail" *ngIf="!lang">
+                                    {{cart.service.name_en}}
+                                 </td>
+
+                                <td class="product-thumbnail">
+                                    {{cart.cost}} {{lang ? "دينار كويتي" :"Kuwaiti dinar"}}
+                                    <!-- <div class="input-counter">
+                                        <span class="minus-btn"><i class='bx bx-minus'></i></span>
+                                        <input type="text" min="1" value="1">
+                                        <span class="plus-btn"><i class='bx bx-plus'></i></span>
+                                    </div> -->
+                                </td>
+
+
+
+                                <td class="product-thumbnail">
+                                    {{cart.quantity}}
+                                </td>
+                                <td class="product-thumbnail">
+                                    {{order.total_cost}} {{lang ? "دينار كويتي" :"Kuwaiti dinar"}}
+                                </td>
+
+                                <!-- <td class="product-thumbnail" style="cursor: pointer;">
+                                    <a class="danger delete mr-1 mrless"><i  id="loader{{cart.id}}" class="fa fa-cog fa-spin" hidden></i><i id="delete{{cart.id}}" class="fa fa-trash" (click)="delete(cart.id)" style="color: red;"></i></a>
+
+                                </td> -->
+                                <!-- <td class="product-thumbnail" *ngIf="lang">
+                                    {{cart.service.short_description_ar}}
+                                </td>
+                                <td class="product-thumbnail" *ngIf="!lang">
+                                    {{cart.service.short_description_en}}
+                                </td> -->
+                            </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+                </div>

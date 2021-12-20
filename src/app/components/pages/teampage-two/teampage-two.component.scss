@@ -96,7 +96,7 @@
 
 }
 .page-title-area {
-    
+
     background: {
         size: cover;
         repeat: no-repeat;
@@ -111,7 +111,7 @@ h3{
 }
 
 .all{
- 
+
     background: {
         size: cover;
         repeat: no-repeat;
@@ -120,11 +120,10 @@ h3{
 }
 .form-control:focus {
     color: white!important;
- 
+
 }
 .card{
-    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
-    background-color: black;
+
     margin: 0px;
     text-align: center;
     padding: 5%;
@@ -133,8 +132,7 @@ h3{
     // margin-right: 35%;
 }
 .card1{
-    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
-    background-color: black;
+
     margin: 0px;
     text-align: center;
     padding: 5%;
@@ -172,7 +170,7 @@ h4{
 .cart-table {
     table {
         margin-bottom: 0;
-
+        border-bottom: 1px solid white;
         thead {
             tr {
                 th {
@@ -237,8 +235,8 @@ h4{
                             min-width: 130px;
                             text-align: center;
                             display: inline-block;
-                            position: relative;    
-                
+                            position: relative;
+
                             span {
                                 position: absolute;
                                 top: 0;
@@ -250,7 +248,7 @@ h4{
                                 line-height: 50px;
                                 transition: var(--transition);
                                 font-size: 22px;
-                
+
                                 &.minus-btn {
                                     left: 0;
                                 }
@@ -296,7 +294,7 @@ h4{
 }
 @media(max-width: 992px){
 .table{
-    width: 100%!important;   
+    width: 100%!important;
     margin-right: 0%!important;
 }.cart-table{
     margin-right: 0%!important;
@@ -317,11 +315,12 @@ h3{
     height: 206px;
 }
 table, tr {
+    border-bottom: 1px solid white;
     border:transparent;
     // background-image: linear-gradient(to left, #e0e0e0 , rgb(18,18,18),rgb(18,18,18));
     color: white;
     height: 75px;
-    background-color: black;
+
 
 }
 th ,td {
@@ -330,6 +329,6 @@ th ,td {
 .a{
     // background-image: linear-gradient(to right, #e0e0e0 , rgb(18,18,18),rgb(18,18,18));
     height: 80px;
-background-color: black;
+
 
 }

@@ -6,10 +6,10 @@
                 <h1 *ngIf="lang">السلة</h1>
             </div>
         </div>
-    
-       
+
+
     </section>
-    
+
     <section class="cart-area ptb-100 " >
         <div class="container">
             <form>
@@ -32,53 +32,53 @@
                     <h3 style="color: white;margin-top: 1%;">{{'cartempty' | translate }}</h3>
                     </div>
                 <div class="table-responsive" *ngIf="finished && !cartempty">
-    
+
                     <table class="table table-bordered"  [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }">
                         <thead>
                             <tr>
                                 <th scope="col">{{'img' | translate }}</th>
                                 <th scope="col">{{'name' | translate }}</th>
-                               
+
                                 <th scope="col" *ngIf="!lang"> cost</th>
                                 <th scope="col" *ngIf="lang">الكلفة</th>
                                 <th scope="col">{{'quantity'| translate }}</th>
                                 <th scope="col">{{'delete' | translate }}</th>
                             </tr>
                         </thead>
-                    
+
                         <tbody>
-                           
+
                             <tr  class="aa" *ngFor="let cart of myorder"  >
                                 <td class="product-thumbnail">
                                     <a >
                                         <img src="{{cart.service.avatar}}" alt="item"  style="width: 20%; ">
                                     </a>
                                 </td>
-    
+
                                 <td class="product-thumbnail" *ngIf="lang">
                                    {{cart.service.name_ar}}
                                 </td>
                                 <td class="product-thumbnail" *ngIf="!lang">
                                     {{cart.service.name_en}}
                                  </td>
-                              
+
                                 <td class="product-thumbnail">
-                                    {{cart.cost}}
+                                    {{cart.cost}} {{lang ? "دينار كويتي" :"Kuwaiti dinar"}}
                                     <!-- <div class="input-counter">
                                         <span class="minus-btn"><i class='bx bx-minus'></i></span>
                                         <input type="text" min="1" value="1">
                                         <span class="plus-btn"><i class='bx bx-plus'></i></span>
                                     </div> -->
                                 </td>
-    
-                              
-    
+
+
+
                                 <td class="product-thumbnail">
                                     {{cart.quantity}}
                                 </td>
                                 <td class="product-thumbnail" style="cursor: pointer;">
                                     <a class="danger delete mr-1 mrless"><i  id="loader{{cart.id}}" class="fa fa-cog fa-spin" hidden></i><i id="delete{{cart.id}}" class="fa fa-trash" (click)="delete(cart.id)" style="color: red;"></i></a>
-                               
+
                                 </td>
                                 <!-- <td class="product-thumbnail" *ngIf="lang">
                                     {{cart.service.short_description_ar}}
@@ -87,18 +87,18 @@
                                     {{cart.service.short_description_en}}
                                 </td> -->
                             </tr>
-    
-                           
-    
-                        
-                           
+
+
+
+
+
                         </tbody>
                     </table>
                 </div>
-    
+
                 <div class="cart-buttons" *ngIf="!cartempty">
                     <div class="row " [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }">
-                       
+
                         <div class="" (click)="deleteallservice()" style="cursor: pointer;">
                            <a  class="default-btn" style="color: white;">{{'de' | translate }}
                             <i   class="fa fa-cog fa-spin" *ngIf="loaddeletall" ></i>    <i  class="fa fa-trash" *ngIf="!loaddeletall"></i>
@@ -106,21 +106,21 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="cart-totals" *ngIf="!cartempty" style="height: 230px;">
                     <h3  [ngStyle]="{'text-align': lang ?  'right': 'left' }"
                     style="color: rgb(13,72,108)">{{'total_cost' | translate }}</h3>
-    
+
                     <ul>
                         <li [ngStyle]="{'text-align': lang ?  'right': 'left' }"
-                        style="color: rgb(0,173,238)"> {{total_cost}}</li>
-                      
+                        style="color: rgb(0,173,238)"> {{total_cost}} {{lang ? "دينار كويتي" :"Kuwaiti dinar"}}</li>
+
                     </ul>
                     <div class="row">
                         <div class="col-6">
                             <div >
                                 <button  class="default-btn" (click)="checkout()">
-                                 <a  style="color: white;">{{'Checkout' | translate }} </a><i   class="fa fa-cog fa-spin" *ngIf="loading2" ></i> 
+                                 <a  style="color: white;">{{'Checkout' | translate }} </a><i   class="fa fa-cog fa-spin" *ngIf="loading2" ></i>
                              </button>
                          </div>
                         </div>
@@ -128,23 +128,23 @@
                             <div data-toggle="modal" data-target="#exampleModalCenter"  style="cursor: pointer;">
                                 <a  class="default-btn a" style="color: white;width: 170px;
                                 margin-left: -17px;">{{'useoffer' | translate }}
-                            
+
                                 </a>
                              </div>
                         </div>
-                       
+
                     </div>
-          
-    
-                
+
+
+
                 </div>
             </form>
             <button  class="default-btn" *ngIf="!lang"  routerLink="/purches" style="float: left;">
                 Date of services purchased
-              
+
             </button>
             <button  class="default-btn"  *ngIf="lang"   routerLink="/purches" style="float: right;">
-    
+
                 فواتير الخدمات المشتراة
             </button>
         </div>
@@ -162,10 +162,10 @@
               </button> -->
             </div>
             <div class="modal-body">
-                
+
                 <input type="email" class="form-control" id="code" placeholder="{{'code' | translate }}" [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }" >
-              <p *ngIf="lang && codenull" style="color: red;float: right;">يرجى إخال الرمز</p>  
-              <p *ngIf="!lang && codenull" style="color: red;float: left;">  please enter code</p>  
+              <p *ngIf="lang && codenull" style="color: red;float: right;">يرجى إخال الرمز</p>
+              <p *ngIf="!lang && codenull" style="color: red;float: left;">  please enter code</p>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal" style="    height: 46px;">{{'close' | translate }}</button>

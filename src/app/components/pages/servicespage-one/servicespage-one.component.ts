@@ -29,11 +29,12 @@ service_quantity_price;
 unit_price;
 min;
 max;
+error=false;
 //  @ViewChild('username', {static: true}) usernameElement: ElementRef;
-totalprice:any;
+totalprice=0;
 loading1:boolean=false;
   constructor(private translate: TranslateService,private toastrService: ToastrService ,private router:Router,
-    private service1:Constants) { 
+    private service1:Constants) {
     this.translateMethod()
    this.service= localStorage.getItem('service');
     this.ser=JSON.parse( this.service);
@@ -74,7 +75,7 @@ this.id_service=this.ser.id
 
   }
 addCart(){
- 
+
   this.loading1=true
    var link = (document.getElementById("link") as HTMLInputElement).value;
    var quantity = (document.getElementById("quantity") as HTMLInputElement).value;
@@ -83,7 +84,7 @@ addCart(){
     "service":"",
     // "service_quantity_price_id":"",
     "quantity":"",
-    
+
   }
   body.link=link;
   body.service=this.id_service;
@@ -112,7 +113,7 @@ else{
   this.service1.addCartMethod(body).subscribe(res=>{
     console.log(res);
  this.loading1=false
- 
+
             if (Number(langId) == 1) {
               this.toastrService.success("تم إضافة الخدمة بنجاح إلى السلة");
             } else {
@@ -129,8 +130,8 @@ else{
           }
       // this.toastrService.error("")
            this.loading1=false;
-        
-  });  
+
+  });
 }
 
 
@@ -185,7 +186,7 @@ else{
   this.service1.addCartMethod(body).subscribe(res=>{
     console.log(res);
  this.loading1=false
- 
+
             if (Number(langId) == 1) {
               this.toastrService.success("تم إضافة الخدمة بنجاح إلى السلة");
             } else {
@@ -198,15 +199,15 @@ else{
          console.log(err);
          this.toastrService.error(err)
            this.loading1=false;
-        
-  });  
+
+  });
 }
 
 
 }
 addCart3(){
-  
- 
+
+
   this.loading1=true
    var link = (document.getElementById("link") as HTMLInputElement).value;
    var usernames= (document.getElementById("usernames") as HTMLInputElement).value;
@@ -256,7 +257,7 @@ else{
   this.service1.addCartMethod(body).subscribe(res=>{
     console.log(res);
  this.loading1=false
- 
+
             if (Number(langId) == 1) {
               this.toastrService.success("تم إضافة الخدمة بنجاح إلى السلة");
             } else {
@@ -269,8 +270,8 @@ else{
          console.log(err);
          this.toastrService.error(err)
            this.loading1=false;
-        
-  });  
+
+  });
 }
 
 
@@ -324,7 +325,7 @@ else{
   this.service1.addCartMethod(body).subscribe(res=>{
     console.log(res);
  this.loading1=false
- 
+
             if (Number(langId) == 1) {
               this.toastrService.success("تم إضافة الخدمة بنجاح إلى السلة");
             } else {
@@ -337,8 +338,8 @@ else{
          console.log(err);
          this.toastrService.error(err)
            this.loading1=false;
-        
-  });  
+
+  });
 }
 
 
@@ -409,7 +410,7 @@ else{
   this.service1.addCartMethod(body).subscribe(res=>{
     console.log(res);
  this.loading1=false
- 
+
             if (Number(langId) == 1) {
               this.toastrService.success("تم إضافة الخدمة بنجاح إلى السلة");
             } else {
@@ -422,8 +423,8 @@ else{
          console.log(err);
          this.toastrService.error(err)
            this.loading1=false;
-        
-  });  
+
+  });
 }
 
 
@@ -477,7 +478,7 @@ else{
   this.service1.addCartMethod(body).subscribe(res=>{
     console.log(res);
  this.loading1=false
- 
+
             if (Number(langId) == 1) {
               this.toastrService.success("تم إضافة الخدمة بنجاح إلى السلة");
             } else {
@@ -490,21 +491,21 @@ else{
          console.log(err);
          this.toastrService.error(err)
            this.loading1=false;
-        
-  });  
+
+  });
 }
 
 
 }
 click(event,index:number ){
- 
+
   this.chooseprice=event;
   console.log(index);
 
   console.log(this.chooseprice);
   for(var i:number = 0 ;i < this.service_quantity_price.length;i++)
   {
-    
+
     if(i == index)
     {
       this.clicked[i] = true;
@@ -515,7 +516,7 @@ click(event,index:number ){
     }
 
   }
-  
+
 
 
 }
@@ -524,5 +525,17 @@ showPrice(){
   // this.totalprice=((1)*Number(3))/1000
 this.totalprice=((this.unit_price)*Number(quantity))/1000
   console.log(this.totalprice)
+}
+ShowPrice(e) {
+    console.log(e,this.error)
+    if (e <100 || e>10000){
+        this.error = true;
+    }
+    else {
+        this.error=false;
+        this.totalprice=((this.unit_price)*Number(e))/1000
+    }
+
+
 }
 }

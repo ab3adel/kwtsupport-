@@ -44,15 +44,12 @@
                     <p *ngIf="!lang" style="text-align: justify;">{{ser.short_description_en}}</p>
 
                     <h3  style="text-align: justify;">{{'addinfo'| translate }}</h3>
-                         
+
                     <p *ngIf="lang" style="text-align: justify;">{{ser.long_description_ar}}</p>
                     <p *ngIf="!lang" style="text-align: justify;">{{ser.long_description_en}}</p>
                          <h3 style="text-align: justify;">{{'thousand'| translate }}</h3>
-                         <p style="text-align: justify;">{{ser.unit_price}}</p>
-                         <h3 style="text-align: justify;">{{'min'| translate }}</h3>
-                         <p style="text-align: justify;">{{min}}</p>
-                         <h3 style="text-align: justify;">{{'max'| translate }}</h3>
-                         <p style="text-align: justify;">{{max}}</p>
+                         <p style="text-align: justify;">{{ser.unit_price}} {{lang && totalprice !== "" ? "دينار كويتي" :"Kuwaiti dinar"}}</p>
+
                     <div class="products-meta" [ngStyle]="{'float': lang ?  'right': 'left' }"
                         style="text-align: justify;">
                         <h3 *ngIf="lang && !array" >اختر السعر والكمية </h3>
@@ -65,20 +62,22 @@
                                     <!-- <span style=" -webkit-text-decoration-line: line-through;
                                     text-decoration-line: line-through; " *ngIf="serviceqp.new_price!=null">
                                     {{'old_price' | translat}}: <span class="in-stock" style=" -webkit-text-decoration-line: line-through;
-                                        text-decoration-line: line-through; "> 
+                                        text-decoration-line: line-through; ">
                                         {{serviceqp.old_price}}</span></span> -->
                                     <!-- new price null -->
                                     <span  *ngIf="serviceqp.new_price==null">{{'price' | translate }}: <span
                                             class="in-stock">{{serviceqp.old_price}}</span></span>
-            
+
                                     <span *ngIf="serviceqp.new_price!=null">{{'new_price' | translate }}:
                                         <a>{{serviceqp.new_price}}</a></span>
                                         <i class="fa fa-check-square-o check" aria-hidden="true"  *ngIf="clicked[i]" style="color: #125596;"></i>
                                 </div>
                             </div>
+
+
                         </div>
-                      
-                      
+
+
                         <!-- <button type="submit" class="default-btn" data-target="#exampl">
                             <i class="bx bx-cart" style="color: white;"></i> {{'Add to cart'| translate }}
 
@@ -97,26 +96,42 @@
                                         <p *ngIf="lang && linknull" style="color: red;float: right;">يرجى إخال الحقل</p>
                                         <p *ngIf="!lang && linknull" style="color: red;float: left;"> please enter failed</p>
                                       <br>
-                                        <input type="text" class="form-control" id="quantity" placeholder="{{'quantity' | translate }}"
+                                        <input type="number" class="form-control" (input)="ShowPrice($event.target.value)"
+                                             id="quantity" placeholder="{{'quantity' | translate }}"
                                         [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }" >
                                     <p *ngIf="lang && quantitynull" style="color: red;float: right;">يرجى إخال الحقل</p>
                                     <p *ngIf="!lang && quantitynull" style="color: red;float: left;"> please enter failed</p>
-                           
+
                                     </div>
                                     <br>
-                                    <div class="">
-                                        <button *ngIf="lang" class="default-btn" (click)="showPrice()"> اضغط لمعرفة السعر</button><b *ngIf="lang" >{{totalprice}}</b>
-                                       <button *ngIf="!lang" class="default-btn" (click)="showPrice()">Click to see the price</button><b *ngIf="!lang" >{{totalprice}}</b>
+                                    <div class="totalPrice">
+                                       <b *ngIf="lang && !error && totalprice !== 0 " >{{totalprice}} {{lang  ? "دينار كويتي" :"Kuwaiti dinar"}}</b>
+                                      <b *ngIf="!lang && !error && totalprice !== 0 " >{{totalprice}} {{lang ? "دينار كويتي" :"Kuwaiti dinar"}}</b>
+                                      <b class="error" *ngIf="error" > {{lang ? " الرقم غير صالح" :"the number is not valid"}}</b>
                                         <br>
                                         <br>
-                                        
+
                                             <button type="button" class="default-btn" (click)="addCart()">
-                                                <i class="bx bx-cart" style="color: white;" *ngIf="!loading1"></i> <i class="fa fa-cog fa-spin"
+                                                <i class="bx bx-cart" style="color: rgb(99, 50, 50);" *ngIf="!loading1"></i> <i class="fa fa-cog fa-spin"
                                                 style="color: white;" *ngIf="loading1"></i>{{'add' | translate }}
-                                              
+
                                             </button>
-                  
-                                    </div>  
+
+                                    </div>
+                                    <table class="table table-bordered" [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }">
+                                        <thead>
+                                            <tr >
+                                                <th scope="col">{{'min'| translate }}</th>
+                                                <th scope="col">{{'max'| translate }}</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td scope="col">{{min}}</td>
+                                                <td scope="col">{{max}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                             </div>
                         </form>
                         <!-- Custom Comments  || Custom Comment Package -->
@@ -142,25 +157,25 @@
                                     <p *ngIf="lang && quantitynull" style="color: red;float: right;">يرجى إخال الحقل</p>
                                     <p *ngIf="!lang && quantitynull" style="color: red;float: left;"> please enter failed</p>
                                     </div>
-                                   
+
                                     <br>
                                     <div class="">
                                         <button *ngIf="lang" class="default-btn" (click)="showPrice()"> اضغط لمعرفة السعر</button><b *ngIf="lang" >{{totalprice}}</b>
                                         <button *ngIf="!lang" class="default-btn" (click)="showPrice()">Click to see the price</button><b *ngIf="!lang" >{{totalprice}}</b>
                                         <br>
                                         <br>
-                                        
+
                                         <button type="button" class="default-btn" (click)="addCart2()">{{'add' | translate }}
                                             <i class="bx bx-cart" style="color: white;" *ngIf="!loading1"></i> <i class="fa fa-cog fa-spin"
                                                 style="color: white;" *ngIf="loading1"></i>
                                         </button>
-                                        
-                                      
-                                    </div>  
+
+
+                                    </div>
                             </div>
                         </form>
                          <!-- Mentions || Mentions Custom List || Mentions User Followers || Comment Likes -->
-                        <form class="form" 
+                        <form class="form"
                         *ngIf="original_type=='Mentions' || original_type=='Mentions Custom List'
                          || original_type=='Mentions User Followers' || original_type=='comment Likes'">
                             <div [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }">
@@ -184,8 +199,8 @@
                                     <p *ngIf="lang && quantitynull" style="color: red;float: right;">يرجى إخال الحقل</p>
                                     <p *ngIf="!lang && quantitynull" style="color: red;float: left;"> please enter failed</p>
                                     </div>
-                                  
-                                   
+
+
                                     <br>
                                     <div class="">
                                         <button *ngIf="lang" class="default-btn" (click)="showPrice()"> اضغط لمعرفة السعر</button><b *ngIf="lang" >{{totalprice}}</b>
@@ -196,13 +211,13 @@
                                             <i class="bx bx-cart" style="color: white;" *ngIf="!loading1"></i> <i class="fa fa-cog fa-spin"
                                                 style="color: white;" *ngIf="loading1"></i>
                                         </button>
-                                        
-                                      
-                                    </div>  
+
+
+                                    </div>
                             </div>
                         </form>
                       <!-- poll -->
-                      <form class="form" 
+                      <form class="form"
                       *ngIf="  original_type=='Poll'" >
                           <div [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }">
                               <h6 style="color: rgb(0,173,238)"> {{'Add to cart'|
@@ -225,9 +240,9 @@
                                 <p *ngIf="lang && quantitynull" style="color: red;float: right;">يرجى إخال الحقل</p>
                                 <p *ngIf="!lang && quantitynull" style="color: red;float: left;"> please enter failed</p>
                                 </div>
-                           
-                                
-                                 
+
+
+
                                   <br>
                                   <div class="">
                                     <button *ngIf="lang" class="default-btn" (click)="showPrice()"> اضغط لمعرفة السعر</button><b *ngIf="lang" >{{totalprice}}</b>
@@ -238,13 +253,13 @@
                                         <i class="bx bx-cart" style="color: white;" *ngIf="!loading1"></i> <i class="fa fa-cog fa-spin"
                                             style="color: white;" *ngIf="loading1"></i>
                                     </button>
-                                      
-                                    
-                                  </div>  
+
+
+                                  </div>
                           </div>
                       </form>
                        <!-- Comment Replies -->
-                       <form class="form" 
+                       <form class="form"
                        *ngIf="  original_type=='Comment Replies'" >
                            <div [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }">
                                <h6 style="color: rgb(0,173,238)"> {{'Add to cart'|
@@ -272,10 +287,10 @@
                                 <p *ngIf="lang && quantitynull" style="color: red;float: right;">يرجى إخال الحقل</p>
                                 <p *ngIf="!lang && quantitynull" style="color: red;float: left;"> please enter failed</p>
                                 </div>
-                              
-                            
-                                 
-                                  
+
+
+
+
                                    <br>
                                    <div class="">
                                     <button *ngIf="lang" class="default-btn" (click)="showPrice()"> اضغط لمعرفة السعر</button><b *ngIf="lang" >{{totalprice}}</b>
@@ -286,13 +301,13 @@
                                         <i class="bx bx-cart" style="color: white;" *ngIf="!loading1"></i> <i class="fa fa-cog fa-spin"
                                             style="color: white;" *ngIf="loading1"></i>
                                     </button>
-                                       
-                                     
-                                   </div>  
+
+
+                                   </div>
                            </div>
                        </form>
                        <!-- Subscriptions -->
-                       <form class="form" 
+                       <form class="form"
                        *ngIf="  original_type=='Subscriptions'" >
                            <div [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }">
                                <h6 style="color: rgb(0,173,238)"> {{'Add to cart'|
@@ -312,13 +327,13 @@
                                     [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }">
                                 <p *ngIf="lang && quantitynull" style="color: red;float: right;">يرجى إخال الحقل</p>
                                 <p *ngIf="!lang && quantitynull" style="color: red;float: left;"> please enter failed</p>
-                    
-                    
+
+
                                 </div>
-                               
-                            
-                                 
-                                  
+
+
+
+
                                    <br>
                                    <div class="">
                                     <button *ngIf="lang" class="default-btn" (click)="showPrice()"> اضغط لمعرفة السعر</button><b *ngIf="lang" >{{totalprice}}</b>
@@ -329,8 +344,8 @@
                                         <i class="bx bx-cart" style="color: white;" *ngIf="!loading1"></i> <i class="fa fa-cog fa-spin"
                                             style="color: white;" *ngIf="loading1"></i>
                                     </button>
-                                     
-                                   </div>  
+
+                                   </div>
                            </div>
                        </form>
                     </div>
@@ -340,7 +355,7 @@
 
             </div>
 
-         
+
         </div>
     </div>
 </section>
@@ -370,7 +385,7 @@
                     <i class="bx bx-cart" style="color: white;" *ngIf="!loading1"></i> <i class="fa fa-cog fa-spin"
                         style="color: white;" *ngIf="loading1"></i>
                 </button>
-   
+
             </div>
         </div>
     </div>
