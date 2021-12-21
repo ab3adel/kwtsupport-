@@ -35,7 +35,10 @@
 
              *ngIf="lang && !login" style="width: 50%;    margin-left: 10%;     " class="oo">
         </a>
-        <button *ngIf="!login" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"
+        <button *ngIf="!login" class="navbar-toggler"
+        type="button" data-toggle="collapse" data-target="#navbarText"
+        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"
+        (click)="navButtonClicked()"
         style="
         background-color: white;
 
@@ -43,7 +46,11 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <button *ngIf="login && lang" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"
+        <button *ngIf="login && lang"
+        class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#navbarText" aria-controls="navbarText"
+        aria-expanded="false" aria-label="Toggle navigation"
+        (click)="navButtonClicked()"
         style="
         background-color: white;
 
@@ -99,8 +106,11 @@
                      </li>
 
                 <li class="nav-item active out" ><a  class="nav-link" *ngIf="login" (click)="logout()" style="cursor: pointer;">{{'sign out' | translate }} |  </a>  </li>
-                <li class="nav-item active my"  ><a routerLink="/myProfile" class="nav-link" *ngIf="login">{{'myprofile' | translate }}
-           </a> </li>
+                <li class="nav-item active my"   [ngStyle]="{'margin-right':widthX >900 ? '-5px':''}" >
+                    <a routerLink="/myProfile" class="nav-link"
+                        *ngIf="login">{{'myprofile' | translate }}
+                    </a>
+                </li>
 
            <li class="nav-item iccc" style="width:5% ;margin-left:2px"  (click)="changeLang()">
             <a>

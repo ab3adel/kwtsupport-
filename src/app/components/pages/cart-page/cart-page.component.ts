@@ -19,7 +19,7 @@ export class CartPageComponent implements OnInit {
   myorder;
   myorderlength;
   total_cost;
-  cartempty;
+  cartempty=true;
   codenull;
   loading1
   loading2;
@@ -52,14 +52,13 @@ export class CartPageComponent implements OnInit {
         console.log(res,"myCartRes");
         this.res=res;
 
-        //this.total_cost=this.res.payload.total_cost;
-        this.total_cost="1000"
-        console.log(this.total_cost,"total Cost")
-   //this.myorder=this.res.payload.orders;
-   this.myorder=[{service:{name_ar:"arabicName",name_en:"englishName"},cost:10,quantaty:10,id:10}]
-   console.log("cart",this.myorder)
-  // this.myorderlength=this.myorder.length;
-  this.myorderlength=5
+        this.total_cost=this.res.payload.total_cost;
+
+   this.myorder=this.res.payload.orders;
+
+
+   this.myorderlength=this.myorder.length;
+
    if(this.myorderlength==0)
    {
      this.cartempty=true
@@ -77,12 +76,12 @@ export class CartPageComponent implements OnInit {
 }
 delete(id)
 {
-  console.log(id);
+
  (<HTMLInputElement>document.getElementById("loader"+id)).hidden = false;
  (<HTMLInputElement>document.getElementById("delete"+id)).hidden = true;
   this.service.deleteService(id).subscribe(
    res=> {
-     console.log(res)
+
      if(this.lang){
        this.toast.success( "تم الحذف  بنجاح");
      }else{
@@ -103,7 +102,7 @@ deleteallservice()
 
   this.service.deleteallService().subscribe(
    res=> {
-     console.log(res)
+
      if(this.lang){
        this.toast.success( "تم الحذف  بنجاح");
      }else{

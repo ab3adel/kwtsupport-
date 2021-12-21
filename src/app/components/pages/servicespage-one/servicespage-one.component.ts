@@ -527,8 +527,8 @@ this.totalprice=((this.unit_price)*Number(quantity))/1000
   console.log(this.totalprice)
 }
 ShowPrice(e) {
-    console.log(e,this.error)
-    if (e <100 || e>10000){
+
+    if (e <this.min || e>this.max){
         this.error = true;
     }
     else {

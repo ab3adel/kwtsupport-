@@ -883,3 +883,9 @@ p{
 
     }
 }
+@media only screen  and (max-width:520px){
+    .center {
+        display:flex;
+        justify-content: center;
+    }
+}

@@ -42,6 +42,7 @@ isDown:boolean;
 widthX:number =0;
 num:number=0;
 ele:HTMLDivElement;
+buttonOpen=false;
     constructor(
         private router: Router,
         location: Location,
@@ -49,6 +50,7 @@ ele:HTMLDivElement;
         private translate: TranslateService,
         private toastrService: ToastrService
     ) {
+        this.buttonOpen=false
       this.cart=localStorage.getItem("cart");
 
         if(this.service.getUser()!=null){
@@ -141,12 +143,21 @@ ngAfterViewInit () {
 ngOnDestroy () {
     window.removeEventListener('scroll',this.onScroll,true)
 }
- onScroll(event) {
+navButtonClicked () {
+
+    this.buttonOpen= !this.buttonOpen;
+
+}
+  onScroll=(event) =>{
     this.ele=  document.querySelector(".navbar-area")
 
         if (this.scrollY> event.srcElement.documentElement.scrollTop){
             this.scrollY=event.srcElement.documentElement.scrollTop;
-            this.ele.style.animationName="navHide";
+            if (!this.buttonOpen){
+
+                this.ele.style.animationName="navHide";
+            }
+
 
         }
         else {

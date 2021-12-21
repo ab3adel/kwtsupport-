@@ -45,8 +45,8 @@ export class WebsitesAdvetiseDetailsComponent implements OnInit {
          }
 
       let itemName = localStorage.getItem ("serviceDetailName")
-      console.log(itemName,this.services["web"])
-      this.service=this.services["blogs"]
+
+      this.service=this.services[itemName]
       }
       translateMethod() {
         this.translate.setDefaultLang('en');

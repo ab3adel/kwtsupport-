@@ -26,7 +26,7 @@
     </div>
     <div class="container" *ngIf="finished">
         <div class="row ">
-            <div class="col-lg-5 col-md-12">
+            <div class="col-lg-5 col-md-12 center" >
                 <div class="products-details-image">
 
                     <img src="{{ser.avatar}}" alt="image"  [ngStyle]="{'float': lang ?  'right': 'left' }">
@@ -104,23 +104,24 @@
 
                                     </div>
                                     <br>
-                                    <div class="totalPrice">
-                                       <b *ngIf="lang && !error && totalprice !== 0 " >{{totalprice}} {{lang  ? "دينار كويتي" :"Kuwaiti dinar"}}</b>
-                                      <b *ngIf="!lang && !error && totalprice !== 0 " >{{totalprice}} {{lang ? "دينار كويتي" :"Kuwaiti dinar"}}</b>
+                                    <div class="totalPrice ">
+                                       <b *ngIf="lang && !error && totalprice !== 0 " >  السعر:  {{totalprice}} {{lang  ? "دينار كويتي" :"Kuwaiti dinar"}}</b>
+                                      <b *ngIf="!lang && !error && totalprice !== 0 " >The Price:  {{totalprice}} {{lang ? "دينار كويتي" :"Kuwaiti dinar"}}</b>
                                       <b class="error" *ngIf="error" > {{lang ? " الرقم غير صالح" :"the number is not valid"}}</b>
                                         <br>
                                         <br>
-
+                                         <div class="center">
                                             <button type="button" class="default-btn" (click)="addCart()">
                                                 <i class="bx bx-cart" style="color: rgb(99, 50, 50);" *ngIf="!loading1"></i> <i class="fa fa-cog fa-spin"
                                                 style="color: white;" *ngIf="loading1"></i>{{'add' | translate }}
 
                                             </button>
+                                        </div>
 
                                     </div>
                                     <table class="table table-bordered" [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }">
                                         <thead>
-                                            <tr >
+                                            <tr style="font-size: large;" >
                                                 <th scope="col">{{'min'| translate }}</th>
                                                 <th scope="col">{{'max'| translate }}</th>
                                             </tr>

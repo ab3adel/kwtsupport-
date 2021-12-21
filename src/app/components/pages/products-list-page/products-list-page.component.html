@@ -4,14 +4,14 @@
 <section class="">
     <div class="container" >
         <div class="page-title-content">
-            <h1 style="    font-size: 50px;
+            <h1 style="font-size: xx-large;
             padding-top: 5%;" *ngIf="lang">{{namear}}  </h1>
-                        <h1 style="    font-size: 50px;
+                        <h1 style="font-size: xx-large;
                         padding-top: 5%;" *ngIf="!lang">{{nameen}}  </h1>
         </div>
     </div>
 
- 
+
 </section>
 
 <div class="products-area ">
@@ -47,7 +47,7 @@
                 </div>
             </div>
         </div>
-        <!-- <div [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }" > 
+        <!-- <div [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }" >
             <form class="computer" style="background: black;
         width: 11%;
         height: 80px;
@@ -57,13 +57,13 @@
                 font-size: 50px;cursor: pointer; " (click)="clicklist()" *ngIf="!lang"></i>
             <i class="fa fa-list" aria-hidden="true"  style="color: white;
             width: 57%;
-            font-size: 50px;cursor: pointer;    padding-left: 11%;" (click)="clicklist()" *ngIf="lang"></i>    
+            font-size: 50px;cursor: pointer;    padding-left: 11%;" (click)="clicklist()" *ngIf="lang"></i>
             <i class="fa fa-th-large" aria-hidden="true"  style="color: white; font-size: 50px;
             cursor: pointer;"
            (click)="clickcard()" ></i>
         </form>
         </div> -->
-        
+
         <div style="margin: 0px ; text-align: center;" *ngIf="isempty && finished" >
             <img src="../../../../assets/img/myImage/empty-compare.png">
             <p *ngIf="lang" style="    color: white;
@@ -72,7 +72,7 @@
             font-size: 35px;"> There Is No Services</p>
         </div>
         <div class="row" *ngIf="finished"  >
-         
+
 
             <div class="cart-table table-responsive" *ngIf="finished && !isempty" >
                    <!-- <section class="widget widget_search" [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }">
@@ -82,29 +82,29 @@
                             <label [ngStyle]="{'float': lang ?  'right': 'left' }">
                                 <div class="search-hero" >
                                     <input *ngIf="lang" class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442; البحث ... ">
-                                  
+
                                     <input *ngIf="!lang" class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442; search for all.... ">
                                   </div>
-                              
+
                             </label>
-                      
+
                         </form>
                     </section> -->
      <br>
                     <div style="margin: 0px ; text-align: center;" *ngIf="isempty1" >
-                        
+
                         <img src="../../../../assets/img/myImage/empty-compare.png" *ngIf="!lang" style="margin-left: -19%;">
                         <img src="../../../../assets/img/myImage/empty-compare.png" *ngIf="lang"  style=" margin-right: -19%;">
                         <p *ngIf="lang" style="    color: white;
                         font-size: 35px;"> لايوجد خدمات</p>
                         <p *ngIf="!lang" style="    color: white;
                         font-size: 35px;"> There Is No Services</p>
-                    </div>  
-                   
+                    </div>
+
                 <table class="table table-bordered computer"  [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }" *ngIf="!isempty1 && list">
                     <thead>
                         <tr class="a">
-                          
+
                             <th scope="col" style="width: 18%;">{{'img'| translate }}</th>
                             <th scope="col">{{'name'| translate }}</th>
                             <th scope="col">{{'dess'| translate }}</th>
@@ -115,15 +115,15 @@
                     </thead>
 
                     <tbody>
-                       
+
                         <tr *ngFor="let s of services | filter:searchText" >
-                            <td class="product-thumbnail" > 
+                            <td class="product-thumbnail" >
                                 <div class="products-image">
                                     <a >
                                         <img src="{{s.avatar}}" class="main-image" alt="image" style="width: 20%; ">
                                     </a>
-            
-                                 
+
+
                                 </div>
                                  </td>
                                  <td class="product-thumbnail" *ngIf="lang"> {{s.name_ar}} </td>
@@ -132,26 +132,26 @@
                             <td class="product-thumbnail" *ngIf="!lang"> {{s.short_description_en}} </td>
                             <!-- <td class="product-thumbnail" > {{s.quantity}} </td> -->
                             <!-- <td class="product-thumbnail" > {{s.old_price}} </td> -->
-                            <td class="product-thumbnail" (click)="det(s)"> 
-                            <i class="fa fa-eye" style="color: white; font-size: 25px; cursor: pointer;" ></i>    
+                            <td class="product-thumbnail" (click)="det(s)">
+                            <i class="fa fa-eye" style="color: white; font-size: 25px; cursor: pointer;" ></i>
                             </td>
                     </tbody>
                 </table>
-   
-               
+
+
 
 
 
                 <div class="mobil"  *ngIf="!isempty1">
                     <div class="col-12" *ngFor="let s of services " style="    padding-left: 20%;
                     padding-right: 20%;">
-                 
+
                         <div  >
                             <div class="card" (click)="det(s)">
                                 <img src="{{s.avatar}}"  alt="image" >
                                 <p *ngIf="lang" style="color: white;"> {{s.name_ar}}</p>
                                 <p  *ngIf="!lang" style="color: white;">{{s.name_en}}</p>
-                     
+
                         </div>
                     </div>
                 </div>
@@ -161,22 +161,22 @@
             <!-- <div class="computer"  *ngIf="!isempty1 && card">
                 <div class="row">
                     <div class="col-lg-3" *ngFor="let s of services ">
-             
-                        
+
+
                             <div class="card " style="cursor: pointer;height: 320px;" (click)="det(s)">
                                 <img src="{{s.avatar}}"  alt="image" >
                                 <p *ngIf="lang" style="color: white;"> {{s.name_ar}}</p>
                                 <p  *ngIf="!lang" style="color: white;">{{s.name_en}}</p>
-                     
-                        
+
+
                     </div>
                 </div>
                 </div>
-              
+
             </div> -->
 
-    
+
         </div>
-    
+
 </div>
 </div>
