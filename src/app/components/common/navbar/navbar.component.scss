@@ -1,16 +1,37 @@
+@keyframes navHide {
+    0%{
+        opacity: 1;
+        visibility: visible;
+    }
+    100%{
+
+        opacity: 0;
+        visibility:collapse;
+    }
+}
+@keyframes navShow {
+    0%{
+        opacity: 0;
+        visibility:collapse;
+    }
+    100%{
+
+
+        opacity: 1;
+        visibility: visible;
+    }
+}
 .navbar-area {
-    position: absolute;
-    background-color: transparent;
+    position: fixed;
+    background-color: var(--whiteColor) !important;
     top: 0;
     left: 0;
     width: 100%;
     height: auto;
     z-index: 999;
-    // padding: {
-    //     top: 8px;
-    //     bottom: 8px;
-    // };
-    &.is-sticky {
+    animation:  1s ease-in-out 1s  forwards ;
+   transition: 1s;
+   /* &.is-sticky {
         position: fixed;
         top: 0;
         left: 0;
@@ -18,12 +39,12 @@
         z-index: 999;
         box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
         background-color: var(--whiteColor) !important;
-        animation: 500ms ease-in-out 100ms normal none 1 running fadeInDown;
+        //animation: 500ms ease-in-out 100ms normal none 1 running fadeInDown;
         padding: {
             // top: 5px;
             // bottom: 5px;
         };
-    }
+    }*/
     &.navbar-color-white {
         &.is-sticky {
             background-color: var(--blackColor) !important;
@@ -75,11 +96,12 @@
             justify-content: space-between;
         }
         .navbar-nav {
-            margin-left: 4rem;
+
 
             .nav-item {
                 position: relative;
-
+                margin-left: 5px;
+                margin-right: 5px;
                 a {
                     color: rgb(0,173,238);
                     font: {
@@ -435,16 +457,7 @@
 @media only screen and (max-width: 1199px) {
 
     .navbar-area {
-        padding: {
-            top: 15px;
-            bottom: 15px;
-        };
-        &.is-sticky {
-            padding: {
-                top: 15px;
-                bottom: 15px;
-            };
-        }
+
     }
     .plor-responsive-nav {
         display: block;
@@ -616,12 +629,7 @@
     .navbar-area {
         padding-top: 25px;
 
-        &.is-sticky {
-            padding: {
-                top: 15px;
-                bottom: 15px;
-            };
-        }
+
     }
     .navbar-style-two {
         padding: {
@@ -819,7 +827,7 @@ a:hover{
     background-color: rgb(0,173,238);
     border-radius: 30px;
     padding: 10px 18px 3px;
-    margin-left: 2%;
+    margin-right: 1%;
 
 
     .option-item {

@@ -26,20 +26,7 @@ let noQuotes;
             useClass: PathLocationStrategy
         }
     ],
-    animations:[
-        trigger('onScroll',[
-                state('scrollDown',style({
-                    opacity:1
-                })),
-                state("scrollUp",style({
-                    opacity:0
-                })),
-                transition('scrollDown <=> scrollUp',[
-                    animate('1.5s')
-                ]),
 
-    ])
-    ]
 })
 
 export class NavbarComponent implements OnInit {
@@ -54,6 +41,7 @@ scrollY:number = 0;
 isDown:boolean;
 widthX:number =0;
 num:number=0;
+ele:HTMLDivElement;
     constructor(
         private router: Router,
         location: Location,
@@ -146,21 +134,25 @@ logout(){
 ngAfterViewInit () {
     window.addEventListener('scroll',this.onScroll,true)
     this.widthX= window.innerWidth
-    console.log(this.widthX)
+
+
+
 }
 ngOnDestroy () {
     window.removeEventListener('scroll',this.onScroll,true)
 }
  onScroll(event) {
-
+    this.ele=  document.querySelector(".navbar-area")
 
         if (this.scrollY> event.srcElement.documentElement.scrollTop){
             this.scrollY=event.srcElement.documentElement.scrollTop;
-            this.isDown = false;
+            this.ele.style.animationName="navHide";
+
         }
         else {
             this.scrollY= event.srcElement.documentElement.scrollTop;
-            this.isDown=true;
+
+            this.ele.style.animationName="navShow";
         }
 
 

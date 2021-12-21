@@ -1,4 +1,4 @@
-<div   class="{{navbarClass}}">
+<div   class='navbar-area' >
     <!-- <div class="plor-responsive-nav">
 
         <div class="container-fluid">
@@ -29,10 +29,11 @@
 
            <img src="./../../../../assets/img/myImage/اللوغو.png" alt="logo"
 
-           class="imm"  *ngIf="!lang && !login"  style="width: 50%;    " >
+           class="imm"  *ngIf="!lang && !login"  style="width: 50%; margin-right: 10%;   " >
+
            <img src="./../../../../assets/img/myImage/اللوغو.png" alt="logo"
 
-             *ngIf="lang && !login" style="width: 50%;    margin-left: 50%; margin-top:5px;    " class="oo">
+             *ngIf="lang && !login" style="width: 50%;    margin-left: 10%;     " class="oo">
         </a>
         <button *ngIf="!login" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"
         style="
@@ -55,10 +56,12 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse j spaceEvenly" id="navbarText"
-
+        <div class="collapse navbar-collapse j " id="navbarText"
+           [ngStyle]="{'justify-content':lang && widthX > 900 ? 'left':'right'} "
                         >
-          <ul class="navbar-nav ar" *ngIf="lang" style="padding:5px" >
+          <ul class="navbar-nav ar" *ngIf="lang" style="padding:5px"
+            [ngStyle]="{'margin-left':lang && widthX > 900 ? '4rem':''} "
+                 >
 
             <li class="nav-item active"><a routerLink="/"  class="nav-link active">{{'home' | translate }}  </a>
 
@@ -80,7 +83,7 @@
 
 
                <!--  style="width: 89px;" -->
-            <li class="nav-item active"  *ngIf="!login" style="margin-left:0px;margin-right:20px">
+            <li class="nav-item active"  *ngIf="!login" style="margin-left:0px;">
                 <a routerLink="/register" class="nav-link" *ngIf="!login" >
                                                                        <!--width:35% -->
                     |<img src="../../../../assets/img/myImage/sign-up.png"
@@ -100,7 +103,7 @@
            </a> </li>
 
            <li class="nav-item iccc" style="width:5% ;margin-left:2px"  (click)="changeLang()">
-            <a>-
+            <a>
 
 
             <img src="../../../../assets/img/myImage/hi.png"   style="
@@ -126,7 +129,8 @@
 
           </ul>
 
-          <ul class="navbar-nav "   *ngIf="!lang"  id="modifiedList" style="padding:5px">
+          <ul class="navbar-nav "   *ngIf="!lang"  id="modifiedList" style="padding:5px"
+               [ngStyle]="{'margin-right':!lang && widthX > 900 ? '4rem':''} ">
             <li class="nav-item active"><a routerLink="/"  class="nav-link">{{'home' | translate }} </a>
 
             </li>
