@@ -119,11 +119,12 @@
                                         </div>
 
                                     </div>
-                                    <table class="table table-bordered" [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }">
+                                    <table class="table table-bordered" [ngStyle]="{'direction': lang ?  'rtl': 'ltr'
+                                                                          ,'margin-top':'10px','text-align':'center' }">
                                         <thead>
                                             <tr style="font-size: large;" >
-                                                <th scope="col">{{'min'| translate }}</th>
-                                                <th scope="col">{{'max'| translate }}</th>
+                                                <th scope="col">{{lang? "الكمية الصغرى":"Smallest quantity"}}</th>
+                                                <th scope="col">{{lang? "الكمية الكبرى":"Greatest quantity"}}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -227,7 +228,7 @@
 
                                     <input type="text" class="form-control" id="link" placeholder="{{'link' | translate }}"
                                         [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }">
-                                    <p *ngIf="lang && linknull" style="color: red;float: right;">يرجى إخال الحقل</p>
+                                    <p *ngIf="lang && linknull" style="color: red;float: right;">يرجى إدخال الحقل</p>
                                     <p *ngIf="!lang && linknull" style="color: red;float: left;"> please enter failed</p>
                                     <br>
                                     <input type="text" class="form-control" id="answer_number"

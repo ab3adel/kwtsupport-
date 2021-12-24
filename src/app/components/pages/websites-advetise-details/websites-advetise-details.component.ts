@@ -30,7 +30,7 @@ export class WebsitesAdvetiseDetailsComponent implements OnInit {
     min;
     max;
     services;
-
+screenWidth:number;
     constructor(private translate: TranslateService,private toastrService: ToastrService ,private router:Router,
         private service1:Constants) {
         this.translateMethod()
@@ -104,6 +104,7 @@ export class WebsitesAdvetiseDetailsComponent implements OnInit {
 
       }
   ngOnInit(): void {
+    this.screenWidth=window.innerWidth;
   }
 
 }

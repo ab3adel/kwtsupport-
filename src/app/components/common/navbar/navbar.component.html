@@ -106,8 +106,8 @@
                      </li>
 
                 <li class="nav-item active out" ><a  class="nav-link" *ngIf="login" (click)="logout()" style="cursor: pointer;">{{'sign out' | translate }} |  </a>  </li>
-                <li class="nav-item active my"   [ngStyle]="{'margin-right':widthX >900 ? '-5px':''}" >
-                    <a routerLink="/myProfile" class="nav-link"
+                <li class="nav-item active my"    >
+                    <a routerLink="/myProfile" class="nav-link" [ngStyle]="{'margin-right':widthX >900 ? '-5px':''}"
                         *ngIf="login">{{'myprofile' | translate }}
                     </a>
                 </li>
@@ -177,7 +177,7 @@
                </li>
 
                 <li class="nav-item active out" style="padding-left:4%"><a  class="nav-link" *ngIf="login" (click)="logout()" style="cursor: pointer;">{{'sign out' | translate }} |  </a>  </li>
-                <li class="nav-item active my"  ><a routerLink="/myProfile" class="nav-link " *ngIf="login">{{'myprofile' | translate }}
+                <li class="nav-item active my"  ><a routerLink="/myProfile" class="nav-link "  *ngIf="login">{{'myprofile' | translate }}
            </a> </li>
 
            <li class="nav-item1 iccc active" style="width:5%;" >
@@ -235,7 +235,7 @@
 
                   <div class="" *ngIf="login">
                       <div class="">
-                          <a routerLink="/wallet">
+                          <a routerLink="/wallet" style="margin-left: 5px;">
                             <i class="fa fa-briefcase cart-hover" aria-hidden="true" style="
                             font-size: 25px"></i>
                           </a>
@@ -244,7 +244,7 @@
 
             <div class="after" *ngIf="login">
                 <div class="cart-btn" >
-                    <a routerLink="/cart" >
+                    <a routerLink="/cart"  style="margin-right: 5px;">
                         <i class="flaticon-shopping-cart"></i>
                         <span *ngIf="cart >0"  style="background-color: indianred;">{{cart}}</span>
                     </a>

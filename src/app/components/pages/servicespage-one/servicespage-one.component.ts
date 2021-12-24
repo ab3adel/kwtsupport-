@@ -533,7 +533,7 @@ ShowPrice(e) {
     }
     else {
         this.error=false;
-        this.totalprice=((this.unit_price)*Number(e))/1000
+        this.totalprice=((((this.unit_price)*Number(e))/1000).toFixed(2) as unknown) as number
     }
 
 
