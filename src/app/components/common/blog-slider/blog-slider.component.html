@@ -48,7 +48,7 @@
                     </div>
                 </div>
             </div>
-            <!-- <h3 style="color:white" [ngStyle]="{'text-align': lang ?  'right': 'left' }"> {{'web'| translate }}</h3> -->
+            <!-- web design servicess -->
 
             <div class="row" style="margin-top: 2%;">
                 <div class="col-lg-4 col-md-12 col-sm-12">
@@ -59,16 +59,8 @@
                                     style="width: 100%; padding:10% ;">
                             </a>
 
-                            <div class="products-button">
 
-                                <ul>
-                                    <li>
-
-                                    </li>
-                                </ul>
-                            </div>
                         </div>
-
                         <div class="products-content">
                             <h3><a >{{'w3'| translate }}</a></h3>
 
@@ -84,18 +76,11 @@
                                     style="width: 100%; padding:10% ;">
                             </a>
 
-                            <div class="products-button">
 
-                                <ul>
-                                    <li>
-
-                                    </li>
-                                </ul>
-                            </div>
                         </div>
 
                         <div class="products-content" >
-                            <h3><a >{{'w1'| translate }}</a></h3>
+                            <h3><a >{{lang? "استضافة وحجز اسم موقع":"hosting and revers web domain"}}</a></h3>
 
 
                         </div>
@@ -109,14 +94,7 @@
                                     style="width: 100%; padding:10% ;">
                             </a>
 
-                            <div class="products-button">
 
-                                <ul>
-                                    <li>
-
-                                    </li>
-                                </ul>
-                            </div>
                         </div>
 
                         <div class="products-content">
@@ -148,8 +126,98 @@
                     </div>
                 </div>
             </div>
+      <!--  design servicess -->
+      <div class="row" style="margin-top: 2%;">
+        <div class="col-lg-4 col-md-12 col-sm-12">
+            <div class="card" (click)="webDetails('intrologo')">
+                <div class="products-image" >
+                    <a>
+                        <img src="../../../../assets/img/myImage/y (3).png" class="main-image" alt="image"
+                            style="width: 100%; padding:10% ;">
+                    </a>
 
-            <div class="row" style="margin-top: 2%;">
+
+                </div>
+
+                <div class="products-content">
+                    <h3><a >{{lang? " تصميم انترو لوغو غرافيك" :" Design intro logo graphic"}}</a></h3>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-12 col-sm-12">
+            <div class="card" (click)="webDetails('advertisevideo')">
+                <div class="products-image" >
+                    <a>
+                        <img src="../../../../assets/img/myImage/y (3).png" class="main-image" alt="image"
+                            style="width: 100%; padding:10% ;">
+                    </a>
+
+
+                </div>
+
+                <div class="products-content">
+                    <h3><a >{{lang? "    تصوير   ومونتاج اعلان فيديو " :" Recording videos and  Montage for advertisings  "}}</a></h3>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-12 col-sm-12">
+            <div class="card" (click)="webDetails('photoshotlife')">
+                <div class="products-image" >
+                    <a>
+                        <img src="../../../../assets/img/myImage/y (3).png" class="main-image" alt="image"
+                            style="width: 100%; padding:10% ;">
+                    </a>
+
+
+                </div>
+
+                <div class="products-content">
+                    <h3><a >{{lang? "    تصوير منجات  لايف ستايل" :"Photoshoting life style products"}}</a></h3>
+
+
+                </div>
+            </div>
+            </div>
+        <div class="col-lg-4 col-md-12 col-sm-12">
+            <div class="card" (click)="webDetails('photoshotwhite')">
+                <div class="products-image" >
+                    <a>
+                        <img src="../../../../assets/img/myImage/y (3).png" class="main-image" alt="image"
+                            style="width: 100%; padding:10% ;">
+                    </a>
+
+
+                </div>
+
+                <div class="products-content">
+                    <h3><a >{{lang? "    تصوير منجات بخلفية بيضاء" :"Photoshot life style products"}}</a></h3>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-12 col-sm-12">
+            <div class="card" (click)="webDetails('instagram')">
+                <div class="products-image" >
+                    <a>
+                        <img src="../../../../assets/img/myImage/y (3).png" class="main-image" alt="image"
+                            style="width: 100%; padding:10% ;">
+                    </a>
+
+
+                </div>
+
+                <div class="products-content">
+                    <h3><a >{{lang? "تصميم صور وفيديوها لحساب انستغرام" :"Making Photos&Videos for Instagram account"}}</a></h3>
+
+
+                </div>
+            </div>
+           </div>
                 <div class="col-lg-4 col-md-12 col-sm-12">
                     <div class="card" (click)="webDetails('video')">
                         <div class="products-image" >
@@ -158,14 +226,7 @@
                                     style="width: 100%; padding:10% ;">
                             </a>
 
-                            <div class="products-button">
 
-                                <ul>
-                                    <li>
-
-                                    </li>
-                                </ul>
-                            </div>
                         </div>
 
                         <div class="products-content">
@@ -183,14 +244,7 @@
                                     style="width: 100%; padding:10% ;">
                             </a>
 
-                            <div class="products-button">
 
-                                <ul>
-                                    <li>
-
-                                    </li>
-                                </ul>
-                            </div>
                         </div>
 
                         <div class="products-content">
@@ -201,78 +255,74 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12 col-sm-12">
-                    <div class="card"  (click)="webDetails('posts')" >
+                    <div class="card"  (click)="webDetails('montage')" >
                         <div class="products-image">
                             <a>
                                 <img src="../../../../assets/img/myImage/y (1).png" class="main-image" alt="image"
                                     style="width: 100%; padding:10% ;">
                             </a>
 
-                            <div class="products-button">
 
-                                <ul>
-                                    <li>
-
-                                    </li>
-                                </ul>
-                            </div>
                         </div>
 
                         <div class="products-content">
-                            <h3><a >{{'s2'| translate }}</a></h3>
+                            <h3><a >{{lang? "مونتاج فيديو":"Video montage"}}</a></h3>
 
 
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="row" style="margin-top: 2%;">
-                <div class="col-lg-6 col-md-12 col-sm-12">
-                    <div class="card"  (click)="webDetails('brochures')">
+
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="card"  (click)="webDetails('motiongraphic')">
                         <div class="products-image" >
                             <a>
                                 <img src="../../../../assets/img/myImage/5 (1).png" class="main-image" alt="image"
                                     style="width: 100%; padding:10% ;">
                             </a>
 
-                            <div class="products-button">
 
-                                <ul>
-                                    <li>
-
-                                    </li>
-                                </ul>
-                            </div>
                         </div>
 
                         <div class="products-content">
-                            <h3><a >{{'s6'| translate }}</a></h3>
+                            <h3><a >{{lang? "تصميم فيديو موشن غرافيك":"Design motion graphic videos" }}</a></h3>
 
 
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-12 col-sm-12">
-                    <div class="card"  (click)="webDetails('visual')" >
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="card"  (click)="webDetails('visualfull')" >
                         <div class="products-image">
                             <a>
                                 <img src="../../../../assets/img/myImage/32.png" class="main-image" alt="image"
                                     style="width: 100%; padding:10% ;">
                             </a>
 
-                            <div class="products-button">
 
-                                <ul>
-                                    <li>
-
-                                    </li>
-                                </ul>
-                            </div>
                         </div>
 
                         <div class="products-content">
-                            <h3><a >{{'s5'| translate }}</a></h3>
+                            <h3><a >{{lang? "تصميم هوية بصرية كاملة":"Design full visual identity" }}</a></h3>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="card"  (click)="webDetails('visualhalf')" >
+                        <div class="products-image">
+                            <a>
+                                <img src="../../../../assets/img/myImage/32.png" class="main-image" alt="image"
+                                    style="width: 100%; padding:10% ;">
+                            </a>
+
+
+                        </div>
+
+                        <div class="products-content">
+                            <h3><a >{{lang? "تصميم نصف هوية بصرية ":"Design half visual identity" }}</a></h3>
 
 
                         </div>
@@ -282,4 +332,4 @@
             </div>
         </div>
     </div>
-</div>
+

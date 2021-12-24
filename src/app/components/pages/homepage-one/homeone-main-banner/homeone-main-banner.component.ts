@@ -25,9 +25,9 @@ login:boolean=false
       this.login=true
     }
   }
-  
+
   translateMethod() {
-    this.translate.setDefaultLang('en');
+    this.translate.setDefaultLang('ar');
     this.translate.addLangs(['en', 'ar']);
     let y = localStorage.getItem("selected");
     var langCode = y.split('"').join('');

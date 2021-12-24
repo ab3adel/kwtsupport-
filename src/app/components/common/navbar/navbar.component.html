@@ -38,7 +38,6 @@
         <button *ngIf="!login" class="navbar-toggler"
         type="button" data-toggle="collapse" data-target="#navbarText"
         aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"
-        (click)="navButtonClicked()"
         style="
         background-color: white;
 
@@ -50,14 +49,15 @@
         class="navbar-toggler" type="button" data-toggle="collapse"
         data-target="#navbarText" aria-controls="navbarText"
         aria-expanded="false" aria-label="Toggle navigation"
-        (click)="navButtonClicked()"
+
         style="
         background-color: white;
 
         ">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <button class="navbar-toggler" *ngIf="login && !lang" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"
+        <button class="navbar-toggler" *ngIf="login && !lang" type="button" data-toggle="collapse"
+        data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"
         style="  background-color: white;
         ">
           <span class="navbar-toggler-icon"></span>
@@ -213,14 +213,15 @@
                 <div class="cart-btn">
                     <a routerLink="/cart">
                         <i class="flaticon-shopping-cart"></i>
-                        <span>{{cart}}</span>
+                        <span *ngIf="cart >0"  style="background-color: indianred;">{{cart}}</span>
                     </a>
                 </div>
             </div>
+
             <div class="option-item" *ngIf="login">
-                <div class="">
+                <div class="cart-hover">
                     <a routerLink="/wallet">
-                        <i class="fa fa-briefcase" aria-hidden="true" style="color:white;
+                        <i class="fa fa-briefcase cart-hover" aria-hidden="true" style="
                         font-size: 25px"></i>
 
                     </a>
@@ -235,17 +236,17 @@
                   <div class="" *ngIf="login">
                       <div class="">
                           <a routerLink="/wallet">
-                            <i class="fa fa-briefcase" aria-hidden="true" style="color:white;
+                            <i class="fa fa-briefcase cart-hover" aria-hidden="true" style="
                             font-size: 25px"></i>
                           </a>
                       </div>
                   </div>
-      <div style="color: white;" *ngIf="login"> |</div>
-            <div class="" *ngIf="login">
-                <div class="cart-btn">
-                    <a routerLink="/cart">
+
+            <div class="after" *ngIf="login">
+                <div class="cart-btn" >
+                    <a routerLink="/cart" >
                         <i class="flaticon-shopping-cart"></i>
-                        <span>{{cart}}</span>
+                        <span *ngIf="cart >0"  style="background-color: indianred;">{{cart}}</span>
                     </a>
                 </div>
             </div>

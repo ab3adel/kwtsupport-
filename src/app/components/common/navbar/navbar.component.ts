@@ -37,12 +37,9 @@ lang
     token;
     login:boolean=false;
 cart;
-scrollY:number = 0;
-isDown:boolean;
 widthX:number =0;
 num:number=0;
-ele:HTMLDivElement;
-buttonOpen=false;
+
     constructor(
         private router: Router,
         location: Location,
@@ -50,7 +47,7 @@ buttonOpen=false;
         private translate: TranslateService,
         private toastrService: ToastrService
     ) {
-        this.buttonOpen=false
+
       this.cart=localStorage.getItem("cart");
 
         if(this.service.getUser()!=null){
@@ -60,8 +57,8 @@ buttonOpen=false;
 
         let y = localStorage.getItem("selected");
         if(y==null){
-          localStorage.setItem("selected", JSON.stringify("en"));
-          this.translate.use('en');
+          localStorage.setItem("selected", JSON.stringify("ar"));
+          this.translate.use('ar');
         }else{
           noQuotes = y.split('"').join('');
           this.translate.use(noQuotes);
@@ -74,7 +71,7 @@ buttonOpen=false;
         }
         let lang_id = localStorage.getItem("langId");
         if(lang_id==null){
-          localStorage.setItem("langId", JSON.stringify("2"));
+          localStorage.setItem("langId", JSON.stringify("1"));
         }
 
         this.router.events
@@ -134,38 +131,11 @@ logout(){
       });
 }
 ngAfterViewInit () {
-    window.addEventListener('scroll',this.onScroll,true)
+
     this.widthX= window.innerWidth
 
-
-
 }
-ngOnDestroy () {
-    window.removeEventListener('scroll',this.onScroll,true)
-}
-navButtonClicked () {
-
-    this.buttonOpen= !this.buttonOpen;
-
-}
-  onScroll=(event) =>{
-    this.ele=  document.querySelector(".navbar-area")
-
-        if (this.scrollY> event.srcElement.documentElement.scrollTop){
-            this.scrollY=event.srcElement.documentElement.scrollTop;
-            if (!this.buttonOpen){
-
-                this.ele.style.animationName="navHide";
-            }
 
 
-        }
-        else {
-            this.scrollY= event.srcElement.documentElement.scrollTop;
 
-            this.ele.style.animationName="navShow";
-        }
-
-
-    }
 }

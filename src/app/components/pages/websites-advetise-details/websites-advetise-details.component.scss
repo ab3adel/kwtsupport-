@@ -1,3 +1,18 @@
+.listContainer{
+display:flex;
+justify-content: center;
+flex-direction: column;
+}
+.list{
+    list-style: none;
+    color: white;
+}
+.Price {
+    color: white;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
 .all {
     background-image: url(../../../../assets/img/myImage/back.png);
 }

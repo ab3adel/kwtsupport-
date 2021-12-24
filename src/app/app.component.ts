@@ -20,6 +20,7 @@ export class AppComponent implements OnInit {
     routerSubscription: any;
 
     constructor(private router: Router) {
+
     }
 
     ngOnInit(){

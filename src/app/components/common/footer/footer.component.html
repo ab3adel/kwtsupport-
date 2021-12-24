@@ -83,12 +83,7 @@
                             <li><a href="{{instagram}}" class="instagram" target="_blank"><i class='bx bxl-instagram'></i></a></li>
                         </ul>
                     </div>
-                    <!-- <ul class="social-link effect jaques">
-                        <li><a href="{{facebook}}" class="d-block" target="_blank"><i class='bx bxl-facebook'></i></a></li>
-                        <li><a href="{{twitter}}" class="d-block" target="_blank"><i class='bx bxl-twitter'></i></a></li>
-                        <li><a href="{{instagram}}"  class="d-block" target="_blank"><i class='bx bxl-instagram'></i></a></li>
-                        <li><a href="{{linkedin}}" class="d-block" target="_blank"><i class='bx bxl-linkedin'></i></a></li>
-                    </ul> -->
+
                 </div>
             </div>
 
@@ -101,12 +96,13 @@
         <div class="footer-bottom-area">
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-6">
-                    <p   [ngStyle]="{'float': lang ?  'right': 'left' }"> {{'copyright' | translate }}<i class='bx bx-copyright'>2021
+                    <p   [ngStyle]="{'float': lang ?  'right': 'left' }" style="font-size: small;"> {{'copyright' | translate }}<i class='bx bx-copyright'>2021
                         {{'All Right Reserved' | translate }} </i></p>
                 </div>
 
                 <div class="col-lg-6 col-md-6">
-                    <img src="../../../../assets/img/charge/kk.png" style="width: 30%;" [ngStyle]="{'float': lang ?  'left': 'right' }">
+                    <img src="../../../../assets/img/charge/kk.png" style="width: 20%;"
+                    [ngStyle]="{'float': lang ?  'left': 'right' }">
                     <!-- <ul> -->
                         <!-- <li><a routerLink="privacy-policy"></a></li> -->
                         <!-- <li><a routerLink="terms-of-service">Terms & Conditions</a></li> -->

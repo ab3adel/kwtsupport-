@@ -29,17 +29,17 @@ export class PurshasedServiceDetailsComponent implements OnInit {
     order;
     allarray=[];
     orderDetails:string;
-
+    targetOrder:any;
     constructor(private translate: TranslateService,
       private service:Constants,private toast:ToastrService,private router:Router) {
         this.orderDetails = localStorage.getItem("orderDetails")
        this.order= JSON.parse(this.orderDetails)
-       console.log(this.order)
+           console.log(Number (this.order))
        }
 
     ngOnInit(): void {
       this.translateMethod();
-      //this.getmypurches();
+      this.getmypurches();
 
     }
     translateMethod() {
@@ -57,28 +57,14 @@ export class PurshasedServiceDetailsComponent implements OnInit {
       }
 
     }
-   /* getmypurches(){
+   getmypurches=()=>{
         this.service.myPurchesMethod().subscribe(res=>{
             console.log("purches",res);
             this.res=res;
 
-       //this.myorder=this.res.payload;
-       this.myorder=[
-                     {
-                        orders:[{service:{name_ar:"arabicName",name_en:"englishName"},cost:10,quantity:10,id:10}],
-                        total_cost:100
+       this.myorder=this.res.payload;
+       this.targetOrder = this.myorder.find(ele=> ele.id === Number (this.order))
 
-                        }
-                  ]
-      // this.myorderlength=this.myorder.length;
-      this.myorderlength=5
-       if(this.myorderlength==0)
-       {
-         this.purchesempty=true
-       }
-       else{
-         this.purchesempty=false
-       }
       // localStorage.setItem("purches",this.myorderlength);
 
 
@@ -87,6 +73,22 @@ export class PurshasedServiceDetailsComponent implements OnInit {
 
         })
     }
-*/
+    dateFormat =(date)=>{
+        const dateObj = new Date(date);
+        const month = dateObj.getMonth();
+        const day = String(dateObj.getDate()).padStart(2, '0');
+        const year = dateObj.getFullYear();
+        const output = month  + '-'+ day  + '-' + year;
+        return output
+    }
 
+ panelExpansion=()=> {
+    let panel = document.querySelector("#collapseOne") as HTMLDivElement
+    console.log(panel)
+    if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+ }
 }

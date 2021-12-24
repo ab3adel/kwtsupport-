@@ -68,7 +68,7 @@
                                  </td>
 
                                 <td class="product-thumbnail">
-                                    {{cart.cost}}
+                                    {{cart.cost}} {{lang? "دينار كويتي":"KWD"}}
                                     <!-- <div class="input-counter">
                                         <span class="minus-btn"><i class='bx bx-minus'></i></span>
                                         <input type="text" min="1" value="1">
@@ -82,9 +82,9 @@
                                     {{cart.quantity}}
                                 </td>
                                 <td class="product-thumbnail">
-                                    {{order.total_cost}}
+                                    {{order.total_cost}} {{lang? "دينار كويتي":"KWD"}}
                                 </td>
-                                <td class="product-thumbnail" (click)="purshasedDetails(order)">
+                                <td class="product-thumbnail" (click)="purshasedDetails(order.id)">
                                     <i class="fa fa-eye" style="color: white; font-size: 25px; cursor: pointer;" ></i>
                                 </td>
 

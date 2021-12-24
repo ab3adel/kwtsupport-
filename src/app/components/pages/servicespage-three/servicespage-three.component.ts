@@ -22,29 +22,30 @@ export class ServicespageThreeComponent implements OnInit {
     constructor(private translate: TranslateService,private router:Router,
       private service:Constants) {
         this.translateMethod()
-        
- 
-  
+
+
+
 
      this.getCategory();
      }
-  
+
     ngOnInit(): void {
     }
     translateMethod() {
-      this.translate.setDefaultLang('en');
+      this.translate.setDefaultLang('ar');
       this.translate.addLangs(['en', 'ar']);
       let y = localStorage.getItem("selected");
       var langCode = y.split('"').join('');
       this.translate.use(langCode);
       let lang_id = localStorage.getItem("langId");
+      console.log(lang_id)
       langId = lang_id.split('"').join('');
       if (Number(langId) == 1) {
         this.lang = true;
       } else {
         this.lang = false;
       }
-  
+
     }
     getCategory(){
       this.service.getCCategory().subscribe(res=>{
@@ -60,7 +61,7 @@ export class ServicespageThreeComponent implements OnInit {
       localStorage.setItem("cnamear" , namear);
       localStorage.setItem("cnameen",nameen);
         this.router.navigateByUrl("services");
-      
+
       }
-      
+
   }

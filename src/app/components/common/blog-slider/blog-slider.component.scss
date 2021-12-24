@@ -1,3 +1,7 @@
+.flexContainer {
+    display:flex;
+
+}
 .card {
     color: white;
     background-color: #f9f9f9;
@@ -244,7 +248,7 @@
                 font-size: 15.5px;
             }
         }
-    } 
+    }
 
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -268,7 +272,7 @@
 //         size: cover;
 //         repeat: no-repeat;
 //         image: url(../../../../assets/img/myImage/service.png);
-       
+
 //     };
 // }
 .all{
@@ -276,8 +280,8 @@
         size: cover;
         repeat: no-repeat;
         image: url(../../../../assets/img/myImage/back.png);
-     
-    };  
+
+    };
 }
 .card{
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);

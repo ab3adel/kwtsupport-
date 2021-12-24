@@ -57,16 +57,10 @@ export class BlogLeftSidebarPageComponent implements OnInit {
         console.log("purches",res);
         this.res=res;
 
-   //this.myorder=this.res.payload;
-   this.myorder=[
-                 {
-                    orders:[{service:{name_ar:"arabicName",name_en:"englishName"},cost:10,quantity:10,id:10}],
-                    total_cost:100
+   this.myorder=this.res.payload;
 
-                    }
-              ]
-  // this.myorderlength=this.myorder.length;
-  this.myorderlength=5
+  this.myorderlength=this.myorder.length;
+
    if(this.myorderlength==0)
    {
      this.purchesempty=true

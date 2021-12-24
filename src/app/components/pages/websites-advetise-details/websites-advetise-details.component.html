@@ -1,7 +1,7 @@
 <div class="all">
     <section class="">
         <div class="container">
-            <div class="page-title-content" style="    padding-top: 4%;">
+            <div class="page-title-content" style="    padding-top: 4%; margin-top: 2rem;">
                 <h1 *ngIf="lang">{{service.ar}}</h1>
                 <h1 *ngIf="!lang">{{service.en}}}</h1>
             </div>
@@ -25,12 +25,26 @@
                 <div class="col-lg-7 col-md-12">
 
                     <div class="products-details-desc">
-                        <h3 *ngIf="lang" style="text-align: right;">{{service.ar}}</h3>
-                        <h3 *ngIf="!lang" style="text-align: left;">{{service.en}}</h3>
-                        <h3  style="text-align: justify;">{{'dess'| translate }}</h3>
 
 
-                        <h3  style="text-align: justify;">{{lang?"السعر" :"Price"}}</h3>
+                            <div *ngIf="lang && service.descAr" class="listContainer" style="text-align: right;" >
+                                <h3  style="text-align: justify;" >{{'dess'| translate }} :</h3>
+                                <ul class="list">
+                                   <li  *ngFor="let item of service.descAr">{{item}}</li>
+                                </ul>
+
+                            </div>
+                            <div *ngIf="!lang && service.descEn" class="listContainer" style="text-align: left;">
+                                <h3  style="text-align: justify;" >{{'dess'| translate }} :</h3>
+                                <ul class="list">
+                                    <li  *ngFor="let item of service.descEn">{{item}}</li>
+                                 </ul>
+                          </div>
 
 
-                                service price {{lang ? "دينار كويتي" :"Kuwaiti dinar"}}
+
+
+                             <div class="Price" [ngStyle]="{'text-align':lang? 'right':'left'}" >
+                                <h3  style="text-align: justify;">{{lang?"السعر" :"Price"}}</h3>
+                                 {{service.price}} {{lang ? "دينار كويتي" :" KWD"}}
+                            </div>

@@ -34,7 +34,7 @@ address_ar
         }
     ]
     translateMethod() {
-        this.translate.setDefaultLang('en');
+        this.translate.setDefaultLang('ar');
         this.translate.addLangs(['en', 'ar']);
         let y = localStorage.getItem("selected");
         var langCode = y.split('"').join('');
@@ -46,7 +46,7 @@ address_ar
         } else {
           this.lang = false;
         }
-    
+
       }
 getall(){
     this.service.getContact().subscribe(res=>{
@@ -60,7 +60,7 @@ getall(){
         this.email=this.footer.payload.email;
         this.address=this.footer.payload.address;
         this.address_ar=this.footer.payload.address_ar
-        console.log( this.address,this.phone)
+        
 
     })
 }

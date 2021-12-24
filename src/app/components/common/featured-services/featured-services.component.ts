@@ -27,12 +27,12 @@ category
         easing: 'ease-in-sine',
         delay: 500,
       });
-    
+
  }, 1000);
 
   }
   translateMethod() {
-    this.translate.setDefaultLang('en');
+    this.translate.setDefaultLang('ar');
     this.translate.addLangs(['en', 'ar']);
     let y = localStorage.getItem("selected");
     var langCode = y.split('"').join('');
@@ -49,7 +49,6 @@ category
 
 getCategory(){
 this.service.getCCategory().subscribe(res=>{
-  console.log(res);
   this.data=res;
   this.category=this.data.payload;
 })

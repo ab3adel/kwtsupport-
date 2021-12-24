@@ -11,15 +11,18 @@
 
 
 <div class="all">
-<div class="container" [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }" style="padding-top:5%;padding-bottom:5%">
+<div class="chargingContainer" [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }" style="padding-top:5%;padding-bottom:5%">
    <!-- <div class="shadow" style="background-color: black;"> -->
 
-        <h2 style="color: white;"> {{'mywallet'|translate}}</h2>
-        <div style="margin: 0px; text-align: center;">
+
+        <div class="myGrid">
+
+        <div  class="walletAddress" style="margin: 0px; text-align: center;">
+            <h2 style="color: white; margin-left:0px"> {{'mywallet'|translate}}</h2>
             <div class="card1" >
                 <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
                 <i class="fa fa-briefcase" aria-hidden="true" style="color:white;
-                font-size: 40px"></i>
+                font-size: 3rem"></i>
                 <div class="card-body">
                   <p class="card-text" style="color:white;">{{payload}}</p>
 
@@ -30,15 +33,17 @@
            </div>
         </div>
         </div>
-
-<h4 [ngStyle]="{'text-align': lang ?  'right': 'left' }" style="    margin-left: 72px; ">{{'Charging' | translate }}</h4>
+<div  class="myForm">
+<h4 [ngStyle]="{'text-align': lang ?  'right': 'left' }" style="font-size: 2rem; margin:0px" >
+    {{'Charging' | translate }}
+</h4>
 <!-- <hr style="width:89% ; margin-top: 35px;"> -->
-<form [formGroup]="Form" (ngSubmit)="charge()">
+<form [formGroup]="Form" (ngSubmit)="charge()" style="margin-top: 1rem;">
     <div class="container">
     <div class="row" style="    margin-right: 3%;margin-left: 3%;">
-<div class="col-lg-12">
-<h3 style="color: white;text-align: right;" *ngIf="lang" >اختر طريقة الشحن </h3>
-<h3 style="color: white;text-align: left;"  *ngIf="!lang" >  Choose a charge method </h3>
+<div class="col-lg-12 center start">
+<h3 style="color: white;text-align: right;" *ngIf="lang" style="margin-bottom: 1rem;color:white" >اختر طريقة الشحن </h3>
+<h3 style="color: white;text-align: left;"  *ngIf="!lang"  style="margin-bottom: 1rem;color:white" >  Choose a charge method </h3>
 <div class="row">
 
         <!-- <div class="col-lg-3 col-sm-6">
@@ -60,10 +65,10 @@
         <p style="color: white;"> CREDIT</p>
         </div> -->
     <!-- </div> -->
-    <div class="col-lg-6 col-sm-6">
-        <div class="card" (click)="clickKNET()" id="KNET" style="padding: 10%;">
+    <div class="col-lg-6 col-sm-6 minWidth">
+        <div class="card" (click)="clickKNET()" id="KNET" style="width:90%">
         <img src="../../../../assets/img/charge/kk.png" class="iconch">
-        <p style="color: white;">KNET</p>
+
         </div>
     </div>
 </div>
@@ -74,7 +79,7 @@
         <div class="col-lg-6 col-md-6" style="margin-top: 3%;">
             <div class="form-group">
                 <input type="text" name="amount" id="amount" class="form-control"required data-error="" placeholder="{{'amount'| translate}}"
-                formControlName="amount"
+                formControlName="amount" style="max-width: 90%;"
                 [ngClass]="{ 'is-invalid': submitted && f.amount.errors }">
 
                <div *ngIf="submitted && f.amount.errors" class="invalid-feedback">
@@ -94,19 +99,20 @@
     </div>
 </div>
 </form>
-
-
+</div>
+</div>
+<div class="chargingTable">
 <h4 [ngStyle]="{'text-align': lang ?  'right': 'left' }" style="      margin-top: 3%;  margin-left: 72px; ">{{'my chargings' | translate }}</h4>
 <!-- <hr style="width:89% ;margin-top: 72px;"> -->
 
 <div class="cart-table table-responsive" *ngIf="!lang" style="margin-left:25%" [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }">
-<table class="table table-bordered"  >
+<table class="table table-bordered" style="border-bottom: none;" >
     <thead>
         <tr class="a">
 
-                <th scope="col" > date</th>
-                <th scope="col">{{'amount' | translate }}</th>
-                <th scope="col">{{'method' | translate }}</th>
+                <th scope="col " class=" thBorder" style="border-bottom: 1px solid white;"> date</th>
+                <th scope="col " class=" thBorder" style="border-bottom: 1px solid white;">{{'amount' | translate }}</th>
+                <th scope="col " class=" thBorder" style="border-bottom: 1px solid white;">{{'method' | translate }}</th>
 
 
 
@@ -138,16 +144,17 @@
     </tbody>
 </table>
 </div>
+
 <div class="cart-table table-responsive" *ngIf="lang"  [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }" style="    margin-right: 17%;">
-    <table class="table table-bordered"  >
+    <table class="table table-bordered" style="border-bottom: none;" >
         <thead>
             <tr  class="a">
 
-                    <th scope="col" *ngIf="lang">التاريخ</th>
+                    <th scope="col " class="thBorder" *ngIf="lang" style="border-bottom: 1px solid white;">التاريخ</th>
 
 
-                    <th scope="col">{{'amount' | translate }}</th>
-                    <th scope="col">{{'method' | translate }}</th>
+                    <th scope="col " class=" thBorder" style="border-bottom: 1px solid white;">{{'amount' | translate }}</th>
+                    <th scope="col " class=" thBorder" style="border-bottom: 1px solid white;">{{'method' | translate }}</th>
 
 
 
@@ -180,5 +187,6 @@
         </tbody>
     </table>
     </div>
+</div>
 </div>
 </div>

@@ -1,6 +1,45 @@
+.chargingContainer {
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    max-width: 100vw;
+}
+.myGrid {
+    display: grid;
+    grid-template-columns: 1fr 0.4fr;
+    max-width: fit-content;
+}
+.walletAddress {
+    grid-column:2/2;
+    grid-row:1/1;
+    display:flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: start;
+}
+.myForm {
+    grid-column: 1/1;
+
+}
+.start {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.minWidth {
+    min-width: 100%;
+}
 .iconch
 {
-width:50%
+width:100%
+}
+.thBorder {
+    border-bottom:1px solid white ;
+    padding-top: 2rem;
+    padding-bottom: 1px;
+}
+.chargingTable {
+    width:100%
 }
 .analysis-img {
     text-align: center;
@@ -36,8 +75,40 @@ width:50%
     }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 770px) {
+    .myGrid {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+   .walletAddress {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   }
+   .myForm {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+   }
+   .center {
+       display:flex;
+       flex-direction: column;
+       align-items: center;
+       margin-bottom: 1rem;
+       color:white;
+   }
+   .row {
+       display:flex;
+       justify-content: center;
 
+   }
+   #KNET {
+       margin :0px
+   }
+   .minWidth {
+       min-width: 100%;
+   }
     .analysis-img {
         padding-right: 0;
     }
@@ -130,7 +201,7 @@ h3{
 
     margin: 0px;
     text-align: center;
-    padding: 5%;
+
     cursor: pointer;
 
     // margin-right: 35%;
@@ -141,8 +212,8 @@ h3{
     text-align: center;
     padding: 5%;
     cursor: pointer;
-     margin-left:35%;
-    margin-right: 35%;
+    margin-top: 1rem;
+
 }
 .w{
     margin-left: 30%;
@@ -180,7 +251,7 @@ h4{
                 th {
                     border-bottom-width: 0px;
                     vertical-align: middle;
-                    padding: 0 0 15px;
+
                     text-transform: uppercase;
                     border: none;
                     white-space: nowrap;
@@ -297,6 +368,7 @@ h4{
     margin-right: 8%;
 }
 @media(max-width: 992px){
+
 .table{
     width: 100%!important;
     margin-right: 0%!important;
@@ -322,7 +394,7 @@ table, tr {
     border:transparent;
     // background-image: linear-gradient(to left, #e0e0e0 , rgb(18,18,18),rgb(18,18,18));
     color: white;
-    height: 75px;
+
 
 
 }
