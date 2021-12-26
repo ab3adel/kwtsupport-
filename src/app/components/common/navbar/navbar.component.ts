@@ -107,6 +107,7 @@ num:number=0;
     });
 
     }
+
     changeLang(){
 
         if(noQuotes  == 'ar'){
@@ -132,10 +133,20 @@ logout(){
 }
 ngAfterViewInit () {
 
-    this.widthX= window.innerWidth
+    this.widthX= window.innerWidth}
+
+buttonClicked =()=>{
+    let links = document.querySelectorAll(".nav-link") ;
+  console.log(links,"from navbar");
+  links.forEach(element => {
+      console.log(element);
+     ( element as HTMLAnchorElement).addEventListener("click",this.closeNavbar)
+  });
+
 
 }
-
-
-
+closeNavbar =()=>{
+    let navbar= document.querySelector("#navbarText") as HTMLDivElement;
+    navbar.classList.remove('show');
+}
 }

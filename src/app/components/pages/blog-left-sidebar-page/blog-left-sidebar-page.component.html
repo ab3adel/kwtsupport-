@@ -37,13 +37,13 @@
                     <table class="table table-bordered"  [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }">
                         <thead>
                             <tr>
-                                <th scope="col">{{'img' | translate }}</th>
-                                <th scope="col">{{'name' | translate }}</th>
 
-                                <th scope="col" *ngIf="!lang"> cost</th>
-                                <th scope="col" *ngIf="lang">الكلفة</th>
-                                <th scope="col">{{'quantity'| translate }}</th>
+
+                                <th scope="col" *ngIf="lang" > التاريخ</th>
+                                <th scope="col" *ngIf="!lang" >Service Date</th>
+
                                 <th scope="col">{{'total_cost' | translate }}</th>
+
                                 <th scope="cl" *ngIf="!lang">Show Details</th>
                                 <th scope="cl" *ngIf="lang">اظهر التفاصيل</th>
                                 <!-- <th scope="col">{{'delete' | translate }}</th> -->
@@ -54,33 +54,11 @@
                            <ng-container *ngFor="let order of myorder">
                             <tr  class="aa" *ngFor="let cart of order.orders"  >
 
-                                <td class="product-thumbnail">
-                                    <a >
-                                        <img src="{{cart.service.avatar}}" alt="item" style="width: 20%; ">
-                                    </a>
-                                </td>
-
-                                <td class="product-thumbnail" *ngIf="lang">
-                                   {{cart.service.name_ar}}
-                                </td>
-                                <td class="product-thumbnail" *ngIf="!lang">
-                                    {{cart.service.name_en}}
-                                 </td>
 
                                 <td class="product-thumbnail">
-                                    {{cart.cost}} {{lang? "دينار كويتي":"KWD"}}
-                                    <!-- <div class="input-counter">
-                                        <span class="minus-btn"><i class='bx bx-minus'></i></span>
-                                        <input type="text" min="1" value="1">
-                                        <span class="plus-btn"><i class='bx bx-plus'></i></span>
-                                    </div> -->
+                                    {{dateFormat(cart.service.updated_at)}}
                                 </td>
 
-
-
-                                <td class="product-thumbnail">
-                                    {{cart.quantity}}
-                                </td>
                                 <td class="product-thumbnail">
                                     {{order.total_cost}} {{lang? "دينار كويتي":"KWD"}}
                                 </td>

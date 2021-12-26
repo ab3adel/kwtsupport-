@@ -80,4 +80,12 @@ purshasedDetails (item) {
     localStorage.setItem('orderDetails',JSON.stringify(item) )
     this.router.navigateByUrl('/purshasedDetails')
 }
+dateFormat =(date)=>{
+    const dateObj = new Date(date);
+    const month = dateObj.getMonth();
+    const day = String(dateObj.getDate()).padStart(2, '0');
+    const year = dateObj.getFullYear();
+    const output = month  + '-'+ day  + '-' + year;
+    return output
+}
 }

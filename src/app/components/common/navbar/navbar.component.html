@@ -35,7 +35,7 @@
 
              *ngIf="lang && !login" style="width: 50%;    margin-left: 10%;     " class="oo">
         </a>
-        <button *ngIf="!login" class="navbar-toggler"
+        <button *ngIf="!login" class="navbar-toggler" (click)="buttonClicked()"
         type="button" data-toggle="collapse" data-target="#navbarText"
         aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"
         style="
@@ -45,7 +45,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <button *ngIf="login && lang"
+        <button *ngIf="login && lang" (click)="buttonClicked()"
         class="navbar-toggler" type="button" data-toggle="collapse"
         data-target="#navbarText" aria-controls="navbarText"
         aria-expanded="false" aria-label="Toggle navigation"
@@ -56,7 +56,7 @@
         ">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <button class="navbar-toggler" *ngIf="login && !lang" type="button" data-toggle="collapse"
+        <button class="navbar-toggler" *ngIf="login && !lang" type="button" data-toggle="collapse" (click)="buttonClicked()"
         data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"
         style="  background-color: white;
         ">
@@ -93,7 +93,7 @@
             <li class="nav-item active"  *ngIf="!login" style="margin-left:0px;">
                 <a routerLink="/register" class="nav-link" *ngIf="!login" >
                                                                        <!--width:35% -->
-                    |<img src="../../../../assets/img/myImage/sign-up.png"
+                   <img src="../../../../assets/img/myImage/sign-up.png"
                      style="width:20px;margin-left:5px;">
 
                 </a>
@@ -101,11 +101,11 @@
 
                      <li class="nav-item" style=" margin-left: -5px;">
                         <a routerLink="/login" class="nav-link" *ngIf="!login" >
-                             {{'signin' | translate }}
+                            {{lang? "تسجيل الدخول":"login"}}
                         </a>
                      </li>
 
-                <li class="nav-item active out" ><a  class="nav-link" *ngIf="login" (click)="logout()" style="cursor: pointer;">{{'sign out' | translate }} |  </a>  </li>
+                <li class="nav-item active out" ><a  class="nav-link" *ngIf="login" (click)="logout()" style="cursor: pointer;">{{lang? "تسجيل الخروج":"logout"}}   </a>  </li>
                 <li class="nav-item active my"    >
                     <a routerLink="/myProfile" class="nav-link" [ngStyle]="{'margin-right':widthX >900 ? '-5px':''}"
                         *ngIf="login">{{'myprofile' | translate }}
@@ -164,7 +164,7 @@
                 <a routerLink="/register" class="nav-link" *ngIf="!login" style="margin-right:10px">
                     <img src="../../../../assets/img/myImage/sign-up.png"
                      style="width: 36%;" >
-                    |
+
 
                 </a>
             </li>
@@ -172,11 +172,11 @@
                 <li class="nav-item active r"
                      >
                     <a routerLink="/login" class="nav-link" *ngIf="!login" >
-                          {{'signin' | translate }}
+                         {{lang? "تسجيل الدخول":"Sign In"}}
                     </a>
                </li>
 
-                <li class="nav-item active out" style="padding-left:4%"><a  class="nav-link" *ngIf="login" (click)="logout()" style="cursor: pointer;">{{'sign out' | translate }} |  </a>  </li>
+                <li class="nav-item active out" style="padding-left:4%"><a  class="nav-link" *ngIf="login" (click)="logout()" style="cursor: pointer;">{{'sign out' | translate }}   </a>  </li>
                 <li class="nav-item active my"  ><a routerLink="/myProfile" class="nav-link "  *ngIf="login">{{'myprofile' | translate }}
            </a> </li>
 

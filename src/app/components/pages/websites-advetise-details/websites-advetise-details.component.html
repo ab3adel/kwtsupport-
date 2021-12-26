@@ -27,23 +27,23 @@
                     <div class="products-details-desc">
 
                             <div *ngIf="lang && service.descAr" class="listContainer" [ngStyle]="{'text-align':'right'}" >
-                                <h3   >{{'dess'| translate }} :</h3>
+                                <h3  style="color: #00adee;" >{{'dess'| translate }} :</h3>
                                 <ul class="list" >
                                    <li  *ngFor="let item of service.descAr">{{item}}</li>
                                 </ul>
 
-                                <h3  >{{lang?"السعر" :"Price"}}:</h3>
+                                <h3 style="color: #00adee;" >{{lang?"السعر" :"Price"}}:</h3>
                                 <div  style="color:white" [ngStyle]="screenWidth >770?lang? {'margin-right':'40px'}:{'margin-left':'40px'}:''">
                                     {{service.price}} {{lang ? "دينار كويتي" :" KWD"}}
                                 </div>
                             </div>
                             <div *ngIf="!lang && service.descEn" class="listContainer"  [ngStyle]="{'text-align': 'left'}">
-                                <h3   >{{'dess'| translate }} :</h3>
+                                <h3  style="color: #00adee;" >{{'dess'| translate }} :</h3>
                                 <ul class="list"  >
                                     <li  *ngFor="let item of service.descEn">{{item}}</li>
                                  </ul>
 
-                                <h3  >{{lang?"السعر" :"Price"}} :</h3>
+                                <h3  style="color: #00adee;" >{{lang?"السعر" :"Price"}} :</h3>
                                 <div style="color:white" [ngStyle]="lang? {'margin-right':'40px'}:{'margin-left':'40px'}">
                                     {{service.price}} {{lang ? "دينار كويتي" :" KWD"}}
                                 </div>

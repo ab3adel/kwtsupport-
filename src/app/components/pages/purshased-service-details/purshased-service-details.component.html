@@ -11,25 +11,55 @@
     </section>
 
     <section class="cart-area ptb-100 " >
-        <div class="container">
-            <form>
+        <div class="container ">
 
 
-                <div class=" table-responsive" >
 
-                    <table class="table table-bordered"  [ngStyle]="{'direction': lang ?  'rtl': 'ltr' }">
-                        <thead>
+                <div class=" table-responsive scrollable" >
+
+                    <table class="table table-bordered "
+                   >
+                        <thead style="white-space: nowrap;">
                             <tr>
-                                <th scope="col" *ngIf="lang" >   اسم الخدمة</th>
+                                <th scope="col" *ngIf="lang" > اسم الخدمة</th>
                                 <th scope="col" *ngIf="!lang" >Service Name</th>
-                                <th scope="col" *ngIf="lang" >    وصف الخدمة</th>
-                                <th scope="col" *ngIf="!lang" >Service Discription</th>
-                                <th scope="col" *ngIf="lang" >     التاريخ</th>
+
+                                <th scope="col" *ngIf="lang" > التاريخ</th>
                                 <th scope="col" *ngIf="!lang" >Service Date</th>
 
-                                <th scope="col" *ngIf="lang" >      الكلفة</th>
+                                <th scope="col" *ngIf="lang" > الكلفة</th>
                                 <th scope="col" *ngIf="!lang" >Cost</th>
 
+                                <th scope="col" *ngIf="lang" > الكمية</th>
+                                <th scope="col" *ngIf="!lang" >Quantity</th>
+
+
+                                <th scope="col" *ngIf="lang" > رابط الحساب</th>
+                                <th scope="col" *ngIf="!lang" >ِAccount Link</th>
+
+                                <th scope="col" *ngIf="lang" >  التعليقات</th>
+                                <th scope="col" *ngIf="!lang" >Comments </th>
+
+                                <th scope="col" *ngIf="lang" >  المناشير</th>
+                                <th scope="col" *ngIf="!lang" >Posts </th>
+
+                                <th scope="col" *ngIf="lang" >  رقم الاجابة</th>
+                                <th scope="col" *ngIf="!lang" >Answer Number </th>
+
+                                <th scope="col" *ngIf="lang" >  أسماء المستخدمين</th>
+                                <th scope="col" *ngIf="!lang" >User Names </th>
+
+                                <th scope="col" *ngIf="lang" >  عدد البداية </th>
+                                <th scope="col" *ngIf="!lang" > Start Count </th>
+
+                                <th scope="col" *ngIf="lang" >  الحالة</th>
+                                <th scope="col" *ngIf="!lang" >Status </th>
+
+                                <th scope="col" *ngIf="lang" >  المتبقي</th>
+                                <th scope="col" *ngIf="!lang" >ٌRemain </th>
+
+                                <th scope="col" *ngIf="lang" > وصف الخدمة</th>
+                                <th scope="col" *ngIf="!lang" >Service Discription</th>
 
 
                                 <!-- <th scope="col">{{'delete' | translate }}</th> -->
@@ -40,55 +70,91 @@
 
                             <tr  class="aa" *ngFor="let cart of targetOrder.orders"  >
 
-
-
-                                <td class="product-thumbnail" >
+                                <td class="product-thumbnail tableData" >
                                    {{lang? cart.service.name_ar :cart.service.name_en }}
                                 </td>
 
-
-
-                                <td class="product-thumbnail fixedWidth">
-
-                                            <div class="accordion-item">
-
-                                                <button (click)="panelExpansion()" class="panel"
-                                                     >
-                                                    {{lang ? cart.service.short_description_ar : cart.service.short_description_en}}
-                                                </button>
-
-                                            <div id="collapseOne"  >
-                                                <div class="accordion-body">
-                                                    {{lang ? cart.service.long_description_ar:cart.service.long_description_en}}
-                                                </div>
-                                            </div>
-                                            </div>
-
+                                <td class="product-thumbnail tableData">
+                                    {{dateFormat(cart.service.created_at)}}
                                 </td>
 
-
-                                <td class="product-thumbnail">
-                                    {{dateFormat(cart.service.updated_at)}}
-                                </td>
-
-                                <td class="product-thumbnail">
+                                <td class="product-thumbnail tableData">
 
                                         {{cart.cost}} {{lang? "دينار كويتي":"KWD"}}
 
                                 </td>
 
+                                <td class="product-thumbnail tableData">
 
-                                <!-- <i class="bi bi-check2"></i>
-                                    <td class="product-thumbnail" style="cursor: pointer;">
-                                    <a class="danger delete mr-1 mrless"><i  id="loader{{cart.id}}" class="fa fa-cog fa-spin" hidden></i><i id="delete{{cart.id}}" class="fa fa-trash" (click)="delete(cart.id)" style="color: red;"></i></a>
+                                    {{cart.quantity}}
 
-                                </td> -->
-                                <!-- <td class="product-thumbnail" *ngIf="lang">
-                                    {{cart.service.short_description_ar}}
                                 </td>
-                                <td class="product-thumbnail" *ngIf="!lang">
-                                    {{cart.service.short_description_en}}
-                                </td> -->
+
+                                <td class="product-thumbnail tableData">
+
+                                    {{cart.Link}}
+
+                                </td>
+                                <td class="product-thumbnail tableData">
+
+                                    {{cart.comments !== null? cart.comments : '-'}}
+
+                                </td>
+                                <td class="product-thumbnail tableData">
+
+                                    {{cart.posts !== null? cart.posts : '-'}}
+
+                                </td>
+                                <td class="product-thumbnail tableData">
+
+                                    {{cart.answer_number !== null? cart.answer_number : '-'}}
+
+                                </td>
+                                <td class="product-thumbnail tableData">
+
+                                    {{cart.usernames !== null? cart.usernames : '-'}}
+
+                                </td>
+                                <td class="product-thumbnail tableData">
+
+                                    {{cart.details.start_count }}
+
+                                </td>
+                                <td class="product-thumbnail tableData"   >
+
+
+                                    <i *ngIf="cart.details.status === 'Completed'"
+                                     style="color:white; font-size: large;"
+                                      class="bi bi-check2-circle"></i>
+                                      <i *ngIf="cart.details.status === 'Canceled'"
+                                      style="color:red; font-size: large;"
+                                      class="bi bi-x-circle-fill"></i>
+
+
+                                </td>
+
+                                <td class="product-thumbnail tableData">
+
+                                    {{cart.details.remains }}
+
+                                </td>
+                                <td class="product-thumbnail fixedWidth">
+
+                                    <div class="accordion-item">
+
+                                        <button (click)="panelExpansion()" class="panel"
+                                             >
+                                            {{lang ? cart.service.short_description_ar : cart.service.short_description_en}}
+                                        </button>
+
+                                    <div id="collapseOne"  >
+                                        <div class="accordion-body">
+                                            {{lang ? cart.service.long_description_ar:cart.service.long_description_en}}
+                                        </div>
+                                    </div>
+                                    </div>
+
+                                </td>
                             </tr>
 
 

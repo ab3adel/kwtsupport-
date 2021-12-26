@@ -1,3 +1,12 @@
+.scrollable {
+    overflow-x: scroll;
+    scrollbar-width: none;
+    max-width: 80vw;
+}
+.scrollable::-webkit-scrollbar{
+    display:none
+}
+
 .panel {
 
  background-color: transparent;
@@ -11,6 +20,12 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+}
+.tableData {
+    width: 30%;
+}
+.fixedWidth {
+    width:35%
 }
 .cart-table {
     table {
@@ -38,6 +53,7 @@
                     vertical-align: middle;
                     color: var(--optionalColor);
                     white-space: nowrap;
+                    width: 30%;
                     font: {
                         weight: 700;
                         size: 16px;
@@ -218,7 +234,9 @@
 }
 
 @media only screen and (max-width: 767px) {
-
+    .panel {
+        font-weight: normal;
+    }
     .cart-table {
         table {
             thead {
@@ -345,7 +363,7 @@ th ,td{
     text-align:center
 }
 .all{
-    padding-top: 2%;
+    padding-top: 3rem;
     background: {
         size: cover;
         repeat: no-repeat;

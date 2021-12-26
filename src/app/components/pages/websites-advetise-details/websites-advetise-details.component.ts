@@ -35,51 +35,55 @@ screenWidth:number;
         private service1:Constants) {
         this.translateMethod()
            this.services={
-                    advertisevideo:  { en:'   design & montage advetising videos',ar:"  تصميم ومونتاج فيديو اعلانات"
+                    advertisevideo:  { en:'   Video Advertisement Recording & Montage',ar:"  تصميم ومونتاج فيديو اعلانات"
                             ,src:"../../../../assets/img/myImage/00 (1).png",
                         descAr:["مدة التصوير 60 دقيقة","تصوير فيديو مدته 60 ثانية"],
-                        descEn:["recording video duartion 60 min","recording for 60 sec"],
+                        descEn:["Export a 60 seconds’ video","Recording for 60 minutes"],
                         price:150},
-                    store: {en:' hosting and reverse website domain',ar:" استضافة وحجز اسم موقع"
+                    store: {en:' E-commerce Stores Development',ar:"  تطوير المتاجر الالكترونية  "
                             ,src:"../../../../assets/img/myImage/000.png",
                             descAr:["مبني على نظام WordPress","لوحة تحكم بعدة لغات","واجهة مستخدم متجاوبة تعمل على الهاتف والكومبيوتر بشكل كامل,لغة واحدة"],
-                        descEn:["fully built on WordPres","UI responsive work perfectly on mobile and computer","panel control multi langauges"]
+                        descEn:["Yearly hosting for website data"," Register one domain with .com TLD yearly","Purchase two business E-mails"]
                         ,price:300},
-                    web:{ en: 'hosting & revers website domain ',ar:" استضافة وحجز اسم موقع "
+                    web:{ en: 'Webhosting and Domain Registration ',ar:" استضافة وحجز اسم موقع "
                                 ,src:"../../../../assets/img/myImage/0 (2).png"
                             ,descAr:[" استضافة سنوية لبيانات الموقع",   "حجز اسم واحد بنطاق com سنويا" ,"اضافة بريد الكتروني تجاري 2"]
-                            ,descEn:["hosting yearly for web data","revers one com domain","add tow commerce emails"],
+                            ,descEn:["Yearly hosting for website data"," Register one domain with .com TLD yearly","Purchase two business E-mails"],
                             price:90},
-                    intrologo: {en:'Design intro logo graphic',ar:"تصميم انترو لوغو غرافيك"
+                    intrologo: {en:'Logo Intro Graphic Design',ar:"تصميم انترو لوغو غرافيك"
                                 ,src:"../../../../assets/img/myImage/y (1).png"
-                            ,descAr:["فيديو لمدة 3-9 ثواني"],descEn:["video duration 3-9 sec"],
+                            ,descAr:["فيديو لمدة 3-9 ثواني"],descEn:["Video design, length between 3 – 9 seconds"],
                             price:35},
                     logo:{en:' logo Design',ar:"تصميم لوغو",src:"../../../../assets/img/myImage/y (2).png",
                             price:120},
-                    video:{ en:'video Design',ar:"تصميم فيديو",src:"../../../../assets/img/myImage/y (3).png",
-                                descAr:["مدة التصوير 60 دقيقة"],descEn:["60 minutes video duration"],
+                    video:{ en:'Video Recording',ar:"تصوير فيديو",src:"../../../../assets/img/myImage/y (3).png",
+                                descAr:["مدة التصوير 60 دقيقة"],descEn:["Recording for 60 minutes"],
                                 price:100},
-                    visualfull: {en:'full visual Identity Design',ar:" تصميم الهوية البصرية كاملة",src:"../../../../assets/img/myImage/32.png"
+                    visualfull: {en:'Visual Identity Full-Design ',ar:" تصميم الهوية البصرية كاملة",src:"../../../../assets/img/myImage/32.png"
                             ,descAr:["تصميم شعار وانترو لوجو غرافيك","اختيار الخط الرسمي للهوية باللغة العربية والانجليزية مع تحديد ألوان الرسمية"
                                 ,"تصاميم المطبوعات(كروت-أظرف بمقياس A4 ومراسلة-اوراق رسميةأكياس ورقيةوكرتونية-ملابس وهويات عمل-بنرات-اعلانات زجاجية وطرقية)"
-                                ,"- تصميم وتوحيد االيقونات الرمزية وقوالب المنشورات الورقية وااللكتروني"],price:280},
-                    photoshotwhite:{ en:'photoshoting white background products   ',ar:" تصوير منتجات خلفية بيضاء",src:"../../../../assets/img/myImage/5 (1).png"
+                                ,"- تصميم وتوحيد االيقونات الرمزية وقوالب المنشورات الورقية وااللكتروني"],
+                             descEn:[ "Logo intro graphic design"," Determine the official font & colors in both Arabic and English"
+                             ,"Printed matter design:  cards, A4 envelops & mailings, official documents, paper & cardboard bags, clothes & ID, banners, glass & road Ads",
+                            " Design and standardization of symbolic icons and templates for paper and electronic publications"]
+                            ,price:280},
+                    photoshotwhite:{ en:'Product Photoshoots with White Background  ',ar:" تصوير منتجات خلفية بيضاء",src:"../../../../assets/img/myImage/5 (1).png"
                                     , price:1.500},
-                    photoshotlife:{ en:'photoshoting life style products   ',ar:" تصوير منتجات  لايف ستايل",src:"../../../../assets/img/myImage/5 (1).png"
+                    photoshotlife:{ en:'Life Style Products Photoshoots ',ar:" تصوير منتجات  لايف ستايل",src:"../../../../assets/img/myImage/5 (1).png"
                                     , price:2.500},
-                    instagram:{ar:"تصميم صور وفيديوهات لحساب انستغرام",en:"making videos & photos for insta account",
+                    instagram:{ar:"تصميم صور وفيديوهات لحساب انستغرام",en:"Instagram Account Photos & Videos Design",
                         src:"../../../../assets/img/myImage/5 (1).png",descAr:["اشتراك شهري","30 صورة بوست","40 صورة ستوري","4 فيديوهات"]
-                        ,descEn:["4 videos","40 story photos","30 post photos","monthly subscribe"],price:200},
-                    visualhalf:{en:"Design half visual identity",ar:"تصميم نصف هوية بصرية",src:"../../../../assets/img/myImage/5 (1).png"
+                        ,descEn:["4 videos"," 30 story photos","30 post photos","Monthly subscription"],price:200},
+                    visualhalf:{en:"Visual Identity Half-Design",ar:"تصميم نصف هوية بصرية",src:"../../../../assets/img/myImage/5 (1).png"
                                 ,descAr:["تصميم شعار","تصاميم المطبوعات ) كروت – أظرف بمقاس A4 و مراسلة - أوراق رسمية ("]
-                                ,descEn:["logo design","design copies (carts,A4 envelopses,official papers )"],
+                                ,descEn:["logo design","Printed matter design: cards, A4 envelops & mailings, official documents"],
                                 price:170},
-                    motiongraphic:{en:"Design motion graphic video",ar:"تصميم فيديوهات موشن غرافيك"
+                    motiongraphic:{en:"Video Motion Graphic Design",ar:"تصميم فيديوهات موشن غرافيك"
                             ,src:"../../../../assets/img/myImage/5 (1).png",descAr:["40-50 ثانية","تعليق صوتي بشري ","استخدام موسيقى ومؤثرات صوتية"]
-                             ,descEn:["40-50 sec","human voice commentar","using music and audio implications"]
+                             ,descEn:["40-50 sec","Human voice over"," Use music or sound effects"]
                              ,price:150},
-                   montage:{en:"video montage",ar:"مونتاج فيديو",src:"../../../../assets/img/myImage/5 (1).png"
-                          ,descAr:["تصدير فيديو مدة 60 ثانية"],descEn:["exporting 60 sec video"],price:50},
+                   montage:{en:"Video Montage",ar:"مونتاج فيديو",src:"../../../../assets/img/myImage/5 (1).png"
+                          ,descAr:["تصدير فيديو مدة 60 ثانية"],descEn:[" Export a 60 seconds’ video"],price:50},
 
 
          }

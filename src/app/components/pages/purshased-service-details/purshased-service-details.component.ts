@@ -64,7 +64,7 @@ export class PurshasedServiceDetailsComponent implements OnInit {
 
        this.myorder=this.res.payload;
        this.targetOrder = this.myorder.find(ele=> ele.id === Number (this.order))
-
+      console.log(this.targetOrder)
       // localStorage.setItem("purches",this.myorderlength);
 
 
