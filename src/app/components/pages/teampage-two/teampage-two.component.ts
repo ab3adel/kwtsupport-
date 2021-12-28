@@ -27,7 +27,7 @@ data
   bookeyBol:boolean=false;
   CREDITBool:boolean=false;
   KNETBool:boolean=false;
-  nameCharge;
+  nameCharge="KNET";
   Form: FormGroup;
   PayUrl
     constructor(private translate: TranslateService,private fb: FormBuilder,private toastrService: ToastrService ,
