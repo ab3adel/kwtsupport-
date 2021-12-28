@@ -41,12 +41,12 @@ screenWidth:number;
                         descEn:["Export a 60 seconds’ video","Recording for 60 minutes"],
                         price:150},
                     store: {en:' E-commerce Stores Development',ar:"  تطوير المتاجر الالكترونية  "
-                            ,src:"../../../../assets/img/myImage/000.png",
+                    ,src:"../../../../assets/img/myImage/0 (2).png",
                             descAr:["مبني على نظام WordPress","لوحة تحكم بعدة لغات","واجهة مستخدم متجاوبة تعمل على الهاتف والكومبيوتر بشكل كامل,لغة واحدة"],
                         descEn:["Yearly hosting for website data"," Register one domain with .com TLD yearly","Purchase two business E-mails"]
                         ,price:300},
                     web:{ en: 'Webhosting and Domain Registration ',ar:" استضافة وحجز اسم موقع "
-                                ,src:"../../../../assets/img/myImage/0 (2).png"
+                              ,src:"../../../../assets/img/myImage/000.png",
                             ,descAr:[" استضافة سنوية لبيانات الموقع",   "حجز اسم واحد بنطاق com سنويا" ,"اضافة بريد الكتروني تجاري 2"]
                             ,descEn:["Yearly hosting for website data"," Register one domain with .com TLD yearly","Purchase two business E-mails"],
                             price:90},
