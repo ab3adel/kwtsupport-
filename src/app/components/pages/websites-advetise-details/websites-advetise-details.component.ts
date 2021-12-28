@@ -47,7 +47,7 @@ screenWidth:number;
                         ,price:300},
                     web:{ en: 'Webhosting and Domain Registration ',ar:" استضافة وحجز اسم موقع "
                               ,src:"../../../../assets/img/myImage/000.png",
-                            ,descAr:[" استضافة سنوية لبيانات الموقع",   "حجز اسم واحد بنطاق com سنويا" ,"اضافة بريد الكتروني تجاري 2"]
+                            descAr:[" استضافة سنوية لبيانات الموقع",   "حجز اسم واحد بنطاق com سنويا" ,"اضافة بريد الكتروني تجاري 2"]
                             ,descEn:["Yearly hosting for website data"," Register one domain with .com TLD yearly","Purchase two business E-mails"],
                             price:90},
                     intrologo: {en:'Logo Intro Graphic Design',ar:"تصميم انترو لوغو غرافيك"
