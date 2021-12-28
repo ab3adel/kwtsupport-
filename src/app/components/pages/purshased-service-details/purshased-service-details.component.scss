@@ -1,7 +1,18 @@
 .scrollable {
-    overflow-x: scroll;
+    overflow-x: hidden;
     scrollbar-width: none;
-    max-width: 80vw;
+    max-width: 63vw;
+    position:relative;
+    transition: max-width 0.3s ease-out;
+}
+.moreDetails {
+    position: absolute;
+    right:0;
+    top:50%;
+    color:white;
+    height: 20%;
+    font-size:1.5rem;
+
 }
 .scrollable::-webkit-scrollbar{
     display:none

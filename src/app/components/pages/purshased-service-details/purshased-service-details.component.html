@@ -14,9 +14,12 @@
         <div class="container ">
 
 
-
                 <div class=" table-responsive scrollable" >
 
+                    <i class="bi bi-list moreDetails"
+                    (click)="wideTable($event.currentTarget)">
+
+                   </i>
                     <table class="table table-bordered "
                    >
                         <thead style="white-space: nowrap;">
@@ -92,7 +95,7 @@
 
                                 <td class="product-thumbnail tableData">
 
-                                    {{cart.Link}}
+                                    {{cart.link}}
 
                                 </td>
                                 <td class="product-thumbnail tableData">

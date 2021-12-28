@@ -91,4 +91,11 @@ export class PurshasedServiceDetailsComponent implements OnInit {
         panel.style.maxHeight = panel.scrollHeight + "px";
       }
  }
+ wideTable =(e) =>{
+     let table = document.querySelector(".scrollable") as HTMLDivElement
+     table.style.maxWidth="84vw";
+     table.style.overflowX="scroll";
+     e.style.display='none';
+
+ }
 }

@@ -95,7 +95,7 @@
                                                                        <!--width:35% -->
                    <img src="../../../../assets/img/myImage/sign-up.png"
                      style="width:20px;margin-left:5px;">
-
+                     {{widthX> 770? '|' : ''}}
                 </a>
             </li>
 
@@ -105,9 +105,9 @@
                         </a>
                      </li>
 
-                <li class="nav-item active out" ><a  class="nav-link" *ngIf="login" (click)="logout()" style="cursor: pointer;">{{lang? "تسجيل الخروج":"logout"}}   </a>  </li>
+                <li class="nav-item active out" [ngStyle]="{'margin-left':widthX >900 ? '-5px':''}" ><a  class="nav-link" *ngIf="login" (click)="logout()" style="cursor: pointer;">{{'sign out' | translate }}{{widthX> 770? ' | ' : ''}}   </a>  </li>
                 <li class="nav-item active my"    >
-                    <a routerLink="/myProfile" class="nav-link" [ngStyle]="{'margin-right':widthX >900 ? '-5px':''}"
+                    <a routerLink="/myProfile" class="nav-link"
                         *ngIf="login">{{'myprofile' | translate }}
                     </a>
                 </li>
@@ -165,7 +165,7 @@
                     <img src="../../../../assets/img/myImage/sign-up.png"
                      style="width: 36%;" >
 
-
+                     {{widthX> 770? '|' : ''}}
                 </a>
             </li>
 
@@ -176,7 +176,7 @@
                     </a>
                </li>
 
-                <li class="nav-item active out" style="padding-left:4%"><a  class="nav-link" *ngIf="login" (click)="logout()" style="cursor: pointer;">{{'sign out' | translate }}   </a>  </li>
+                <li class="nav-item active out" style="padding-left:4%"><a  class="nav-link" *ngIf="login" (click)="logout()" style="cursor: pointer;">{{'sign out' | translate }} {{widthX> 770? '|' : ''}}   </a>  </li>
                 <li class="nav-item active my"  ><a routerLink="/myProfile" class="nav-link "  *ngIf="login">{{'myprofile' | translate }}
            </a> </li>
 
